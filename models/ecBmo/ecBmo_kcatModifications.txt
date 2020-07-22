@@ -1,0 +1,10 @@
+Unicode,enz_pos,rxn_pos,Organism,Modified,Parameter,oldValue,newValue,error,ControlCoeff
+P23337,3122,3539,phymatotrichopsis omnivora,1,SA*Mw,0.0183,10345.7,-74.1779,0.909987
+P38972,2865,3129,escherichia coli,1,SA*Mw,0.05,5.06748,-62.3363,0.464598
+P00358,3107,3519,homo sapiens,1,SA*Mw,16.7,1550,-51.6069,0.288465
+P40989,2804,3058,phaseolus vulgaris,1,SA*Mw,0.716994,1320,-36.2473,0.3172
+P14540,3035,3485,nocardia asteroides,1,SA*Mw,32.5,1562,-28.7449,0.120424
+P48445,2882,3162,staphylococcus aureus,1,K_cat,1.22998,450000,-23.6199,0.071848
+P32895,3284,3853,salmonella enterica subsp. enterica serovar typhimurium,1,SA*Mw,0.659993,1170,-18.1349,0.071778
+P28777,2995,3342,neurospora crassa,1,SA*Mw,0.870013,105.93,-11.9894,0.075781
+P05694,2871,3726,escherichia coli,1,SA*Mw,0.450003,3.5,-6.89154,0.066971
