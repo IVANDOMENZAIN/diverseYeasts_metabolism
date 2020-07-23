@@ -2,6 +2,7 @@ current = pwd;
 %load models
 model = importModel('../models/blastobotrys_mokoenaii.xml');
 load('../models/ecBmo/ecModel_batch.mat')
+carbon_source = 'D-glucose exchange';
 %Test ecModel 
 sol = solveLP(ecModel_batch,1);
 growthIdx = find(ecModel_batch.c);
@@ -13,17 +14,21 @@ obj_ec = find(ecModel_batch.c);
 sol = solveLP(ecModel_batch,1);
 printFluxes(ecModel_batch, sol.x, true, 10^-6);
 %Retrieve all exchange reactions
-model = minimal_Y6(model,'r_1714');
+cS_id    = model.rxns(find(strcmpi(model.rxnNames,carbon_source)));
+model    = minimal_Y6(model,cS_id);
 solution = solveLP(model);
-obj = (find(model.c));
-GURidx = (find(strcmpi(model.rxns,'r_1714')));
-gRate = solution.x(find(model.c));
-ecModel_batch = setParam(ecModel_batch,'ub','r_1714_REV',1);
-ecGURidx = (find(strcmpi(ecModel_batch.rxns,'r_1714_REV')));
-
+obj      = (find(model.c));
+gRate    = solution.x(find(model.c));
+ecModel_batch = setParam(ecModel_batch,'ub',[cS_id{1} '_REV'],1);
+%Set media for ecModel
+cd GECKO/geckomat/kcat_sensitivity_analysis
+ecModel_batch = changeMedia_batch(ecModel_batch,[carbon_source ' (reversible)']);
+ecModel_batch = setParam(ecModel_batch,'ub',[cS_id{1} '_REV'],1);
 sol = solveLP(ecModel_batch,1);
+printFluxes(ecModel_batch, sol.x, true, 10^-6);
 gRate_ec = sol.x(growthIdx);
 [modelRxns,modelIdxs] = getExchangeRxns(model);
+cd ../../..
 %Initialize variables for results
 excRxnIds = [];
 rates_01  = [];
@@ -46,15 +51,12 @@ for i=1:length(modelRxns)
             tempecModel = setParam(tempecModel,'lb',obj_ec,0.25*gRate_ec);
             solution_25 = solveLP(tempecModel);
             if ~isempty(solution_25.x)
-                tempecModel = setParam(ecModel_batch,'obj',ecM_idx,1);
                 tempecModel = setParam(tempecModel,'lb',obj_ec,0.5*gRate_ec);
                 solution_50 = solveLP(tempecModel);
                 if ~isempty(solution_50.x)
-                    tempecModel = setParam(ecModel_batch,'obj',ecM_idx,1);
                     tempecModel = setParam(tempecModel,'lb',obj_ec,0.75*gRate_ec);
                     solution_75 = solveLP(tempecModel);
                     if ~isempty(solution_75.x)
-                        tempecModel = setParam(ecModel_batch,'obj',ecM_idx,1);
                         tempecModel = setParam(tempecModel,'lb',obj_ec,0.99*gRate_ec);
                         solution_99 = solveLP(tempecModel);
                         if ~isempty(solution_99.x)
@@ -75,5 +77,5 @@ end
 results = table(excRxnIds,rates_01,rates_25,rates_50,rates_75,rates_99); 
 sumas = sum(table2array(results(:,2:end)),2);
 results = results(sumas>0,:);
-writetable(results,'../results/Bmo_production_glc_potential.txt','delimiter','\t','QuoteStrings',false);
+writetable(results,'../results/Bmo_production_xyl_potential.txt','delimiter','\t','QuoteStrings',false);
     
