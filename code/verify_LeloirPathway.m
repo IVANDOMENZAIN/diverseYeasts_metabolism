@@ -2,7 +2,7 @@
 yeastGEM = load('../models/yeastGEM.mat');
 yeastGEM = ravenCobraWrapper(yeastGEM.model);
 
-load('../models/candida intermedia/Candida_intermedia.mat')
+load('../models/candida_intermedia/Candida_intermedia.mat')
 model = ravenCobraWrapper(reducedModel);
 model.proteins = reducedModel.proteins;
 %substitute gene IDs
@@ -54,7 +54,7 @@ model_leloir.rev(idx) = 1;
 model_leloir.lb(idx) = -1000;
 model_leloir.ub(idx) = 1000;
 model = changeMedia(model_leloir,1);
-save('../models/candida intermedia/cint_leloir.mat','model')
+save('../models/candida_intermedia/cint_leloir.mat','model')
 
  
 
