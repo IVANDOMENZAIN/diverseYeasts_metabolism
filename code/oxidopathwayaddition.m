@@ -1,8 +1,6 @@
 %explore lactose metbolism in C. intermedia model
-load('../models/candida_intermedia/Candida_intermedia.mat')
-model = ravenCobraWrapper(reducedModel);
-model.proteins = reducedModel.proteins;
-save('../models/candida_intermedia/Candida_intermedia_RAVEN.mat','model')
+load('../models/candida_intermedia/cint_leloir.mat.mat')
+
 %Adding reactions from aspergillus niger oxidoreductive pathway. Reference:
 %10.1016/j.fbr.2007.02.006
 % Define reactions equations

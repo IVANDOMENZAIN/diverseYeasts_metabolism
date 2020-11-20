@@ -54,8 +54,7 @@ model_leloir.rev(idx) = 1;
 model_leloir.lb(idx) = -1000;
 model_leloir.ub(idx) = 1000;
 model = changeMedia(model_leloir,1);
-
-save('../models/candida intermedia/cint_leloir.mat','model_leloir')
+save('../models/candida intermedia/cint_leloir.mat','model')
 
  
 
