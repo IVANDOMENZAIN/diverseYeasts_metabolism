@@ -34,10 +34,8 @@ blockedExchanges = {'r_1663'; ... % bicarbonate exchange
                     'r_4062'; ... % lipid backbone exchange
                     'r_4064'};    % lipid chain exchange
 
-glucoseExchange = {'r_1714'};     % D-glucose exchange
-
 uptakeRxnIndexes     = findRxnIDs(model,desiredExchanges);
-glucoseExchangeIndex = findRxnIDs(model,cSource);
+cSouceExchangeIndex = findRxnIDs(model,cSource);
 BlockedRxnIndex      = findRxnIDs(model,blockedExchanges);
 
 if length(find(uptakeRxnIndexes~= 0)) ~= 15
@@ -45,7 +43,7 @@ if length(find(uptakeRxnIndexes~= 0)) ~= 15
 end
 
 model.lb(uptakeRxnIndexes(uptakeRxnIndexes~=0))     = -1000;
-model.lb(glucoseExchangeIndex) = -1;
+model.lb(cSouceExchangeIndex) = -1;
 
 model.lb(BlockedRxnIndex) = 0;
 model.ub(BlockedRxnIndex) = 0;
