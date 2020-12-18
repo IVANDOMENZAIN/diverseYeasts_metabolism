@@ -71,7 +71,9 @@ t = t((t.FC>1.001*bioFC | t.FC<0.999*bioFC),:);
 t = sortrows(t,'FC','descend');
 %Write results as a .txt file
 writetable(t,'../results/lactose_pathways_comparison_Cint.txt','delimiter','\t','QuoteStrings',false)
-
+%Compare flux distributions using a RAVEN built-in function
+clc
+followChanged(model_oxido,[sol1.x; 0; 0],sol3.x,5E-1, 1E-6, 1E-8, {'ATP'})
 % Kamesh has shared that xyl1 displays cofactor cofactor promiscuity, let's
 % add this to the model
 % Define reaction names
