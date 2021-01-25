@@ -6,6 +6,8 @@ load('../models/candida_intermedia/cintGEM_oxido.mat');
 %Find O2 exchange
 O2_ex = find(strcmpi(model.rxnNames,'oxygen exchange'))
 O2_ex = model.rxns(O2_ex);
+%Let's set minimal media conditions
+model = changeMedia(model,'r_1714',1)
 %Block oxygen exchange
 model = setParam(model,'lb',O2_ex,0);
 model = setParam(model,'ub',O2_ex,0);
@@ -30,37 +32,60 @@ printFluxes(model,sol2.x)
 %Checking model for anaerobic growth on YeastGEM (model =
 %anaerobicModel(model))
 %First checking if we have the necessary metabolites and exch reactions
-find(strcmp(model.mets,'s_3714[c]')) 
-find(strcmp(model.mets,'s_1198[c]'))
-find(strcmp(model.mets,'s_1203[c]'))
-find(strcmp(model.mets,'s_1207[c]'))
-find(strcmp(model.mets,'s_1212[c]'))
-find(strcmp(model.mets,'s_0529[c]'))
-%Didn't find anything, will look without the compartment suffix
-find(strcmp(model.mets,'s_3714')) 
-find(strcmp(model.mets,'s_1198'))
-find(strcmp(model.mets,'s_1203'))
-find(strcmp(model.mets,'s_1207'))
-find(strcmp(model.mets,'s_1212'))
-find(strcmp(model.mets,'s_0529'))
-%Got them!
-find(strcmp(model.rxns,'r_1994')) %palmitoleate
-find(strcmp(model.rxns,'r_2106')) %zymosterol
-find(strcmp(model.rxns,'r_2134')) %14-demethyllanosterol
-find(strcmp(model.rxns,'r_2137')) %ergosta-5,7,22,24(28)-tetraen-3beta-ol
-find(strcmp(model.rxns,'r_2189')) %oleate
-find(strcmp(model.rxns,'r_0713'))
-find(strcmp(model.rxns,'r_0714')) %<--- couldn't find this one!
-find(strcmp(model.rxns,'r_0487'))
-find(strcmp(model.rxns,'r_0472'))
-find(strcmp(model.rxnNames,'biomass pseudoreaction'))
-%We have almost all of them!
-find(strcmp(model.metNames,'ATP [cytoplasm]'))
+toRemove = {'s_3714' 's_1198' 's_1203' 's_1207' 's_1212' 's_0529'};
+tempModel = model;
+%Get index for biomass-related reactions
+bioRxn = find(strcmpi(model.rxnNames,'biomass pseudoreaction'));
+cofRxn = find(strcmpi(model.rxnNames,'cofactor pseudoreaction'));
+proRxn = find(strcmpi(model.rxnNames,'protein pseudoreaction'));
+ionRxn = find(strcmpi(model.rxnNames,'ion pseudoreaction'));
+lipRxn = find(contains(model.rxnNames,'lipid chain'));
+printModel(tempModel,bioRxn)
+printModel(tempModel,cofRxn)
+printModel(tempModel,proRxn)
+printModel(tempModel,ionRxn)
+printModel(tempModel,lipRxn)
+%model.metNames(find(strcmp(model.mets,'s_3714[c]'))) 
 
+printModel(model,find(strcmp(model.rxns,'r_1994'))) %palmitoleate
+printModel(model,find(strcmp(model.rxns,'r_2106'))) %zymosterol
+printModel(model,find(strcmp(model.rxns,'r_2134'))) %14-demethyllanosterol
+printModel(model,find(strcmp(model.rxns,'r_2137'))) %ergosta-5,7,22,24(28)-tetraen-3beta-ol
+printModel(model,find(strcmp(model.rxns,'r_2189'))) %oleate
+printModel(model,find(strcmp(model.rxns,'r_0713')))
+%printModel(find(strcmp(model.rxns,'r_0714'))) %<--- couldn't find this one!
+printModel(model,find(strcmp(model.rxns,'r_0487')))
+printModel(model,find(strcmp(model.rxns,'r_0472')))
 
-model = anaerobicModel(model)
+toAdd = {'r_1994' 'r_2106' 'r_2134' 'r_2137' 'r_2189'};
 
-%No growth observed, running FSEOF if growth relies on oxygen or if we need
-%to add something to the media hehe
+for rxn=toAdd
+    tempModel = setParam(tempModel,'lb',rxn,-1000);
+    printModel(tempModel,find(strcmp(tempModel.rxns,rxn))) %palmitoleate
+end
+sol = solveLP(tempModel)
+printFluxes(tempModel,sol.x)
 
+toAdd = {'r_0713' 'r_0487' 'r_0472'};
 
+for rxn=toAdd
+    tempModel = setParam(tempModel,'lb',rxn,0);
+    tempModel = setParam(tempModel,'ub',rxn,0);
+    printModel(tempModel,find(strcmp(tempModel.rxns,rxn))) %palmitoleate
+end
+sol = solveLP(tempModel)
+printFluxes(tempModel,sol.x)
+
+%It seems that the Cint model cannot grow without oxygen (using anaerobic
+%media composition for S. cerevisiae), so let's open all the possible and
+%see if this is still the case
+[a,b]= getExchangeRxns(tempModel);
+exchNames = tempModel.rxnNames(b);
+tempModel.lb(b) = -1000;
+%close oxygen
+%Block oxygen exchange
+tempModel = setParam(tempModel,'lb',O2_ex,0);
+tempModel = setParam(tempModel,'ub',O2_ex,0);
+
+sol = solveLP(tempModel)
+printFluxes(tempModel,sol.x)
