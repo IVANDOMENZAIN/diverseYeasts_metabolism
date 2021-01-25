@@ -12,7 +12,7 @@ function model = changeMedia(model,cSource,flux)
 if nargin<2
     flux = 1;
 end
-exchangeRxns = findExcRxns(model);
+[~,exchangeRxns]=getExchangeRxns(model);
 model.lb(exchangeRxns) = 0;
 model.ub(exchangeRxns) = 1000;
 
