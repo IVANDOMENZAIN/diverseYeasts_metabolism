@@ -24,7 +24,7 @@ genesToAdd.genes          = {'xyl1' 'xyl1_2' 'xyl1_3' 'G0RNA2'};
 genesToAdd.geneShortNames = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};  
 rxnsToAdd.grRules         = {'xyl1 or xyl1_2 or xyl1_3' 'G0RNA2'};
 %LEt's evaluate biomass production before integrating the pathway
-model = changeMedia(model,1);
+model = changeMedia(model,'lac_ex',1);
 sol1 = solveLP(model,1);
 printFluxes(model,sol1.x)
 % Introduce changes to the model
@@ -34,13 +34,13 @@ model_oxido = addRxns(model_oxido,rxnsToAdd,3);
 I  = haveFlux(model_oxido,1E-6,'ald_red_NADPH');
 I2 = haveFlux(model_oxido,1E-6,'xyl_hex_red');
 %LEt's evaluate biomass production
-model_oxido = changeMedia(model_oxido,1);
+model_oxido = changeMedia(model_oxido,'lac_ex',1);
 sol2 = solveLP(model_oxido,1);
 printFluxes(model_oxido,sol2.x)
 %Let's evaluate the whole pathway
 rxns = {'ald_red_NADPH' 'r_4983' 'xyl_hex_red' 'r_5174' 'r_0323'};
 fluxes=haveFlux(model_oxido,1E-6,rxns);
-%All of them can carry flux, let's block galactolkinase and evaluate things
+%All of them can carry flux, let's block galactokinase and evaluate things
 %again
 index = find(contains(model_oxido.rxns,'r_0458')); %Galactokinase
 model_oxido.lb(index)  = 0;

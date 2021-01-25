@@ -23,7 +23,7 @@ for cSource = carbon_sources
     cS_id = model.rxns(find(strcmpi(model.rxnNames,cSource)));
     temp  = minimal_Y6(model,cS_id);
     %Get maximum growth rate subject to a unit carbon source uptake rate
-    sol   = solveLP(temp,1);
+    sol       = solveLP(temp,1);
     maxGrowth = sol.x(growth_idx);
     %for each suboptimal biomass level explore production potential for all
     %exchangeable metabolites
