@@ -41,5 +41,5 @@ modelLac = setParam(modelLac,'lb','ald_red_NADH',0);
 modelLac = setParam(modelLac,'ub','ald_red_NADH',0);
 
 outputFile = '../results/FSEOF_cint/upReg_fluxes_glcK_2_OxRed_NADPH.txt';
-targets=FSEOF(modelLac,galactokinase,oxRed_path,10,0.99,outputFile);
+targets    = extendedFSEOF(modelLac,galactokinase,oxRed_path,10,0.99,outputFile);
 
