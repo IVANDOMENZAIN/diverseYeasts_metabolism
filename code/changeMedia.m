@@ -1,4 +1,4 @@
-function model = changeMedia(model,flux)
+function model = changeMedia(model,cSource,flux)
 % change Y6 model media to minimal - ammonium, glucose, oxygen,
 % phosphate, sulphate
 % Bicarbonate production is blocked to get rid of conflict due to bicarbonate and carbon dioxide
@@ -36,7 +36,7 @@ blockedExchanges = {'r_1663'; ... % bicarbonate exchange
                     'r_4062'; ... % lipid backbone exchange
                     'r_4064'};    % lipid chain exchange
 
-glucoseExchange = {'lac_ex'};     % D-glucose exchange
+glucoseExchange = {cSource};     % D-glucose exchange
 
 uptakeRxnIndexes     = findRxnIDs(model,desiredExchanges);
 glucoseExchangeIndex = findRxnIDs(model,glucoseExchange);

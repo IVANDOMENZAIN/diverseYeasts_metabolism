@@ -1,5 +1,5 @@
 %explore lactose metbolism in C. intermedia model
-load('../models/Candida_intermedia.mat')
+load('../models/candida_intermedia/Candida_intermedia.mat')
 model = ravenCobraWrapper(reducedModel);
 model.proteins = reducedModel.proteins;
 %Find lactose metabolites

@@ -11,7 +11,7 @@
 %%Save current folder path
 current = pwd;
 % Load model
-model = importModel('../models/Candida_intermedia.xml');
+model = importModel('../models/candida_intermedia/Candida_intermedia.xml');
 % 1) Set the objective function to growth pseudo-reaction
 growthRxn = model.rxns{strcmpi(model.rxnNames,'growth')};
 tempModel = setParam(model,'obj',growthRxn,1);
@@ -70,7 +70,6 @@ printFluxes(tempModel,solution_pFBA.x,false,cutOffFlux);
 
 %This will show a cumulative distribution of the absolute values of the
 %fluxes in the simulation
-cd complementary
 FluxDist = solution.x;%(abs(solution.x)>1E-7);
 plot2D(abs(FluxDist),[],'FBA simulation','Fluxes value [mmol/gDCW h]','Cumulative distribution',true)
 %Look at the new flux cumulative distribution

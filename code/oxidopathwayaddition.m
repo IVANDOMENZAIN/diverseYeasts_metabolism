@@ -13,34 +13,34 @@ newRxns = {'D-galactose[c] + NADPH[c] => galactitol[c] + NADP(+)[c]'...
 rxnsToAdd.equations = newRxns;
 
 % Define reaction names
-rxnsToAdd.rxnNames = {'aldose reductase' 'L-xylo-3-hexulose reductase'};% 'hexokinase'};
-rxnsToAdd.rxns     = {'ald_red' 'xyl_hex_red'};% 'hxk'};
+rxnsToAdd.rxnNames = {'aldose reductase (NAPDH)'  'L-xylo-3-hexulose reductase'};% 'hexokinase'};
+rxnsToAdd.rxns     = {'ald_red_NADPH' 'xyl_hex_red'};% 'hxk'};
 %Define objective and bounds
 rxnsToAdd.c  = [0 0];
 rxnsToAdd.lb = [0 -1000];
 rxnsToAdd.ub = [1000 1000];
 % %genes to add
-genesToAdd.genes          = {'xyl1' 'G0RNA2'};
-genesToAdd.geneShortNames = {'xyl1' 'lxr4'};  
-rxnsToAdd.grRules         = {'xyl1' 'G0RNA2'};
+genesToAdd.genes          = {'xyl1' 'xyl1_2' 'xyl1_3' 'G0RNA2'};
+genesToAdd.geneShortNames = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};  
+rxnsToAdd.grRules         = {'xyl1 or xyl1_2 or xyl1_3' 'G0RNA2'};
 %LEt's evaluate biomass production before integrating the pathway
-model = changeMedia(model,1);
+model = changeMedia(model,'lac_ex',1);
 sol1 = solveLP(model,1);
 printFluxes(model,sol1.x)
 % Introduce changes to the model
 model_oxido = addGenesRaven(model,genesToAdd);
 model_oxido = addRxns(model_oxido,rxnsToAdd,3);
 %Evaluate if rxn can carry flux
-I  = haveFlux(model_oxido,1E-6,'ald_red');
+I  = haveFlux(model_oxido,1E-6,'ald_red_NADPH');
 I2 = haveFlux(model_oxido,1E-6,'xyl_hex_red');
 %LEt's evaluate biomass production
-model_oxido = changeMedia(model_oxido,1);
+model_oxido = changeMedia(model_oxido,'lac_ex',1);
 sol2 = solveLP(model_oxido,1);
 printFluxes(model_oxido,sol2.x)
 %Let's evaluate the whole pathway
-rxns = {'ald_red' 'r_4983' 'xyl_hex_red' 'r_5174' 'r_0323'};
+rxns = {'ald_red_NADPH' 'r_4983' 'xyl_hex_red' 'r_5174' 'r_0323'};
 fluxes=haveFlux(model_oxido,1E-6,rxns);
-%All of them can carry flux, let's block galactolkinase and evaluate things
+%All of them can carry flux, let's block galactokinase and evaluate things
 %again
 index = find(contains(model_oxido.rxns,'r_0458')); %Galactokinase
 model_oxido.lb(index)  = 0;
@@ -71,3 +71,38 @@ t = t((t.FC>1.001*bioFC | t.FC<0.999*bioFC),:);
 t = sortrows(t,'FC','descend');
 %Write results as a .txt file
 writetable(t,'../results/lactose_pathways_comparison_Cint.txt','delimiter','\t','QuoteStrings',false)
+%Compare flux distributions using a RAVEN built-in function
+clc
+followChanged(model_oxido,[sol1.x; 0; 0],sol3.x,5E-1, 1E-6, 1E-8, {'ATP'})
+% Kamesh has shared that xyl1 displays cofactor cofactor promiscuity, let's
+% add this to the model
+% Define reaction names
+rxnsToAdd = [];
+newRxns = {'D-galactose[c] + NADH[c] => galactitol[c] + NAD[c]'};...
+           %'D-Fructose[c] + ATP[c] <=> D-Fructose-6-Phosphate[c] + ADP[c]'};
+rxnsToAdd.equations = newRxns;
+
+rxnsToAdd.rxnNames = {'aldose reductase (NADH)'};
+rxnsToAdd.rxns     = {'ald_red_NADH'};
+%Define objective and bounds
+rxnsToAdd.c  = 0;
+rxnsToAdd.lb = 0;
+rxnsToAdd.ub = 1000;
+% %genes to add
+rxnsToAdd.grRules = {'xyl1_2'};
+% Introduce changes to the model
+model_oxido = addRxns(model_oxido,rxnsToAdd,3);
+%Evaluate if rxn can carry flux
+I  = haveFlux(model_oxido,1E-6,'ald_red_NADH');
+%Before saving the model let's unblock the Leloir pathway
+%All of them can carry flux, let's block galactolkinase and evaluate things
+%again
+model = model_oxido;
+index = find(contains(model_oxido.rxns,'r_0458')); %Galactokinase
+model.lb(index)  = 0;
+model.ub(index)  = 1000;
+index = find(contains(model_oxido.rxns,'r_4222')); %Galactokinase
+model.lb(index)  = 0;
+model.ub(index)  = 1000;
+%save model (oxido-reductive pathway)
+save('../models/candida_intermedia/cintGEM_oxido.mat','model')
