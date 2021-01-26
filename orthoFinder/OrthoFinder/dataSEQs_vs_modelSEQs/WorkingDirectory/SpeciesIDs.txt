@@ -1,0 +1,2 @@
+0: data_Cint.faa
+1: model_Cint.faa

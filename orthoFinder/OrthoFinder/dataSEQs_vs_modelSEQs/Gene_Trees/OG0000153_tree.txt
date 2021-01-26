@@ -1,0 +1,1 @@
+((data_Cint_SGZ54852.1:0.0216348,model_Cint_Candida_intermedia@Seq_2740:0.0205693):0.545701,(model_Cint_Candida_intermedia@Seq_2616:0.125685,data_Cint_SGZ54850.1:0.555903):0.545701);
