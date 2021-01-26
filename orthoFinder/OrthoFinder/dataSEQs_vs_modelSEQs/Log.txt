@@ -1,4 +1,4 @@
-2021-01-26 15:50:34 : Started OrthoFinder version 2.5.2
+2021-01-26 17:31:57 : Started OrthoFinder version 2.5.2
 Command Line: /Users/ivand/miniconda3/bin/orthofinder -f orthoFinder
 
 WorkingDirectory_Base: /Users/ivand/Documents/GitHub/diverseYeasts_metabolism/orthoFinder/OrthoFinder/Results_Jan26/WorkingDirectory/
@@ -9,4 +9,4 @@ Species used:
 
 FN_Orthogroups: /Users/ivand/Documents/GitHub/diverseYeasts_metabolism/orthoFinder/OrthoFinder/Results_Jan26/WorkingDirectory/clusters_OrthoFinder_I1.5.txt_id_pairs.txt
 WorkingDirectory_Trees: /Users/ivand/Documents/GitHub/diverseYeasts_metabolism/orthoFinder/OrthoFinder/Results_Jan26/WorkingDirectory/
-2021-01-26 15:51:43 : OrthoFinder run completed
+2021-01-26 17:33:06 : OrthoFinder run completed

@@ -1,302 +1,300 @@
 Orthogroup	Species Tree Node	Gene Tree Node	Support	Type	Genes 1	Genes 2
-OG0000000	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53862.1, model_Cint_Candida_intermedia@Seq_1236	data_Cint_SGZ51186.1, model_Cint_Candida_intermedia@Seq_620, model_Cint_Candida_intermedia@Seq_580, data_Cint_SGZ54258.1, model_Cint_Candida_intermedia@Seq_5017, data_Cint_SGZ51129.1, model_Cint_Candida_intermedia@Seq_3372, data_Cint_SGZ54208.1, data_Cint_SGZ56130.1, model_Cint_Candida_intermedia@Seq_870, data_Cint_SGZ55373.1, model_Cint_Candida_intermedia@Seq_5227
-OG0000000	N0	n2	1.0	Non-Terminal	data_Cint_SGZ51186.1, model_Cint_Candida_intermedia@Seq_620	model_Cint_Candida_intermedia@Seq_580, data_Cint_SGZ54258.1, model_Cint_Candida_intermedia@Seq_5017, data_Cint_SGZ51129.1, model_Cint_Candida_intermedia@Seq_3372, data_Cint_SGZ54208.1, data_Cint_SGZ56130.1, model_Cint_Candida_intermedia@Seq_870, data_Cint_SGZ55373.1, model_Cint_Candida_intermedia@Seq_5227
-OG0000000	N0	n4	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_580, data_Cint_SGZ54258.1, model_Cint_Candida_intermedia@Seq_5017, data_Cint_SGZ51129.1	model_Cint_Candida_intermedia@Seq_3372, data_Cint_SGZ54208.1, data_Cint_SGZ56130.1, model_Cint_Candida_intermedia@Seq_870, data_Cint_SGZ55373.1, model_Cint_Candida_intermedia@Seq_5227
-OG0000000	N0	n5	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_580, data_Cint_SGZ54258.1	model_Cint_Candida_intermedia@Seq_5017, data_Cint_SGZ51129.1
-OG0000000	N0	n8	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3372, data_Cint_SGZ54208.1	data_Cint_SGZ56130.1, model_Cint_Candida_intermedia@Seq_870, data_Cint_SGZ55373.1, model_Cint_Candida_intermedia@Seq_5227
-OG0000000	N0	n10	1.0	Non-Terminal	data_Cint_SGZ56130.1, model_Cint_Candida_intermedia@Seq_870	data_Cint_SGZ55373.1, model_Cint_Candida_intermedia@Seq_5227
-OG0000001	N0	n0	1.0	Non-Terminal	data_Cint_SGZ46812.1, model_Cint_Candida_intermedia@Seq_3472	model_Cint_Candida_intermedia@Seq_3737, model_Cint_Candida_intermedia@Seq_3361, data_Cint_SGZ56654.1, model_Cint_Candida_intermedia@Seq_5185, data_Cint_SGZ49231.1, data_Cint_SGZ55671.1, model_Cint_Candida_intermedia@Seq_2601, data_Cint_SGZ46814.1, data_Cint_SGZ53382.1, model_Cint_Candida_intermedia@Seq_4080, model_Cint_Candida_intermedia@Seq_62
-OG0000001	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3737, model_Cint_Candida_intermedia@Seq_3361, data_Cint_SGZ56654.1, model_Cint_Candida_intermedia@Seq_5185, data_Cint_SGZ49231.1, data_Cint_SGZ55671.1, model_Cint_Candida_intermedia@Seq_2601, data_Cint_SGZ46814.1	data_Cint_SGZ53382.1, model_Cint_Candida_intermedia@Seq_4080, model_Cint_Candida_intermedia@Seq_62
-OG0000001	N0	n3	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3737, model_Cint_Candida_intermedia@Seq_3361, data_Cint_SGZ56654.1, model_Cint_Candida_intermedia@Seq_5185, data_Cint_SGZ49231.1, data_Cint_SGZ55671.1	model_Cint_Candida_intermedia@Seq_2601, data_Cint_SGZ46814.1
-OG0000001	N0	n4	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3737, model_Cint_Candida_intermedia@Seq_3361, data_Cint_SGZ56654.1	model_Cint_Candida_intermedia@Seq_5185, data_Cint_SGZ49231.1, data_Cint_SGZ55671.1
-OG0000001	model_Cint	n6	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3737	model_Cint_Candida_intermedia@Seq_3361
-OG0000001	data_Cint	n8	1.0	Terminal	data_Cint_SGZ49231.1	data_Cint_SGZ55671.1
-OG0000001	model_Cint	n11	1.0	Terminal	model_Cint_Candida_intermedia@Seq_4080	model_Cint_Candida_intermedia@Seq_62
-OG0000002	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51027.1, model_Cint_Candida_intermedia@Seq_4166	data_Cint_SGZ48122.1, model_Cint_Candida_intermedia@Seq_3594, data_Cint_SGZ46206.1, model_Cint_Candida_intermedia@Seq_665, model_Cint_Candida_intermedia@Seq_5494, data_Cint_SGZ56656.1, data_Cint_SGZ54714.1, model_Cint_Candida_intermedia@Seq_2659, data_Cint_SGZ50994.1, model_Cint_Candida_intermedia@Seq_3742
-OG0000002	N0	n2	0.5	Non-Terminal	data_Cint_SGZ48122.1	model_Cint_Candida_intermedia@Seq_3594, data_Cint_SGZ46206.1, model_Cint_Candida_intermedia@Seq_665, model_Cint_Candida_intermedia@Seq_5494, data_Cint_SGZ56656.1, data_Cint_SGZ54714.1, model_Cint_Candida_intermedia@Seq_2659, data_Cint_SGZ50994.1, model_Cint_Candida_intermedia@Seq_3742
-OG0000002	N0	n3	0.5	Non-Terminal	model_Cint_Candida_intermedia@Seq_3594	data_Cint_SGZ46206.1, model_Cint_Candida_intermedia@Seq_665, model_Cint_Candida_intermedia@Seq_5494, data_Cint_SGZ56656.1, data_Cint_SGZ54714.1, model_Cint_Candida_intermedia@Seq_2659, data_Cint_SGZ50994.1, model_Cint_Candida_intermedia@Seq_3742
-OG0000002	N0	n4	1.0	Non-Terminal	data_Cint_SGZ46206.1, model_Cint_Candida_intermedia@Seq_665	model_Cint_Candida_intermedia@Seq_5494, data_Cint_SGZ56656.1, data_Cint_SGZ54714.1, model_Cint_Candida_intermedia@Seq_2659, data_Cint_SGZ50994.1, model_Cint_Candida_intermedia@Seq_3742
-OG0000002	N0	n6	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5494, data_Cint_SGZ56656.1	data_Cint_SGZ54714.1, model_Cint_Candida_intermedia@Seq_2659, data_Cint_SGZ50994.1, model_Cint_Candida_intermedia@Seq_3742
-OG0000002	N0	n8	1.0	Non-Terminal	data_Cint_SGZ54714.1, model_Cint_Candida_intermedia@Seq_2659	data_Cint_SGZ50994.1, model_Cint_Candida_intermedia@Seq_3742
-OG0000003	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5160, data_Cint_SGZ52892.1	model_Cint_Candida_intermedia@Seq_4153, data_Cint_SGZ57787.1, model_Cint_Candida_intermedia@Seq_3006, data_Cint_SGZ47126.1, model_Cint_Candida_intermedia@Seq_3384, data_Cint_SGZ50995.1, model_Cint_Candida_intermedia@Seq_5172, data_Cint_SGZ54679.1, data_Cint_SGZ54677.1
-OG0000003	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4153, data_Cint_SGZ57787.1, model_Cint_Candida_intermedia@Seq_3006, data_Cint_SGZ47126.1	model_Cint_Candida_intermedia@Seq_3384, data_Cint_SGZ50995.1, model_Cint_Candida_intermedia@Seq_5172, data_Cint_SGZ54679.1, data_Cint_SGZ54677.1
-OG0000003	N0	n3	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4153, data_Cint_SGZ57787.1	model_Cint_Candida_intermedia@Seq_3006, data_Cint_SGZ47126.1
-OG0000003	N0	n6	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3384, data_Cint_SGZ50995.1	model_Cint_Candida_intermedia@Seq_5172, data_Cint_SGZ54679.1, data_Cint_SGZ54677.1
-OG0000003	data_Cint	n9	1.0	Terminal	data_Cint_SGZ54679.1	data_Cint_SGZ54677.1
-OG0000004	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_884, data_Cint_SGZ52900.1	data_Cint_SGZ52899.1, data_Cint_SGZ52902.1, model_Cint_Candida_intermedia@Seq_3427, data_Cint_SGZ54826.1, model_Cint_Candida_intermedia@Seq_4674, data_Cint_SGZ48781.1, model_Cint_Candida_intermedia@Seq_605, data_Cint_SGZ48124.1, model_Cint_Candida_intermedia@Seq_3698
-OG0000004	N0	n2	0.5	Non-Terminal	data_Cint_SGZ52899.1, data_Cint_SGZ52902.1	model_Cint_Candida_intermedia@Seq_3427, data_Cint_SGZ54826.1, model_Cint_Candida_intermedia@Seq_4674, data_Cint_SGZ48781.1, model_Cint_Candida_intermedia@Seq_605, data_Cint_SGZ48124.1, model_Cint_Candida_intermedia@Seq_3698
+OG0000000	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51129.1, model_Cint_Seq_5017	data_Cint_SGZ54258.1, model_Cint_Seq_580, data_Cint_SGZ51186.1, model_Cint_Seq_620, model_Cint_Seq_1236, data_Cint_SGZ53862.1, data_Cint_SGZ54208.1, model_Cint_Seq_3372, data_Cint_SGZ56130.1, model_Cint_Seq_870, data_Cint_SGZ55373.1, model_Cint_Seq_5227
+OG0000000	N0	n2	1.0	Non-Terminal	data_Cint_SGZ54258.1, model_Cint_Seq_580	data_Cint_SGZ51186.1, model_Cint_Seq_620, model_Cint_Seq_1236, data_Cint_SGZ53862.1, data_Cint_SGZ54208.1, model_Cint_Seq_3372, data_Cint_SGZ56130.1, model_Cint_Seq_870, data_Cint_SGZ55373.1, model_Cint_Seq_5227
+OG0000000	N0	n4	1.0	Non-Terminal	data_Cint_SGZ51186.1, model_Cint_Seq_620, model_Cint_Seq_1236, data_Cint_SGZ53862.1	data_Cint_SGZ54208.1, model_Cint_Seq_3372, data_Cint_SGZ56130.1, model_Cint_Seq_870, data_Cint_SGZ55373.1, model_Cint_Seq_5227
+OG0000000	N0	n5	1.0	Non-Terminal	data_Cint_SGZ51186.1, model_Cint_Seq_620	model_Cint_Seq_1236, data_Cint_SGZ53862.1
+OG0000000	N0	n8	1.0	Non-Terminal	data_Cint_SGZ54208.1, model_Cint_Seq_3372	data_Cint_SGZ56130.1, model_Cint_Seq_870, data_Cint_SGZ55373.1, model_Cint_Seq_5227
+OG0000000	N0	n10	1.0	Non-Terminal	data_Cint_SGZ56130.1, model_Cint_Seq_870	data_Cint_SGZ55373.1, model_Cint_Seq_5227
+OG0000001	N0	n0	1.0	Non-Terminal	data_Cint_SGZ46814.1, model_Cint_Seq_2601	data_Cint_SGZ46812.1, model_Cint_Seq_3472, data_Cint_SGZ53382.1, model_Cint_Seq_4080, model_Cint_Seq_62, model_Cint_Seq_3361, model_Cint_Seq_3737, data_Cint_SGZ56654.1, model_Cint_Seq_5185, data_Cint_SGZ49231.1, data_Cint_SGZ55671.1
+OG0000001	N0	n2	1.0	Non-Terminal	data_Cint_SGZ46812.1, model_Cint_Seq_3472, data_Cint_SGZ53382.1, model_Cint_Seq_4080, model_Cint_Seq_62	model_Cint_Seq_3361, model_Cint_Seq_3737, data_Cint_SGZ56654.1, model_Cint_Seq_5185, data_Cint_SGZ49231.1, data_Cint_SGZ55671.1
+OG0000001	N0	n3	1.0	Non-Terminal	data_Cint_SGZ46812.1, model_Cint_Seq_3472	data_Cint_SGZ53382.1, model_Cint_Seq_4080, model_Cint_Seq_62
+OG0000001	model_Cint	n6	1.0	Terminal	model_Cint_Seq_4080	model_Cint_Seq_62
+OG0000001	N0	n7	1.0	Non-Terminal	model_Cint_Seq_3361, model_Cint_Seq_3737, data_Cint_SGZ56654.1	model_Cint_Seq_5185, data_Cint_SGZ49231.1, data_Cint_SGZ55671.1
+OG0000001	model_Cint	n9	1.0	Terminal	model_Cint_Seq_3361	model_Cint_Seq_3737
+OG0000001	data_Cint	n11	1.0	Terminal	data_Cint_SGZ49231.1	data_Cint_SGZ55671.1
+OG0000002	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3742, data_Cint_SGZ50994.1	model_Cint_Seq_2659, data_Cint_SGZ54714.1, data_Cint_SGZ56656.1, model_Cint_Seq_5494, model_Cint_Seq_665, data_Cint_SGZ46206.1, model_Cint_Seq_4166, data_Cint_SGZ51027.1, model_Cint_Seq_3594, data_Cint_SGZ48122.1
+OG0000002	N0	n2	1.0	Non-Terminal	model_Cint_Seq_2659, data_Cint_SGZ54714.1	data_Cint_SGZ56656.1, model_Cint_Seq_5494, model_Cint_Seq_665, data_Cint_SGZ46206.1, model_Cint_Seq_4166, data_Cint_SGZ51027.1, model_Cint_Seq_3594, data_Cint_SGZ48122.1
+OG0000002	N0	n4	1.0	Non-Terminal	data_Cint_SGZ56656.1, model_Cint_Seq_5494	model_Cint_Seq_665, data_Cint_SGZ46206.1, model_Cint_Seq_4166, data_Cint_SGZ51027.1, model_Cint_Seq_3594, data_Cint_SGZ48122.1
+OG0000002	N0	n6	1.0	Non-Terminal	model_Cint_Seq_665, data_Cint_SGZ46206.1	model_Cint_Seq_4166, data_Cint_SGZ51027.1, model_Cint_Seq_3594, data_Cint_SGZ48122.1
+OG0000002	N0	n8	1.0	Non-Terminal	model_Cint_Seq_4166, data_Cint_SGZ51027.1	model_Cint_Seq_3594, data_Cint_SGZ48122.1
+OG0000003	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57787.1, model_Cint_Seq_4153	data_Cint_SGZ50995.1, model_Cint_Seq_3384, model_Cint_Seq_5172, data_Cint_SGZ54679.1, data_Cint_SGZ54677.1, data_Cint_SGZ52892.1, model_Cint_Seq_5160, model_Cint_Seq_3006, data_Cint_SGZ47126.1
+OG0000003	N0	n2	1.0	Non-Terminal	data_Cint_SGZ50995.1, model_Cint_Seq_3384, model_Cint_Seq_5172, data_Cint_SGZ54679.1, data_Cint_SGZ54677.1, data_Cint_SGZ52892.1, model_Cint_Seq_5160	model_Cint_Seq_3006, data_Cint_SGZ47126.1
+OG0000003	N0	n3	1.0	Non-Terminal	data_Cint_SGZ50995.1, model_Cint_Seq_3384, model_Cint_Seq_5172, data_Cint_SGZ54679.1, data_Cint_SGZ54677.1	data_Cint_SGZ52892.1, model_Cint_Seq_5160
+OG0000003	N0	n4	1.0	Non-Terminal	data_Cint_SGZ50995.1, model_Cint_Seq_3384	model_Cint_Seq_5172, data_Cint_SGZ54679.1, data_Cint_SGZ54677.1
+OG0000003	data_Cint	n7	1.0	Terminal	data_Cint_SGZ54679.1	data_Cint_SGZ54677.1
+OG0000004	N0	n0	1.0	Non-Terminal	model_Cint_Seq_884, data_Cint_SGZ52900.1	data_Cint_SGZ52899.1, data_Cint_SGZ52902.1, model_Cint_Seq_3427, model_Cint_Seq_605, data_Cint_SGZ48781.1, data_Cint_SGZ54826.1, model_Cint_Seq_4674, data_Cint_SGZ48124.1, model_Cint_Seq_3698
+OG0000004	N0	n2	0.5	Non-Terminal	data_Cint_SGZ52899.1, data_Cint_SGZ52902.1	model_Cint_Seq_3427, model_Cint_Seq_605, data_Cint_SGZ48781.1, data_Cint_SGZ54826.1, model_Cint_Seq_4674, data_Cint_SGZ48124.1, model_Cint_Seq_3698
 OG0000004	data_Cint	n3	1.0	Terminal	data_Cint_SGZ52899.1	data_Cint_SGZ52902.1
-OG0000004	N0	n4	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3427, data_Cint_SGZ54826.1, model_Cint_Candida_intermedia@Seq_4674, data_Cint_SGZ48781.1, model_Cint_Candida_intermedia@Seq_605	data_Cint_SGZ48124.1, model_Cint_Candida_intermedia@Seq_3698
-OG0000004	N0	n5	0.5	Non-Terminal	model_Cint_Candida_intermedia@Seq_3427	data_Cint_SGZ54826.1, model_Cint_Candida_intermedia@Seq_4674, data_Cint_SGZ48781.1, model_Cint_Candida_intermedia@Seq_605
-OG0000004	N0	n6	1.0	Non-Terminal	data_Cint_SGZ54826.1, model_Cint_Candida_intermedia@Seq_4674	data_Cint_SGZ48781.1, model_Cint_Candida_intermedia@Seq_605
-OG0000005	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_623, data_Cint_SGZ46210.1	model_Cint_Candida_intermedia@Seq_3884, model_Cint_Candida_intermedia@Seq_2990, data_Cint_SGZ49663.1, model_Cint_Candida_intermedia@Seq_1204, model_Cint_Candida_intermedia@Seq_1370, data_Cint_SGZ46718.1, model_Cint_Candida_intermedia@Seq_4552, data_Cint_SGZ55088.1
-OG0000005	N0	n2	0.5	Non-Terminal	model_Cint_Candida_intermedia@Seq_3884	model_Cint_Candida_intermedia@Seq_2990, data_Cint_SGZ49663.1, model_Cint_Candida_intermedia@Seq_1204, model_Cint_Candida_intermedia@Seq_1370, data_Cint_SGZ46718.1, model_Cint_Candida_intermedia@Seq_4552, data_Cint_SGZ55088.1
-OG0000005	N0	n3	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2990, data_Cint_SGZ49663.1, model_Cint_Candida_intermedia@Seq_1204, model_Cint_Candida_intermedia@Seq_1370, data_Cint_SGZ46718.1	model_Cint_Candida_intermedia@Seq_4552, data_Cint_SGZ55088.1
-OG0000005	N0	n4	0.5	Non-Terminal	model_Cint_Candida_intermedia@Seq_2990	data_Cint_SGZ49663.1, model_Cint_Candida_intermedia@Seq_1204, model_Cint_Candida_intermedia@Seq_1370, data_Cint_SGZ46718.1
-OG0000005	N0	n5	1.0	Non-Terminal	data_Cint_SGZ49663.1, model_Cint_Candida_intermedia@Seq_1204	model_Cint_Candida_intermedia@Seq_1370, data_Cint_SGZ46718.1
-OG0000006	data_Cint	n0	1.0	Terminal	data_Cint_SGZ47318.1	data_Cint_SGZ55027.1, data_Cint_SGZ54727.1, data_Cint_SGZ51023.1, data_Cint_SGZ51011.1, data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1, data_Cint_SGZ57769.1, data_Cint_SGZ54820.1
-OG0000006	data_Cint	n1	1.0	Terminal	data_Cint_SGZ55027.1, data_Cint_SGZ54727.1, data_Cint_SGZ51023.1	data_Cint_SGZ51011.1, data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1, data_Cint_SGZ57769.1, data_Cint_SGZ54820.1
-OG0000006	data_Cint	n2	1.0	Terminal	data_Cint_SGZ55027.1	data_Cint_SGZ54727.1, data_Cint_SGZ51023.1
-OG0000006	data_Cint	n3	1.0	Terminal	data_Cint_SGZ54727.1	data_Cint_SGZ51023.1
-OG0000006	data_Cint	n4	1.0	Terminal	data_Cint_SGZ51011.1	data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1, data_Cint_SGZ57769.1, data_Cint_SGZ54820.1
-OG0000006	data_Cint	n5	1.0	Terminal	data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1, data_Cint_SGZ57769.1	data_Cint_SGZ54820.1
-OG0000006	data_Cint	n6	1.0	Terminal	data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1	data_Cint_SGZ57769.1
+OG0000004	N0	n4	1.0	Non-Terminal	model_Cint_Seq_3427, model_Cint_Seq_605, data_Cint_SGZ48781.1, data_Cint_SGZ54826.1, model_Cint_Seq_4674	data_Cint_SGZ48124.1, model_Cint_Seq_3698
+OG0000004	N0	n5	0.5	Non-Terminal	model_Cint_Seq_3427	model_Cint_Seq_605, data_Cint_SGZ48781.1, data_Cint_SGZ54826.1, model_Cint_Seq_4674
+OG0000004	N0	n6	1.0	Non-Terminal	model_Cint_Seq_605, data_Cint_SGZ48781.1	data_Cint_SGZ54826.1, model_Cint_Seq_4674
+OG0000005	N0	n0	1.0	Non-Terminal	model_Cint_Seq_623, data_Cint_SGZ46210.1	model_Cint_Seq_3884, model_Cint_Seq_1204, data_Cint_SGZ49663.1, model_Cint_Seq_1370, data_Cint_SGZ46718.1, model_Cint_Seq_2990, data_Cint_SGZ55088.1, model_Cint_Seq_4552
+OG0000005	N0	n2	0.5	Non-Terminal	model_Cint_Seq_3884	model_Cint_Seq_1204, data_Cint_SGZ49663.1, model_Cint_Seq_1370, data_Cint_SGZ46718.1, model_Cint_Seq_2990, data_Cint_SGZ55088.1, model_Cint_Seq_4552
+OG0000005	N0	n3	1.0	Non-Terminal	model_Cint_Seq_1204, data_Cint_SGZ49663.1, model_Cint_Seq_1370, data_Cint_SGZ46718.1, model_Cint_Seq_2990	data_Cint_SGZ55088.1, model_Cint_Seq_4552
+OG0000005	N0	n4	0.5	Non-Terminal	model_Cint_Seq_1204, data_Cint_SGZ49663.1, model_Cint_Seq_1370, data_Cint_SGZ46718.1	model_Cint_Seq_2990
+OG0000005	N0	n5	1.0	Non-Terminal	model_Cint_Seq_1204, data_Cint_SGZ49663.1	model_Cint_Seq_1370, data_Cint_SGZ46718.1
+OG0000006	data_Cint	n0	1.0	Terminal	data_Cint_SGZ47318.1	data_Cint_SGZ55027.1, data_Cint_SGZ51023.1, data_Cint_SGZ54727.1, data_Cint_SGZ51011.1, data_Cint_SGZ57769.1, data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1, data_Cint_SGZ54820.1
+OG0000006	data_Cint	n1	1.0	Terminal	data_Cint_SGZ55027.1, data_Cint_SGZ51023.1, data_Cint_SGZ54727.1	data_Cint_SGZ51011.1, data_Cint_SGZ57769.1, data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1, data_Cint_SGZ54820.1
+OG0000006	data_Cint	n2	1.0	Terminal	data_Cint_SGZ55027.1	data_Cint_SGZ51023.1, data_Cint_SGZ54727.1
+OG0000006	data_Cint	n3	1.0	Terminal	data_Cint_SGZ51023.1	data_Cint_SGZ54727.1
+OG0000006	data_Cint	n4	1.0	Terminal	data_Cint_SGZ51011.1	data_Cint_SGZ57769.1, data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1, data_Cint_SGZ54820.1
+OG0000006	data_Cint	n5	1.0	Terminal	data_Cint_SGZ57769.1, data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1	data_Cint_SGZ54820.1
+OG0000006	data_Cint	n6	1.0	Terminal	data_Cint_SGZ57769.1	data_Cint_SGZ55091.1, data_Cint_SGZ47317.1, data_Cint_SGZ49661.1
 OG0000006	data_Cint	n7	1.0	Terminal	data_Cint_SGZ55091.1	data_Cint_SGZ47317.1, data_Cint_SGZ49661.1
 OG0000006	data_Cint	n8	1.0	Terminal	data_Cint_SGZ47317.1	data_Cint_SGZ49661.1
-OG0000007	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3922, data_Cint_SGZ49609.1	data_Cint_SGZ47430.1, model_Cint_Candida_intermedia@Seq_729, data_Cint_SGZ51007.1, model_Cint_Candida_intermedia@Seq_3881, model_Cint_Candida_intermedia@Seq_327, data_Cint_SGZ58005.1, model_Cint_Candida_intermedia@Seq_3850, data_Cint_SGZ52907.1
-OG0000007	N0	n2	1.0	Non-Terminal	data_Cint_SGZ47430.1, model_Cint_Candida_intermedia@Seq_729, data_Cint_SGZ51007.1, model_Cint_Candida_intermedia@Seq_3881	model_Cint_Candida_intermedia@Seq_327, data_Cint_SGZ58005.1, model_Cint_Candida_intermedia@Seq_3850, data_Cint_SGZ52907.1
-OG0000007	N0	n3	1.0	Non-Terminal	data_Cint_SGZ47430.1, model_Cint_Candida_intermedia@Seq_729	data_Cint_SGZ51007.1, model_Cint_Candida_intermedia@Seq_3881
-OG0000007	N0	n6	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_327, data_Cint_SGZ58005.1	model_Cint_Candida_intermedia@Seq_3850, data_Cint_SGZ52907.1
-OG0000008	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_432, data_Cint_SGZ50830.1	data_Cint_SGZ50838.1, data_Cint_SGZ50832.1, data_Cint_SGZ50836.1, model_Cint_Candida_intermedia@Seq_959, data_Cint_SGZ57340.1, model_Cint_Candida_intermedia@Seq_3729, data_Cint_SGZ50834.1, data_Cint_SGZ50840.1
-OG0000008	N0	n2	0.5	Non-Terminal	data_Cint_SGZ50838.1, data_Cint_SGZ50832.1	data_Cint_SGZ50836.1, model_Cint_Candida_intermedia@Seq_959, data_Cint_SGZ57340.1, model_Cint_Candida_intermedia@Seq_3729, data_Cint_SGZ50834.1, data_Cint_SGZ50840.1
-OG0000008	data_Cint	n3	1.0	Terminal	data_Cint_SGZ50838.1	data_Cint_SGZ50832.1
-OG0000008	N0	n4	0.5	Non-Terminal	data_Cint_SGZ50836.1	model_Cint_Candida_intermedia@Seq_959, data_Cint_SGZ57340.1, model_Cint_Candida_intermedia@Seq_3729, data_Cint_SGZ50834.1, data_Cint_SGZ50840.1
-OG0000008	N0	n5	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_959, data_Cint_SGZ57340.1	model_Cint_Candida_intermedia@Seq_3729, data_Cint_SGZ50834.1, data_Cint_SGZ50840.1
+OG0000007	N0	n0	1.0	Non-Terminal	model_Cint_Seq_327, data_Cint_SGZ58005.1	data_Cint_SGZ52907.1, model_Cint_Seq_3850, data_Cint_SGZ51007.1, model_Cint_Seq_3881, data_Cint_SGZ47430.1, model_Cint_Seq_729, model_Cint_Seq_3922, data_Cint_SGZ49609.1
+OG0000007	N0	n2	1.0	Non-Terminal	data_Cint_SGZ52907.1, model_Cint_Seq_3850	data_Cint_SGZ51007.1, model_Cint_Seq_3881, data_Cint_SGZ47430.1, model_Cint_Seq_729, model_Cint_Seq_3922, data_Cint_SGZ49609.1
+OG0000007	N0	n4	1.0	Non-Terminal	data_Cint_SGZ51007.1, model_Cint_Seq_3881, data_Cint_SGZ47430.1, model_Cint_Seq_729	model_Cint_Seq_3922, data_Cint_SGZ49609.1
+OG0000007	N0	n5	1.0	Non-Terminal	data_Cint_SGZ51007.1, model_Cint_Seq_3881	data_Cint_SGZ47430.1, model_Cint_Seq_729
+OG0000008	N0	n0	1.0	Non-Terminal	model_Cint_Seq_959, data_Cint_SGZ57340.1	model_Cint_Seq_432, data_Cint_SGZ50836.1, data_Cint_SGZ50832.1, data_Cint_SGZ50838.1, data_Cint_SGZ50830.1, model_Cint_Seq_3729, data_Cint_SGZ50834.1, data_Cint_SGZ50840.1
+OG0000008	N0	n2	1.0	Non-Terminal	model_Cint_Seq_432, data_Cint_SGZ50836.1, data_Cint_SGZ50832.1, data_Cint_SGZ50838.1, data_Cint_SGZ50830.1	model_Cint_Seq_3729, data_Cint_SGZ50834.1, data_Cint_SGZ50840.1
+OG0000008	data_Cint	n4	1.0	Terminal	data_Cint_SGZ50836.1	data_Cint_SGZ50832.1, data_Cint_SGZ50838.1, data_Cint_SGZ50830.1
+OG0000008	data_Cint	n5	1.0	Terminal	data_Cint_SGZ50832.1, data_Cint_SGZ50838.1	data_Cint_SGZ50830.1
+OG0000008	data_Cint	n6	1.0	Terminal	data_Cint_SGZ50832.1	data_Cint_SGZ50838.1
 OG0000008	data_Cint	n8	1.0	Terminal	data_Cint_SGZ50834.1	data_Cint_SGZ50840.1
-OG0000009	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_628, data_Cint_SGZ47032.1	model_Cint_Candida_intermedia@Seq_2570, data_Cint_SGZ51025.1, model_Cint_Candida_intermedia@Seq_3522, data_Cint_SGZ51017.1, model_Cint_Candida_intermedia@Seq_345, data_Cint_SGZ56633.1, model_Cint_Candida_intermedia@Seq_2366
-OG0000009	N0	n2	0.5	Non-Terminal	model_Cint_Candida_intermedia@Seq_2570	data_Cint_SGZ51025.1, model_Cint_Candida_intermedia@Seq_3522, data_Cint_SGZ51017.1, model_Cint_Candida_intermedia@Seq_345, data_Cint_SGZ56633.1, model_Cint_Candida_intermedia@Seq_2366
-OG0000009	N0	n3	1.0	Non-Terminal	data_Cint_SGZ51025.1, model_Cint_Candida_intermedia@Seq_3522	data_Cint_SGZ51017.1, model_Cint_Candida_intermedia@Seq_345, data_Cint_SGZ56633.1, model_Cint_Candida_intermedia@Seq_2366
-OG0000009	N0	n5	1.0	Non-Terminal	data_Cint_SGZ51017.1, model_Cint_Candida_intermedia@Seq_345	data_Cint_SGZ56633.1, model_Cint_Candida_intermedia@Seq_2366
-OG0000010	model_Cint	n0	1.0	Terminal	model_Cint_Candida_intermedia@Seq_4182	model_Cint_Candida_intermedia@Seq_3924, model_Cint_Candida_intermedia@Seq_5379, model_Cint_Candida_intermedia@Seq_5211, model_Cint_Candida_intermedia@Seq_5297, model_Cint_Candida_intermedia@Seq_3238, model_Cint_Candida_intermedia@Seq_4480, model_Cint_Candida_intermedia@Seq_3443, model_Cint_Candida_intermedia@Seq_4088
-OG0000010	model_Cint	n1	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3924, model_Cint_Candida_intermedia@Seq_5379, model_Cint_Candida_intermedia@Seq_5211, model_Cint_Candida_intermedia@Seq_5297	model_Cint_Candida_intermedia@Seq_3238, model_Cint_Candida_intermedia@Seq_4480, model_Cint_Candida_intermedia@Seq_3443, model_Cint_Candida_intermedia@Seq_4088
-OG0000010	model_Cint	n2	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3924, model_Cint_Candida_intermedia@Seq_5379, model_Cint_Candida_intermedia@Seq_5211	model_Cint_Candida_intermedia@Seq_5297
-OG0000010	model_Cint	n3	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3924, model_Cint_Candida_intermedia@Seq_5379	model_Cint_Candida_intermedia@Seq_5211
-OG0000010	model_Cint	n4	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3924	model_Cint_Candida_intermedia@Seq_5379
-OG0000010	model_Cint	n5	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3238	model_Cint_Candida_intermedia@Seq_4480, model_Cint_Candida_intermedia@Seq_3443, model_Cint_Candida_intermedia@Seq_4088
-OG0000010	model_Cint	n6	1.0	Terminal	model_Cint_Candida_intermedia@Seq_4480	model_Cint_Candida_intermedia@Seq_3443, model_Cint_Candida_intermedia@Seq_4088
-OG0000010	model_Cint	n7	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3443	model_Cint_Candida_intermedia@Seq_4088
-OG0000011	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2121, data_Cint_SGZ55250.1	data_Cint_SGZ46237.1, model_Cint_Candida_intermedia@Seq_1939, data_Cint_SGZ46503.1, model_Cint_Candida_intermedia@Seq_2362, data_Cint_SGZ52304.1, model_Cint_Candida_intermedia@Seq_2987
-OG0000011	N0	n2	1.0	Non-Terminal	data_Cint_SGZ46237.1, model_Cint_Candida_intermedia@Seq_1939	data_Cint_SGZ46503.1, model_Cint_Candida_intermedia@Seq_2362, data_Cint_SGZ52304.1, model_Cint_Candida_intermedia@Seq_2987
-OG0000011	N0	n4	1.0	Non-Terminal	data_Cint_SGZ46503.1, model_Cint_Candida_intermedia@Seq_2362	data_Cint_SGZ52304.1, model_Cint_Candida_intermedia@Seq_2987
-OG0000012	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57767.1, model_Cint_Candida_intermedia@Seq_2303	model_Cint_Candida_intermedia@Seq_566, data_Cint_SGZ46884.1, model_Cint_Candida_intermedia@Seq_3091, data_Cint_SGZ47045.1, data_Cint_SGZ52897.1, model_Cint_Candida_intermedia@Seq_4275
-OG0000012	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_566, data_Cint_SGZ46884.1, model_Cint_Candida_intermedia@Seq_3091, data_Cint_SGZ47045.1	data_Cint_SGZ52897.1, model_Cint_Candida_intermedia@Seq_4275
-OG0000012	N0	n3	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_566, data_Cint_SGZ46884.1	model_Cint_Candida_intermedia@Seq_3091, data_Cint_SGZ47045.1
-OG0000013	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50456.1, model_Cint_Candida_intermedia@Seq_4404	data_Cint_SGZ47533.1, model_Cint_Candida_intermedia@Seq_1186, model_Cint_Candida_intermedia@Seq_3182, data_Cint_SGZ54485.1, model_Cint_Candida_intermedia@Seq_997, data_Cint_SGZ47193.1
-OG0000013	N0	n2	1.0	Non-Terminal	data_Cint_SGZ47533.1, model_Cint_Candida_intermedia@Seq_1186	model_Cint_Candida_intermedia@Seq_3182, data_Cint_SGZ54485.1, model_Cint_Candida_intermedia@Seq_997, data_Cint_SGZ47193.1
-OG0000013	N0	n4	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3182, data_Cint_SGZ54485.1	model_Cint_Candida_intermedia@Seq_997, data_Cint_SGZ47193.1
-OG0000014	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1892, data_Cint_SGZ54847.1	data_Cint_SGZ54717.1, model_Cint_Candida_intermedia@Seq_3658, data_Cint_SGZ54719.1, data_Cint_SGZ58060.1, data_Cint_SGZ54718.1, model_Cint_Candida_intermedia@Seq_5020
-OG0000014	N0	n2	0.5	Non-Terminal	data_Cint_SGZ54717.1	model_Cint_Candida_intermedia@Seq_3658, data_Cint_SGZ54719.1, data_Cint_SGZ58060.1, data_Cint_SGZ54718.1, model_Cint_Candida_intermedia@Seq_5020
-OG0000014	N0	n3	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3658, data_Cint_SGZ54719.1, data_Cint_SGZ58060.1	data_Cint_SGZ54718.1, model_Cint_Candida_intermedia@Seq_5020
-OG0000014	data_Cint	n5	1.0	Terminal	data_Cint_SGZ54719.1	data_Cint_SGZ58060.1
-OG0000015	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47105.1, model_Cint_Candida_intermedia@Seq_4771	model_Cint_Candida_intermedia@Seq_4187, data_Cint_SGZ46223.1, data_Cint_SGZ46222.1, data_Cint_SGZ46225.1, data_Cint_SGZ51018.1
-OG0000015	data_Cint	n3	1.0	Terminal	data_Cint_SGZ46223.1	data_Cint_SGZ46222.1, data_Cint_SGZ46225.1, data_Cint_SGZ51018.1
-OG0000015	data_Cint	n4	1.0	Terminal	data_Cint_SGZ46222.1	data_Cint_SGZ46225.1, data_Cint_SGZ51018.1
-OG0000015	data_Cint	n5	1.0	Terminal	data_Cint_SGZ46225.1	data_Cint_SGZ51018.1
-OG0000016	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_324, data_Cint_SGZ47033.1	model_Cint_Candida_intermedia@Seq_3185, data_Cint_SGZ46997.1, data_Cint_SGZ54835.1, model_Cint_Candida_intermedia@Seq_3111, model_Cint_Candida_intermedia@Seq_2028
-OG0000016	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3185, data_Cint_SGZ46997.1	data_Cint_SGZ54835.1, model_Cint_Candida_intermedia@Seq_3111, model_Cint_Candida_intermedia@Seq_2028
-OG0000016	model_Cint	n5	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3111	model_Cint_Candida_intermedia@Seq_2028
-OG0000017	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4984, data_Cint_SGZ57804.1	model_Cint_Candida_intermedia@Seq_4587, data_Cint_SGZ55205.1, data_Cint_SGZ49807.1, data_Cint_SGZ49796.1, data_Cint_SGZ51830.1
-OG0000017	data_Cint	n3	1.0	Terminal	data_Cint_SGZ55205.1, data_Cint_SGZ49807.1, data_Cint_SGZ49796.1	data_Cint_SGZ51830.1
-OG0000017	data_Cint	n4	1.0	Terminal	data_Cint_SGZ55205.1	data_Cint_SGZ49807.1, data_Cint_SGZ49796.1
-OG0000017	data_Cint	n5	1.0	Terminal	data_Cint_SGZ49807.1	data_Cint_SGZ49796.1
-OG0000018	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2870, data_Cint_SGZ49923.1	data_Cint_SGZ51002.1, data_Cint_SGZ54299.1, model_Cint_Candida_intermedia@Seq_2471, model_Cint_Candida_intermedia@Seq_3817, data_Cint_SGZ51003.1
-OG0000018	N0	n2	0.5	Non-Terminal	data_Cint_SGZ51002.1	data_Cint_SGZ54299.1, model_Cint_Candida_intermedia@Seq_2471, model_Cint_Candida_intermedia@Seq_3817, data_Cint_SGZ51003.1
-OG0000018	N0	n3	1.0	Non-Terminal	data_Cint_SGZ54299.1, model_Cint_Candida_intermedia@Seq_2471	model_Cint_Candida_intermedia@Seq_3817, data_Cint_SGZ51003.1
-OG0000019	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1298, data_Cint_SGZ51013.1	data_Cint_SGZ57878.1, model_Cint_Candida_intermedia@Seq_1881, data_Cint_SGZ51014.1, model_Cint_Candida_intermedia@Seq_5458, data_Cint_SGZ57877.1
-OG0000019	N0	n2	0.5	Non-Terminal	data_Cint_SGZ57878.1	model_Cint_Candida_intermedia@Seq_1881, data_Cint_SGZ51014.1, model_Cint_Candida_intermedia@Seq_5458, data_Cint_SGZ57877.1
-OG0000019	N0	n3	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1881, data_Cint_SGZ51014.1	model_Cint_Candida_intermedia@Seq_5458, data_Cint_SGZ57877.1
-OG0000020	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51190.1, model_Cint_Candida_intermedia@Seq_3290	data_Cint_SGZ51015.1, model_Cint_Candida_intermedia@Seq_2342, data_Cint_SGZ56629.1, data_Cint_SGZ53002.1, model_Cint_Candida_intermedia@Seq_3830
-OG0000020	N0	n2	0.5	Non-Terminal	data_Cint_SGZ51015.1	model_Cint_Candida_intermedia@Seq_2342, data_Cint_SGZ56629.1, data_Cint_SGZ53002.1, model_Cint_Candida_intermedia@Seq_3830
-OG0000020	N0	n3	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2342, data_Cint_SGZ56629.1	data_Cint_SGZ53002.1, model_Cint_Candida_intermedia@Seq_3830
-OG0000021	N0	n0	1.0	Non-Terminal	data_Cint_SGZ52883.1, model_Cint_Candida_intermedia@Seq_4278	model_Cint_Candida_intermedia@Seq_1764, data_Cint_SGZ52706.1, model_Cint_Candida_intermedia@Seq_1249, data_Cint_SGZ54068.1, data_Cint_SGZ52704.1
-OG0000021	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1764, data_Cint_SGZ52706.1	model_Cint_Candida_intermedia@Seq_1249, data_Cint_SGZ54068.1, data_Cint_SGZ52704.1
+OG0000009	N0	n0	1.0	Non-Terminal	model_Cint_Seq_628, data_Cint_SGZ47032.1	model_Cint_Seq_2570, data_Cint_SGZ51025.1, model_Cint_Seq_3522, model_Cint_Seq_2366, data_Cint_SGZ56633.1, model_Cint_Seq_345, data_Cint_SGZ51017.1
+OG0000009	N0	n2	0.5	Non-Terminal	model_Cint_Seq_2570	data_Cint_SGZ51025.1, model_Cint_Seq_3522, model_Cint_Seq_2366, data_Cint_SGZ56633.1, model_Cint_Seq_345, data_Cint_SGZ51017.1
+OG0000009	N0	n3	1.0	Non-Terminal	data_Cint_SGZ51025.1, model_Cint_Seq_3522	model_Cint_Seq_2366, data_Cint_SGZ56633.1, model_Cint_Seq_345, data_Cint_SGZ51017.1
+OG0000009	N0	n5	1.0	Non-Terminal	model_Cint_Seq_2366, data_Cint_SGZ56633.1	model_Cint_Seq_345, data_Cint_SGZ51017.1
+OG0000010	model_Cint	n0	1.0	Terminal	model_Cint_Seq_4182	model_Cint_Seq_3238, model_Cint_Seq_3443, model_Cint_Seq_4088, model_Cint_Seq_4480, model_Cint_Seq_5297, model_Cint_Seq_5211, model_Cint_Seq_5379, model_Cint_Seq_3924
+OG0000010	model_Cint	n1	1.0	Terminal	model_Cint_Seq_3238, model_Cint_Seq_3443, model_Cint_Seq_4088, model_Cint_Seq_4480	model_Cint_Seq_5297, model_Cint_Seq_5211, model_Cint_Seq_5379, model_Cint_Seq_3924
+OG0000010	model_Cint	n2	1.0	Terminal	model_Cint_Seq_3238	model_Cint_Seq_3443, model_Cint_Seq_4088, model_Cint_Seq_4480
+OG0000010	model_Cint	n3	1.0	Terminal	model_Cint_Seq_3443, model_Cint_Seq_4088	model_Cint_Seq_4480
+OG0000010	model_Cint	n4	1.0	Terminal	model_Cint_Seq_3443	model_Cint_Seq_4088
+OG0000010	model_Cint	n5	1.0	Terminal	model_Cint_Seq_5297	model_Cint_Seq_5211, model_Cint_Seq_5379, model_Cint_Seq_3924
+OG0000010	model_Cint	n6	1.0	Terminal	model_Cint_Seq_5211	model_Cint_Seq_5379, model_Cint_Seq_3924
+OG0000010	model_Cint	n7	1.0	Terminal	model_Cint_Seq_5379	model_Cint_Seq_3924
+OG0000011	N0	n0	1.0	Non-Terminal	data_Cint_SGZ52304.1, model_Cint_Seq_2987	data_Cint_SGZ46503.1, model_Cint_Seq_2362, data_Cint_SGZ46237.1, model_Cint_Seq_1939, model_Cint_Seq_2121, data_Cint_SGZ55250.1
+OG0000011	N0	n2	1.0	Non-Terminal	data_Cint_SGZ46503.1, model_Cint_Seq_2362	data_Cint_SGZ46237.1, model_Cint_Seq_1939, model_Cint_Seq_2121, data_Cint_SGZ55250.1
+OG0000011	N0	n4	1.0	Non-Terminal	data_Cint_SGZ46237.1, model_Cint_Seq_1939	model_Cint_Seq_2121, data_Cint_SGZ55250.1
+OG0000012	N0	n0	1.0	Non-Terminal	model_Cint_Seq_566, data_Cint_SGZ46884.1	data_Cint_SGZ47045.1, model_Cint_Seq_3091, data_Cint_SGZ57767.1, model_Cint_Seq_2303, data_Cint_SGZ52897.1, model_Cint_Seq_4275
+OG0000012	N0	n2	0.5	Non-Terminal	data_Cint_SGZ47045.1	model_Cint_Seq_3091, data_Cint_SGZ57767.1, model_Cint_Seq_2303, data_Cint_SGZ52897.1, model_Cint_Seq_4275
+OG0000012	N0	n3	0.5	Non-Terminal	model_Cint_Seq_3091	data_Cint_SGZ57767.1, model_Cint_Seq_2303, data_Cint_SGZ52897.1, model_Cint_Seq_4275
+OG0000012	N0	n4	1.0	Non-Terminal	data_Cint_SGZ57767.1, model_Cint_Seq_2303	data_Cint_SGZ52897.1, model_Cint_Seq_4275
+OG0000013	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4404, data_Cint_SGZ50456.1	model_Cint_Seq_1186, data_Cint_SGZ47533.1, data_Cint_SGZ54485.1, model_Cint_Seq_3182, data_Cint_SGZ47193.1, model_Cint_Seq_997
+OG0000013	N0	n2	1.0	Non-Terminal	model_Cint_Seq_1186, data_Cint_SGZ47533.1	data_Cint_SGZ54485.1, model_Cint_Seq_3182, data_Cint_SGZ47193.1, model_Cint_Seq_997
+OG0000013	N0	n4	1.0	Non-Terminal	data_Cint_SGZ54485.1, model_Cint_Seq_3182	data_Cint_SGZ47193.1, model_Cint_Seq_997
+OG0000014	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3658, data_Cint_SGZ58060.1	data_Cint_SGZ54719.1, model_Cint_Seq_1892, data_Cint_SGZ54847.1, data_Cint_SGZ54717.1, model_Cint_Seq_5020, data_Cint_SGZ54718.1
+OG0000014	N0	n2	0.5	Non-Terminal	data_Cint_SGZ54719.1	model_Cint_Seq_1892, data_Cint_SGZ54847.1, data_Cint_SGZ54717.1, model_Cint_Seq_5020, data_Cint_SGZ54718.1
+OG0000014	N0	n3	0.5	Non-Terminal	model_Cint_Seq_1892, data_Cint_SGZ54847.1, data_Cint_SGZ54717.1, model_Cint_Seq_5020	data_Cint_SGZ54718.1
+OG0000014	N0	n4	1.0	Non-Terminal	model_Cint_Seq_1892, data_Cint_SGZ54847.1	data_Cint_SGZ54717.1, model_Cint_Seq_5020
+OG0000015	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4771, data_Cint_SGZ47105.1	model_Cint_Seq_4187, data_Cint_SGZ46223.1, data_Cint_SGZ46222.1, data_Cint_SGZ51018.1, data_Cint_SGZ46225.1
+OG0000015	data_Cint	n3	1.0	Terminal	data_Cint_SGZ46223.1	data_Cint_SGZ46222.1, data_Cint_SGZ51018.1, data_Cint_SGZ46225.1
+OG0000015	data_Cint	n4	1.0	Terminal	data_Cint_SGZ46222.1	data_Cint_SGZ51018.1, data_Cint_SGZ46225.1
+OG0000015	data_Cint	n5	1.0	Terminal	data_Cint_SGZ51018.1	data_Cint_SGZ46225.1
+OG0000016	N0	n0	1.0	Non-Terminal	data_Cint_SGZ54835.1, model_Cint_Seq_2028	model_Cint_Seq_3111, data_Cint_SGZ46997.1, model_Cint_Seq_3185, model_Cint_Seq_324, data_Cint_SGZ47033.1
+OG0000016	N0	n2	0.5	Non-Terminal	model_Cint_Seq_3111	data_Cint_SGZ46997.1, model_Cint_Seq_3185, model_Cint_Seq_324, data_Cint_SGZ47033.1
+OG0000016	N0	n3	1.0	Non-Terminal	data_Cint_SGZ46997.1, model_Cint_Seq_3185	model_Cint_Seq_324, data_Cint_SGZ47033.1
+OG0000017	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57804.1, model_Cint_Seq_4984	model_Cint_Seq_4587, data_Cint_SGZ49796.1, data_Cint_SGZ55205.1, data_Cint_SGZ51830.1, data_Cint_SGZ49807.1
+OG0000017	data_Cint	n3	1.0	Terminal	data_Cint_SGZ49796.1, data_Cint_SGZ55205.1, data_Cint_SGZ51830.1	data_Cint_SGZ49807.1
+OG0000017	data_Cint	n4	1.0	Terminal	data_Cint_SGZ49796.1	data_Cint_SGZ55205.1, data_Cint_SGZ51830.1
+OG0000017	data_Cint	n5	1.0	Terminal	data_Cint_SGZ55205.1	data_Cint_SGZ51830.1
+OG0000018	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3817, data_Cint_SGZ51003.1	data_Cint_SGZ54299.1, model_Cint_Seq_2471, model_Cint_Seq_2870, data_Cint_SGZ51002.1, data_Cint_SGZ49923.1
+OG0000018	N0	n2	1.0	Non-Terminal	data_Cint_SGZ54299.1, model_Cint_Seq_2471	model_Cint_Seq_2870, data_Cint_SGZ51002.1, data_Cint_SGZ49923.1
+OG0000018	data_Cint	n5	1.0	Terminal	data_Cint_SGZ51002.1	data_Cint_SGZ49923.1
+OG0000019	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51013.1, model_Cint_Seq_1298	data_Cint_SGZ57877.1, model_Cint_Seq_5458, data_Cint_SGZ51014.1, model_Cint_Seq_1881, data_Cint_SGZ57878.1
+OG0000019	N0	n2	0.5	Non-Terminal	data_Cint_SGZ57877.1, model_Cint_Seq_5458, data_Cint_SGZ51014.1, model_Cint_Seq_1881	data_Cint_SGZ57878.1
+OG0000019	N0	n3	1.0	Non-Terminal	data_Cint_SGZ57877.1, model_Cint_Seq_5458	data_Cint_SGZ51014.1, model_Cint_Seq_1881
+OG0000020	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56629.1, model_Cint_Seq_2342	data_Cint_SGZ53002.1, model_Cint_Seq_3290, data_Cint_SGZ51190.1, data_Cint_SGZ51015.1, model_Cint_Seq_3830
+OG0000020	N0	n2	0.5	Non-Terminal	data_Cint_SGZ53002.1	model_Cint_Seq_3290, data_Cint_SGZ51190.1, data_Cint_SGZ51015.1, model_Cint_Seq_3830
+OG0000020	N0	n3	1.0	Non-Terminal	model_Cint_Seq_3290, data_Cint_SGZ51190.1	data_Cint_SGZ51015.1, model_Cint_Seq_3830
+OG0000021	N0	n0	1.0	Non-Terminal	data_Cint_SGZ52706.1, model_Cint_Seq_1764	data_Cint_SGZ52883.1, model_Cint_Seq_4278, model_Cint_Seq_1249, data_Cint_SGZ54068.1, data_Cint_SGZ52704.1
+OG0000021	N0	n2	1.0	Non-Terminal	data_Cint_SGZ52883.1, model_Cint_Seq_4278	model_Cint_Seq_1249, data_Cint_SGZ54068.1, data_Cint_SGZ52704.1
 OG0000021	data_Cint	n5	1.0	Terminal	data_Cint_SGZ54068.1	data_Cint_SGZ52704.1
-OG0000022	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57954.1, model_Cint_Candida_intermedia@Seq_4675	model_Cint_Candida_intermedia@Seq_4194, data_Cint_SGZ57958.1, model_Cint_Candida_intermedia@Seq_2876, data_Cint_SGZ57956.1, data_Cint_SGZ56399.1
-OG0000022	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4194, data_Cint_SGZ57958.1	model_Cint_Candida_intermedia@Seq_2876, data_Cint_SGZ57956.1, data_Cint_SGZ56399.1
+OG0000022	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57958.1, model_Cint_Seq_4194	data_Cint_SGZ57954.1, model_Cint_Seq_4675, model_Cint_Seq_2876, data_Cint_SGZ57956.1, data_Cint_SGZ56399.1
+OG0000022	N0	n2	1.0	Non-Terminal	data_Cint_SGZ57954.1, model_Cint_Seq_4675	model_Cint_Seq_2876, data_Cint_SGZ57956.1, data_Cint_SGZ56399.1
 OG0000022	data_Cint	n5	1.0	Terminal	data_Cint_SGZ57956.1	data_Cint_SGZ56399.1
-OG0000023	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5425, data_Cint_SGZ57757.1	model_Cint_Candida_intermedia@Seq_786, data_Cint_SGZ46242.1, data_Cint_SGZ51579.1, model_Cint_Candida_intermedia@Seq_2484
-OG0000023	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_786, data_Cint_SGZ46242.1	data_Cint_SGZ51579.1, model_Cint_Candida_intermedia@Seq_2484
-OG0000024	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3940, data_Cint_SGZ46321.1	model_Cint_Candida_intermedia@Seq_5235, data_Cint_SGZ52449.1, data_Cint_SGZ47714.1, model_Cint_Candida_intermedia@Seq_3713
-OG0000024	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5235, data_Cint_SGZ52449.1	data_Cint_SGZ47714.1, model_Cint_Candida_intermedia@Seq_3713
-OG0000025	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53714.1, model_Cint_Candida_intermedia@Seq_3160	data_Cint_SGZ46829.1, model_Cint_Candida_intermedia@Seq_2231, model_Cint_Candida_intermedia@Seq_398, data_Cint_SGZ53370.1
-OG0000025	N0	n2	1.0	Non-Terminal	data_Cint_SGZ46829.1, model_Cint_Candida_intermedia@Seq_2231	model_Cint_Candida_intermedia@Seq_398, data_Cint_SGZ53370.1
-OG0000026	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51008.1, model_Cint_Candida_intermedia@Seq_5327	data_Cint_SGZ47212.1, model_Cint_Candida_intermedia@Seq_3014, data_Cint_SGZ57990.1, model_Cint_Candida_intermedia@Seq_4781
-OG0000026	N0	n2	1.0	Non-Terminal	data_Cint_SGZ47212.1, model_Cint_Candida_intermedia@Seq_3014	data_Cint_SGZ57990.1, model_Cint_Candida_intermedia@Seq_4781
-OG0000027	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50618.1, model_Cint_Candida_intermedia@Seq_2953	data_Cint_SGZ51197.1, model_Cint_Candida_intermedia@Seq_232, data_Cint_SGZ47413.1, model_Cint_Candida_intermedia@Seq_5367
-OG0000027	N0	n2	1.0	Non-Terminal	data_Cint_SGZ51197.1, model_Cint_Candida_intermedia@Seq_232	data_Cint_SGZ47413.1, model_Cint_Candida_intermedia@Seq_5367
-OG0000028	N0	n0	1.0	Non-Terminal	data_Cint_SGZ48121.1, model_Cint_Candida_intermedia@Seq_3792	data_Cint_SGZ54138.1, model_Cint_Candida_intermedia@Seq_1851, data_Cint_SGZ48783.1, model_Cint_Candida_intermedia@Seq_4634
-OG0000028	N0	n2	1.0	Non-Terminal	data_Cint_SGZ54138.1, model_Cint_Candida_intermedia@Seq_1851	data_Cint_SGZ48783.1, model_Cint_Candida_intermedia@Seq_4634
-OG0000029	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49132.1, model_Cint_Candida_intermedia@Seq_1427	model_Cint_Candida_intermedia@Seq_4855, data_Cint_SGZ49256.1, model_Cint_Candida_intermedia@Seq_5413, data_Cint_SGZ52407.1
-OG0000029	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4855, data_Cint_SGZ49256.1	model_Cint_Candida_intermedia@Seq_5413, data_Cint_SGZ52407.1
-OG0000030	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50035.1, model_Cint_Candida_intermedia@Seq_3418	data_Cint_SGZ49657.1, model_Cint_Candida_intermedia@Seq_818, data_Cint_SGZ49987.1, model_Cint_Candida_intermedia@Seq_5531
-OG0000030	N0	n2	1.0	Non-Terminal	data_Cint_SGZ49657.1, model_Cint_Candida_intermedia@Seq_818	data_Cint_SGZ49987.1, model_Cint_Candida_intermedia@Seq_5531
-OG0000031	data_Cint	n0	1.0	Terminal	data_Cint_SGZ49794.1	data_Cint_SGZ55197.1, data_Cint_SGZ55203.1, data_Cint_SGZ49805.1, data_Cint_SGZ55199.1, data_Cint_SGZ51828.1
-OG0000031	data_Cint	n1	1.0	Terminal	data_Cint_SGZ55197.1, data_Cint_SGZ55203.1	data_Cint_SGZ49805.1, data_Cint_SGZ55199.1, data_Cint_SGZ51828.1
-OG0000031	data_Cint	n2	1.0	Terminal	data_Cint_SGZ55197.1	data_Cint_SGZ55203.1
-OG0000031	data_Cint	n3	1.0	Terminal	data_Cint_SGZ49805.1, data_Cint_SGZ55199.1	data_Cint_SGZ51828.1
-OG0000031	data_Cint	n4	1.0	Terminal	data_Cint_SGZ49805.1	data_Cint_SGZ55199.1
-OG0000032	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4489, data_Cint_SGZ57363.1	data_Cint_SGZ49937.1, model_Cint_Candida_intermedia@Seq_679, data_Cint_SGZ49942.1, model_Cint_Candida_intermedia@Seq_4280
-OG0000032	N0	n2	1.0	Non-Terminal	data_Cint_SGZ49937.1, model_Cint_Candida_intermedia@Seq_679	data_Cint_SGZ49942.1, model_Cint_Candida_intermedia@Seq_4280
-OG0000033	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4254, data_Cint_SGZ50191.1	model_Cint_Candida_intermedia@Seq_110, data_Cint_SGZ56686.1, model_Cint_Candida_intermedia@Seq_2193, data_Cint_SGZ54938.1
-OG0000033	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_110, data_Cint_SGZ56686.1	model_Cint_Candida_intermedia@Seq_2193, data_Cint_SGZ54938.1
-OG0000034	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56412.1, model_Cint_Candida_intermedia@Seq_1052, model_Cint_Candida_intermedia@Seq_107	model_Cint_Candida_intermedia@Seq_4687, data_Cint_SGZ50465.1, data_Cint_SGZ52577.1
-OG0000034	model_Cint	n2	1.0	Terminal	model_Cint_Candida_intermedia@Seq_1052	model_Cint_Candida_intermedia@Seq_107
-OG0000034	data_Cint	n4	1.0	Terminal	data_Cint_SGZ50465.1	data_Cint_SGZ52577.1
-OG0000035	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4914, data_Cint_SGZ52906.1	data_Cint_SGZ51009.1, model_Cint_Candida_intermedia@Seq_5117, model_Cint_Candida_intermedia@Seq_5366, data_Cint_SGZ54723.1
-OG0000035	N0	n2	1.0	Non-Terminal	data_Cint_SGZ51009.1, model_Cint_Candida_intermedia@Seq_5117	model_Cint_Candida_intermedia@Seq_5366, data_Cint_SGZ54723.1
-OG0000036	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56658.1, model_Cint_Candida_intermedia@Seq_4321	model_Cint_Candida_intermedia@Seq_4330, data_Cint_SGZ56525.1, data_Cint_SGZ51019.1, data_Cint_SGZ54429.1
-OG0000036	data_Cint	n3	1.0	Terminal	data_Cint_SGZ56525.1	data_Cint_SGZ51019.1, data_Cint_SGZ54429.1
-OG0000036	data_Cint	n4	1.0	Terminal	data_Cint_SGZ51019.1	data_Cint_SGZ54429.1
-OG0000037	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2745, data_Cint_SGZ52890.1	data_Cint_SGZ57316.1, model_Cint_Candida_intermedia@Seq_1315, model_Cint_Candida_intermedia@Seq_3097, model_Cint_Candida_intermedia@Seq_2291
-OG0000037	model_Cint	n3	1.0	Terminal	model_Cint_Candida_intermedia@Seq_1315	model_Cint_Candida_intermedia@Seq_3097, model_Cint_Candida_intermedia@Seq_2291
-OG0000037	model_Cint	n4	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3097	model_Cint_Candida_intermedia@Seq_2291
-OG0000038	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1992, data_Cint_SGZ56050.1	model_Cint_Candida_intermedia@Seq_1828, data_Cint_SGZ53697.1, model_Cint_Candida_intermedia@Seq_2590, data_Cint_SGZ54137.1
-OG0000038	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1828, data_Cint_SGZ53697.1	model_Cint_Candida_intermedia@Seq_2590, data_Cint_SGZ54137.1
-OG0000039	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3945, data_Cint_SGZ58078.1	model_Cint_Candida_intermedia@Seq_1330, data_Cint_SGZ54729.1, data_Cint_SGZ56294.1, model_Cint_Candida_intermedia@Seq_5485
-OG0000039	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1330, data_Cint_SGZ54729.1	data_Cint_SGZ56294.1, model_Cint_Candida_intermedia@Seq_5485
-OG0000040	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1475, data_Cint_SGZ56403.1	data_Cint_SGZ56663.1, model_Cint_Candida_intermedia@Seq_517, model_Cint_Candida_intermedia@Seq_127, data_Cint_SGZ54830.1
-OG0000040	N0	n2	1.0	Non-Terminal	data_Cint_SGZ56663.1, model_Cint_Candida_intermedia@Seq_517	model_Cint_Candida_intermedia@Seq_127, data_Cint_SGZ54830.1
-OG0000041	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57197.1, model_Cint_Candida_intermedia@Seq_981	model_Cint_Candida_intermedia@Seq_4717, data_Cint_SGZ57198.1, model_Cint_Candida_intermedia@Seq_1342, data_Cint_SGZ57195.1
-OG0000041	N0	n2	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4717, data_Cint_SGZ57198.1	model_Cint_Candida_intermedia@Seq_1342, data_Cint_SGZ57195.1
-OG0000042	data_Cint	n1	1.0	Terminal	data_Cint_SGZ46846.1, data_Cint_SGZ57432.1, data_Cint_SGZ57856.1	data_Cint_SGZ57591.1
-OG0000042	data_Cint	n2	1.0	Terminal	data_Cint_SGZ46846.1	data_Cint_SGZ57432.1, data_Cint_SGZ57856.1
+OG0000023	N0	n0	1.0	Non-Terminal	model_Cint_Seq_5425, data_Cint_SGZ57757.1	model_Cint_Seq_786, data_Cint_SGZ46242.1, model_Cint_Seq_2484, data_Cint_SGZ51579.1
+OG0000023	N0	n2	1.0	Non-Terminal	model_Cint_Seq_786, data_Cint_SGZ46242.1	model_Cint_Seq_2484, data_Cint_SGZ51579.1
+OG0000024	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3940, data_Cint_SGZ46321.1	model_Cint_Seq_5235, data_Cint_SGZ52449.1, data_Cint_SGZ47714.1, model_Cint_Seq_3713
+OG0000024	N0	n2	1.0	Non-Terminal	model_Cint_Seq_5235, data_Cint_SGZ52449.1	data_Cint_SGZ47714.1, model_Cint_Seq_3713
+OG0000025	N0	n0	1.0	Non-Terminal	data_Cint_SGZ46829.1, model_Cint_Seq_2231	model_Cint_Seq_3160, data_Cint_SGZ53714.1, model_Cint_Seq_398, data_Cint_SGZ53370.1
+OG0000025	N0	n2	1.0	Non-Terminal	model_Cint_Seq_3160, data_Cint_SGZ53714.1	model_Cint_Seq_398, data_Cint_SGZ53370.1
+OG0000026	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57990.1, model_Cint_Seq_4781	data_Cint_SGZ51008.1, model_Cint_Seq_5327, data_Cint_SGZ47212.1, model_Cint_Seq_3014
+OG0000026	N0	n2	1.0	Non-Terminal	data_Cint_SGZ51008.1, model_Cint_Seq_5327	data_Cint_SGZ47212.1, model_Cint_Seq_3014
+OG0000027	N0	n0	1.0	Non-Terminal	model_Cint_Seq_232, data_Cint_SGZ51197.1	model_Cint_Seq_5367, data_Cint_SGZ47413.1, model_Cint_Seq_2953, data_Cint_SGZ50618.1
+OG0000027	N0	n2	1.0	Non-Terminal	model_Cint_Seq_5367, data_Cint_SGZ47413.1	model_Cint_Seq_2953, data_Cint_SGZ50618.1
+OG0000028	N0	n0	1.0	Non-Terminal	data_Cint_SGZ48783.1, model_Cint_Seq_4634	model_Cint_Seq_3792, data_Cint_SGZ48121.1, data_Cint_SGZ54138.1, model_Cint_Seq_1851
+OG0000028	N0	n2	1.0	Non-Terminal	model_Cint_Seq_3792, data_Cint_SGZ48121.1	data_Cint_SGZ54138.1, model_Cint_Seq_1851
+OG0000029	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49256.1, model_Cint_Seq_4855	data_Cint_SGZ49132.1, model_Cint_Seq_1427, data_Cint_SGZ52407.1, model_Cint_Seq_5413
+OG0000029	N0	n2	1.0	Non-Terminal	data_Cint_SGZ49132.1, model_Cint_Seq_1427	data_Cint_SGZ52407.1, model_Cint_Seq_5413
+OG0000030	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50035.1, model_Cint_Seq_3418	data_Cint_SGZ49987.1, model_Cint_Seq_5531, data_Cint_SGZ49657.1, model_Cint_Seq_818
+OG0000030	N0	n2	1.0	Non-Terminal	data_Cint_SGZ49987.1, model_Cint_Seq_5531	data_Cint_SGZ49657.1, model_Cint_Seq_818
+OG0000031	data_Cint	n0	1.0	Terminal	data_Cint_SGZ49794.1	data_Cint_SGZ55199.1, data_Cint_SGZ49805.1, data_Cint_SGZ51828.1, data_Cint_SGZ55197.1, data_Cint_SGZ55203.1
+OG0000031	data_Cint	n1	1.0	Terminal	data_Cint_SGZ55199.1, data_Cint_SGZ49805.1	data_Cint_SGZ51828.1, data_Cint_SGZ55197.1, data_Cint_SGZ55203.1
+OG0000031	data_Cint	n2	1.0	Terminal	data_Cint_SGZ55199.1	data_Cint_SGZ49805.1
+OG0000031	data_Cint	n3	1.0	Terminal	data_Cint_SGZ51828.1	data_Cint_SGZ55197.1, data_Cint_SGZ55203.1
+OG0000031	data_Cint	n4	1.0	Terminal	data_Cint_SGZ55197.1	data_Cint_SGZ55203.1
+OG0000032	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57363.1, model_Cint_Seq_4489	model_Cint_Seq_4280, data_Cint_SGZ49942.1, data_Cint_SGZ49937.1, model_Cint_Seq_679
+OG0000032	N0	n2	1.0	Non-Terminal	model_Cint_Seq_4280, data_Cint_SGZ49942.1	data_Cint_SGZ49937.1, model_Cint_Seq_679
+OG0000033	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50191.1, model_Cint_Seq_4254	data_Cint_SGZ56686.1, model_Cint_Seq_110, model_Cint_Seq_2193, data_Cint_SGZ54938.1
+OG0000033	N0	n2	1.0	Non-Terminal	data_Cint_SGZ56686.1, model_Cint_Seq_110	model_Cint_Seq_2193, data_Cint_SGZ54938.1
+OG0000034	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1052, data_Cint_SGZ50465.1	data_Cint_SGZ52577.1, model_Cint_Seq_4687, data_Cint_SGZ56412.1, model_Cint_Seq_107
+OG0000034	N0	n2	1.0	Non-Terminal	data_Cint_SGZ52577.1, model_Cint_Seq_4687	data_Cint_SGZ56412.1, model_Cint_Seq_107
+OG0000035	N0	n0	1.0	Non-Terminal	model_Cint_Seq_5366, data_Cint_SGZ54723.1	data_Cint_SGZ52906.1, model_Cint_Seq_4914, data_Cint_SGZ51009.1, model_Cint_Seq_5117
+OG0000035	N0	n2	1.0	Non-Terminal	data_Cint_SGZ52906.1, model_Cint_Seq_4914	data_Cint_SGZ51009.1, model_Cint_Seq_5117
+OG0000036	N0	n0	1.0	Non-Terminal	data_Cint_SGZ54429.1, model_Cint_Seq_4330	model_Cint_Seq_4321, data_Cint_SGZ51019.1, data_Cint_SGZ56525.1, data_Cint_SGZ56658.1
+OG0000036	data_Cint	n3	1.0	Terminal	data_Cint_SGZ51019.1	data_Cint_SGZ56525.1, data_Cint_SGZ56658.1
+OG0000036	data_Cint	n4	1.0	Terminal	data_Cint_SGZ56525.1	data_Cint_SGZ56658.1
+OG0000037	N0	n0	1.0	Non-Terminal	data_Cint_SGZ52890.1, model_Cint_Seq_2745	data_Cint_SGZ57316.1, model_Cint_Seq_1315, model_Cint_Seq_3097, model_Cint_Seq_2291
+OG0000037	model_Cint	n3	1.0	Terminal	model_Cint_Seq_1315	model_Cint_Seq_3097, model_Cint_Seq_2291
+OG0000037	model_Cint	n4	1.0	Terminal	model_Cint_Seq_3097	model_Cint_Seq_2291
+OG0000038	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53697.1, model_Cint_Seq_1828	data_Cint_SGZ56050.1, model_Cint_Seq_1992, data_Cint_SGZ54137.1, model_Cint_Seq_2590
+OG0000038	N0	n2	1.0	Non-Terminal	data_Cint_SGZ56050.1, model_Cint_Seq_1992	data_Cint_SGZ54137.1, model_Cint_Seq_2590
+OG0000039	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3945, data_Cint_SGZ58078.1	model_Cint_Seq_1330, data_Cint_SGZ54729.1, data_Cint_SGZ56294.1, model_Cint_Seq_5485
+OG0000039	N0	n2	1.0	Non-Terminal	model_Cint_Seq_1330, data_Cint_SGZ54729.1	data_Cint_SGZ56294.1, model_Cint_Seq_5485
+OG0000040	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56663.1, model_Cint_Seq_517	data_Cint_SGZ54830.1, model_Cint_Seq_127, data_Cint_SGZ56403.1, model_Cint_Seq_1475
+OG0000040	N0	n2	1.0	Non-Terminal	data_Cint_SGZ54830.1, model_Cint_Seq_127	data_Cint_SGZ56403.1, model_Cint_Seq_1475
+OG0000041	N0	n0	1.0	Non-Terminal	model_Cint_Seq_981, data_Cint_SGZ57197.1	data_Cint_SGZ57195.1, model_Cint_Seq_1342, model_Cint_Seq_4717, data_Cint_SGZ57198.1
+OG0000041	N0	n2	1.0	Non-Terminal	data_Cint_SGZ57195.1, model_Cint_Seq_1342	model_Cint_Seq_4717, data_Cint_SGZ57198.1
+OG0000042	data_Cint	n1	1.0	Terminal	data_Cint_SGZ57591.1	data_Cint_SGZ57432.1, data_Cint_SGZ57856.1, data_Cint_SGZ46846.1
+OG0000042	data_Cint	n2	1.0	Terminal	data_Cint_SGZ57432.1, data_Cint_SGZ57856.1	data_Cint_SGZ46846.1
 OG0000042	data_Cint	n3	1.0	Terminal	data_Cint_SGZ57432.1	data_Cint_SGZ57856.1
-OG0000043	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4649, data_Cint_SGZ47595.1	data_Cint_SGZ50241.1, model_Cint_Candida_intermedia@Seq_2357, model_Cint_Candida_intermedia@Seq_2457
-OG0000043	model_Cint	n3	1.0	Terminal	model_Cint_Candida_intermedia@Seq_2357	model_Cint_Candida_intermedia@Seq_2457
-OG0000044	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47658.1, model_Cint_Candida_intermedia@Seq_5205	model_Cint_Candida_intermedia@Seq_1458, data_Cint_SGZ47657.1, data_Cint_SGZ52792.1
+OG0000043	N0	n0	1.0	Non-Terminal	model_Cint_Seq_2457, data_Cint_SGZ50241.1	data_Cint_SGZ47595.1, model_Cint_Seq_2357, model_Cint_Seq_4649
+OG0000043	model_Cint	n3	1.0	Terminal	model_Cint_Seq_2357	model_Cint_Seq_4649
+OG0000044	N0	n0	1.0	Non-Terminal	model_Cint_Seq_5205, data_Cint_SGZ47658.1	model_Cint_Seq_1458, data_Cint_SGZ47657.1, data_Cint_SGZ52792.1
 OG0000044	data_Cint	n3	1.0	Terminal	data_Cint_SGZ47657.1	data_Cint_SGZ52792.1
-OG0000045	N0	n0	1.0	Non-Terminal	data_Cint_SGZ48071.1, model_Cint_Candida_intermedia@Seq_3028	model_Cint_Candida_intermedia@Seq_755, data_Cint_SGZ50999.1, data_Cint_SGZ50998.1
-OG0000045	data_Cint	n3	1.0	Terminal	data_Cint_SGZ50999.1	data_Cint_SGZ50998.1
-OG0000046	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3058, data_Cint_SGZ48792.1	model_Cint_Candida_intermedia@Seq_1260, data_Cint_SGZ57780.1, data_Cint_SGZ57779.1
+OG0000045	N0	n0	1.0	Non-Terminal	model_Cint_Seq_755, data_Cint_SGZ50998.1	model_Cint_Seq_3028, data_Cint_SGZ50999.1, data_Cint_SGZ48071.1
+OG0000045	data_Cint	n3	1.0	Terminal	data_Cint_SGZ50999.1	data_Cint_SGZ48071.1
+OG0000046	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3058, data_Cint_SGZ48792.1	model_Cint_Seq_1260, data_Cint_SGZ57780.1, data_Cint_SGZ57779.1
 OG0000046	data_Cint	n3	1.0	Terminal	data_Cint_SGZ57780.1	data_Cint_SGZ57779.1
-OG0000047	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53927.1, model_Cint_Candida_intermedia@Seq_713	model_Cint_Candida_intermedia@Seq_3521, data_Cint_SGZ48812.1, data_Cint_SGZ48814.1
-OG0000047	data_Cint	n3	1.0	Terminal	data_Cint_SGZ48812.1	data_Cint_SGZ48814.1
-OG0000048	N0	n0	1.0	Non-Terminal	data_Cint_SGZ52177.1, model_Cint_Candida_intermedia@Seq_2308	model_Cint_Candida_intermedia@Seq_3790, data_Cint_SGZ49115.1, data_Cint_SGZ49118.1
-OG0000048	data_Cint	n3	1.0	Terminal	data_Cint_SGZ49115.1	data_Cint_SGZ49118.1
-OG0000049	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49213.1, model_Cint_Candida_intermedia@Seq_5134	model_Cint_Candida_intermedia@Seq_3, data_Cint_SGZ52735.1, data_Cint_SGZ49211.1
+OG0000047	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3521, data_Cint_SGZ48814.1	model_Cint_Seq_713, data_Cint_SGZ48812.1, data_Cint_SGZ53927.1
+OG0000047	data_Cint	n3	1.0	Terminal	data_Cint_SGZ48812.1	data_Cint_SGZ53927.1
+OG0000048	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3790, data_Cint_SGZ49118.1	model_Cint_Seq_2308, data_Cint_SGZ49115.1, data_Cint_SGZ52177.1
+OG0000048	data_Cint	n3	1.0	Terminal	data_Cint_SGZ49115.1	data_Cint_SGZ52177.1
+OG0000049	N0	n0	1.0	Non-Terminal	model_Cint_Seq_5134, data_Cint_SGZ49213.1	model_Cint_Seq_3, data_Cint_SGZ52735.1, data_Cint_SGZ49211.1
 OG0000049	data_Cint	n3	1.0	Terminal	data_Cint_SGZ52735.1	data_Cint_SGZ49211.1
-OG0000050	data_Cint	n0	1.0	Terminal	data_Cint_SGZ49792.1	data_Cint_SGZ49798.1, data_Cint_SGZ51832.1, data_Cint_SGZ55201.1, data_Cint_SGZ49800.1
-OG0000050	data_Cint	n1	1.0	Terminal	data_Cint_SGZ49798.1	data_Cint_SGZ51832.1, data_Cint_SGZ55201.1, data_Cint_SGZ49800.1
-OG0000050	data_Cint	n2	1.0	Terminal	data_Cint_SGZ51832.1	data_Cint_SGZ55201.1, data_Cint_SGZ49800.1
-OG0000050	data_Cint	n3	1.0	Terminal	data_Cint_SGZ55201.1	data_Cint_SGZ49800.1
-OG0000051	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50119.1, model_Cint_Candida_intermedia@Seq_2994	model_Cint_Candida_intermedia@Seq_3637, data_Cint_SGZ51824.1, data_Cint_SGZ51826.1
-OG0000051	data_Cint	n3	1.0	Terminal	data_Cint_SGZ51824.1	data_Cint_SGZ51826.1
-OG0000052	N0	n0	1.0	Non-Terminal	data_Cint_SGZ54843.1, model_Cint_Candida_intermedia@Seq_2089	data_Cint_SGZ51940.1, model_Cint_Candida_intermedia@Seq_396, model_Cint_Candida_intermedia@Seq_1897
-OG0000052	model_Cint	n3	1.0	Terminal	model_Cint_Candida_intermedia@Seq_396	model_Cint_Candida_intermedia@Seq_1897
+OG0000050	data_Cint	n0	1.0	Terminal	data_Cint_SGZ49800.1	data_Cint_SGZ55201.1, data_Cint_SGZ49792.1, data_Cint_SGZ51832.1, data_Cint_SGZ49798.1
+OG0000050	data_Cint	n1	1.0	Terminal	data_Cint_SGZ55201.1	data_Cint_SGZ49792.1, data_Cint_SGZ51832.1, data_Cint_SGZ49798.1
+OG0000050	data_Cint	n2	1.0	Terminal	data_Cint_SGZ49792.1	data_Cint_SGZ51832.1, data_Cint_SGZ49798.1
+OG0000050	data_Cint	n3	1.0	Terminal	data_Cint_SGZ51832.1	data_Cint_SGZ49798.1
+OG0000051	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3637, data_Cint_SGZ51826.1	model_Cint_Seq_2994, data_Cint_SGZ51824.1, data_Cint_SGZ50119.1
+OG0000051	data_Cint	n3	1.0	Terminal	data_Cint_SGZ51824.1	data_Cint_SGZ50119.1
+OG0000052	N0	n0	1.0	Non-Terminal	data_Cint_SGZ54843.1, model_Cint_Seq_2089	data_Cint_SGZ51940.1, model_Cint_Seq_396, model_Cint_Seq_1897
+OG0000052	model_Cint	n3	1.0	Terminal	model_Cint_Seq_396	model_Cint_Seq_1897
 OG0000053	data_Cint	n1	1.0	Terminal	data_Cint_SGZ52296.1, data_Cint_SGZ52290.1, data_Cint_SGZ52298.1	data_Cint_SGZ52294.1
 OG0000053	data_Cint	n2	1.0	Terminal	data_Cint_SGZ52296.1	data_Cint_SGZ52290.1, data_Cint_SGZ52298.1
 OG0000053	data_Cint	n3	1.0	Terminal	data_Cint_SGZ52290.1	data_Cint_SGZ52298.1
-OG0000054	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53425.1, model_Cint_Candida_intermedia@Seq_3205	model_Cint_Candida_intermedia@Seq_4191, data_Cint_SGZ53423.1, data_Cint_SGZ55227.1
-OG0000054	data_Cint	n3	1.0	Terminal	data_Cint_SGZ53423.1	data_Cint_SGZ55227.1
-OG0000055	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1102, data_Cint_SGZ56001.1	model_Cint_Candida_intermedia@Seq_275, data_Cint_SGZ53753.1, data_Cint_SGZ53751.1
-OG0000055	data_Cint	n3	1.0	Terminal	data_Cint_SGZ53753.1	data_Cint_SGZ53751.1
-OG0000056	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2402, data_Cint_SGZ55720.1	model_Cint_Candida_intermedia@Seq_174, data_Cint_SGZ55716.1, data_Cint_SGZ55718.1
+OG0000054	N0	n0	1.0	Non-Terminal	data_Cint_SGZ55227.1, model_Cint_Seq_4191	model_Cint_Seq_3205, data_Cint_SGZ53423.1, data_Cint_SGZ53425.1
+OG0000054	data_Cint	n3	1.0	Terminal	data_Cint_SGZ53423.1	data_Cint_SGZ53425.1
+OG0000055	N0	n0	1.0	Non-Terminal	model_Cint_Seq_275, data_Cint_SGZ53751.1	model_Cint_Seq_1102, data_Cint_SGZ53753.1, data_Cint_SGZ56001.1
+OG0000055	data_Cint	n3	1.0	Terminal	data_Cint_SGZ53753.1	data_Cint_SGZ56001.1
+OG0000056	N0	n0	1.0	Non-Terminal	data_Cint_SGZ55720.1, model_Cint_Seq_2402	model_Cint_Seq_174, data_Cint_SGZ55716.1, data_Cint_SGZ55718.1
 OG0000056	data_Cint	n3	1.0	Terminal	data_Cint_SGZ55716.1	data_Cint_SGZ55718.1
-OG0000057	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56830.1, model_Cint_Candida_intermedia@Seq_2105	model_Cint_Candida_intermedia@Seq_408, data_Cint_SGZ56832.1, data_Cint_SGZ56834.1
+OG0000057	N0	n0	1.0	Non-Terminal	model_Cint_Seq_2105, data_Cint_SGZ56830.1	model_Cint_Seq_408, data_Cint_SGZ56832.1, data_Cint_SGZ56834.1
 OG0000057	data_Cint	n3	1.0	Terminal	data_Cint_SGZ56832.1	data_Cint_SGZ56834.1
-OG0000058	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57868.1, data_Cint_SGZ57790.1, model_Cint_Candida_intermedia@Seq_515	data_Cint_SGZ57909.1, model_Cint_Candida_intermedia@Seq_4753
-OG0000058	data_Cint	n2	1.0	Terminal	data_Cint_SGZ57868.1	data_Cint_SGZ57790.1
-OG0000059	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3412, data_Cint_SGZ57784.1	model_Cint_Candida_intermedia@Seq_2102, data_Cint_SGZ46214.1
-OG0000060	data_Cint	n1	1.0	Terminal	data_Cint_SGZ46220.1	data_Cint_SGZ52997.1, data_Cint_SGZ52478.1
-OG0000060	data_Cint	n2	1.0	Terminal	data_Cint_SGZ52997.1	data_Cint_SGZ52478.1
-OG0000061	N0	n0	1.0	Non-Terminal	data_Cint_SGZ46228.1, model_Cint_Candida_intermedia@Seq_4014	model_Cint_Candida_intermedia@Seq_2137, data_Cint_SGZ51000.1
-OG0000062	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1876, data_Cint_SGZ46465.1	model_Cint_Candida_intermedia@Seq_4844, data_Cint_SGZ48992.1
-OG0000063	N0	n0	1.0	Non-Terminal	data_Cint_SGZ46906.1, model_Cint_Candida_intermedia@Seq_4932	model_Cint_Candida_intermedia@Seq_4931, data_Cint_SGZ46658.1
-OG0000064	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1741, data_Cint_SGZ46691.1	data_Cint_SGZ54291.1, model_Cint_Candida_intermedia@Seq_2799
-OG0000065	N0	n0	1.0	Non-Terminal	data_Cint_SGZ55320.1, model_Cint_Candida_intermedia@Seq_5497	data_Cint_SGZ46773.1, model_Cint_Candida_intermedia@Seq_4074
-OG0000066	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3878, data_Cint_SGZ46885.1	model_Cint_Candida_intermedia@Seq_175, data_Cint_SGZ51184.1
-OG0000067	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56501.1, model_Cint_Candida_intermedia@Seq_2836	model_Cint_Candida_intermedia@Seq_257, data_Cint_SGZ46892.1
-OG0000068	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47366.1, model_Cint_Candida_intermedia@Seq_1807	data_Cint_SGZ46933.1, model_Cint_Candida_intermedia@Seq_4965
-OG0000069	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2532, data_Cint_SGZ54673.1	data_Cint_SGZ46972.1, model_Cint_Candida_intermedia@Seq_1600
-OG0000070	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47004.1, model_Cint_Candida_intermedia@Seq_4767	model_Cint_Candida_intermedia@Seq_2821, data_Cint_SGZ55891.1
-OG0000071	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4265, data_Cint_SGZ47010.1	data_Cint_SGZ55885.1, model_Cint_Candida_intermedia@Seq_2913
-OG0000072	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_573, data_Cint_SGZ47034.1	data_Cint_SGZ47169.1, model_Cint_Candida_intermedia@Seq_1067
-OG0000073	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5433, data_Cint_SGZ47037.1	model_Cint_Candida_intermedia@Seq_3780, data_Cint_SGZ52872.1
-OG0000074	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5093, data_Cint_SGZ47057.1	model_Cint_Candida_intermedia@Seq_3467, data_Cint_SGZ57725.1
-OG0000075	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1206, data_Cint_SGZ57723.1	model_Cint_Candida_intermedia@Seq_1759, data_Cint_SGZ47058.1
-OG0000076	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_691, data_Cint_SGZ47103.1	model_Cint_Candida_intermedia@Seq_1306, data_Cint_SGZ49277.1
-OG0000077	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47238.1, model_Cint_Candida_intermedia@Seq_1077	data_Cint_SGZ47851.1, model_Cint_Candida_intermedia@Seq_932
-OG0000078	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1743, data_Cint_SGZ47291.1	data_Cint_SGZ49005.1, model_Cint_Candida_intermedia@Seq_927
-OG0000079	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_349, data_Cint_SGZ47331.1	data_Cint_SGZ47332.1, model_Cint_Candida_intermedia@Seq_1446
-OG0000080	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3396, data_Cint_SGZ47403.1	data_Cint_SGZ56673.1, model_Cint_Candida_intermedia@Seq_2689
-OG0000081	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56024.1, model_Cint_Candida_intermedia@Seq_3193	data_Cint_SGZ47439.1, model_Cint_Candida_intermedia@Seq_2609
-OG0000082	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47577.1, model_Cint_Candida_intermedia@Seq_1942	model_Cint_Candida_intermedia@Seq_2712, data_Cint_SGZ57396.1
-OG0000083	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1532, data_Cint_SGZ47592.1	data_Cint_SGZ48883.1, model_Cint_Candida_intermedia@Seq_669
-OG0000084	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47610.1, model_Cint_Candida_intermedia@Seq_1272	model_Cint_Candida_intermedia@Seq_1857, data_Cint_SGZ49143.1
-OG0000085	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2261, data_Cint_SGZ56422.1	data_Cint_SGZ47677.1, model_Cint_Candida_intermedia@Seq_1326
-OG0000086	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1183, data_Cint_SGZ47691.1	model_Cint_Candida_intermedia@Seq_4936, data_Cint_SGZ57542.1
-OG0000087	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56646.1, model_Cint_Candida_intermedia@Seq_1784	data_Cint_SGZ47694.1, model_Cint_Candida_intermedia@Seq_5359
-OG0000088	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1875, data_Cint_SGZ53289.1	model_Cint_Candida_intermedia@Seq_5209, data_Cint_SGZ47718.1
-OG0000089	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5308, data_Cint_SGZ47754.1	data_Cint_SGZ56278.1, model_Cint_Candida_intermedia@Seq_1111
-OG0000090	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57929.1, model_Cint_Candida_intermedia@Seq_4905	model_Cint_Candida_intermedia@Seq_2133, data_Cint_SGZ47799.1
-OG0000091	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47842.1, model_Cint_Candida_intermedia@Seq_4131	model_Cint_Candida_intermedia@Seq_1931, data_Cint_SGZ55338.1
-OG0000092	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1267, data_Cint_SGZ47862.1	data_Cint_SGZ55441.1, model_Cint_Candida_intermedia@Seq_3578
-OG0000093	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51012.1, model_Cint_Candida_intermedia@Seq_118	model_Cint_Candida_intermedia@Seq_766, data_Cint_SGZ47884.1
-OG0000094	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1722, data_Cint_SGZ47970.1	data_Cint_SGZ47941.1, model_Cint_Candida_intermedia@Seq_5047
-OG0000095	data_Cint	n1	1.0	Terminal	data_Cint_SGZ48078.1	data_Cint_SGZ55596.1, data_Cint_SGZ54477.1
-OG0000095	data_Cint	n2	1.0	Terminal	data_Cint_SGZ55596.1	data_Cint_SGZ54477.1
-OG0000096	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_688, data_Cint_SGZ54839.1	data_Cint_SGZ48796.1, model_Cint_Candida_intermedia@Seq_3857
-OG0000097	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1338, data_Cint_SGZ49326.1	data_Cint_SGZ56146.1, model_Cint_Candida_intermedia@Seq_3183
-OG0000098	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1297, data_Cint_SGZ52435.1	model_Cint_Candida_intermedia@Seq_4526, data_Cint_SGZ49448.1
-OG0000099	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57825.1, model_Cint_Candida_intermedia@Seq_4899	data_Cint_SGZ49478.1, model_Cint_Candida_intermedia@Seq_2417
-OG0000100	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4958, data_Cint_SGZ49480.1	data_Cint_SGZ52535.1, model_Cint_Candida_intermedia@Seq_5123
-OG0000101	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3435, data_Cint_SGZ50992.1	data_Cint_SGZ49593.1, model_Cint_Candida_intermedia@Seq_2909
-OG0000102	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1935, data_Cint_SGZ49598.1	model_Cint_Candida_intermedia@Seq_4294, data_Cint_SGZ56688.1
-OG0000103	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56684.1, model_Cint_Candida_intermedia@Seq_2479	data_Cint_SGZ49600.1, model_Cint_Candida_intermedia@Seq_3332
-OG0000104	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51001.1, model_Cint_Candida_intermedia@Seq_278	model_Cint_Candida_intermedia@Seq_4549, data_Cint_SGZ49614.1
-OG0000105	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4097, data_Cint_SGZ49619.1	model_Cint_Candida_intermedia@Seq_1626, data_Cint_SGZ49622.1
-OG0000106	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_65, data_Cint_SGZ49631.1	model_Cint_Candida_intermedia@Seq_3359, data_Cint_SGZ58038.1
-OG0000107	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49674.1, model_Cint_Candida_intermedia@Seq_4422	data_Cint_SGZ52804.1, model_Cint_Candida_intermedia@Seq_1130
-OG0000108	data_Cint	n1	1.0	Terminal	data_Cint_SGZ49707.1	data_Cint_SGZ55472.1
-OG0000108	model_Cint	n2	1.0	Terminal	model_Cint_Candida_intermedia@Seq_2927	model_Cint_Candida_intermedia@Seq_975
-OG0000109	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49734.1, model_Cint_Candida_intermedia@Seq_672	model_Cint_Candida_intermedia@Seq_4760, data_Cint_SGZ56682.1
-OG0000110	model_Cint	n1	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3583, model_Cint_Candida_intermedia@Seq_1663	model_Cint_Candida_intermedia@Seq_401
-OG0000110	model_Cint	n2	1.0	Terminal	model_Cint_Candida_intermedia@Seq_3583	model_Cint_Candida_intermedia@Seq_1663
-OG0000111	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2862, data_Cint_SGZ49906.1	model_Cint_Candida_intermedia@Seq_1096, data_Cint_SGZ54210.1
-OG0000112	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49926.1, model_Cint_Candida_intermedia@Seq_3980	model_Cint_Candida_intermedia@Seq_718, data_Cint_SGZ51004.1
-OG0000113	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_773, data_Cint_SGZ53377.1	data_Cint_SGZ50044.1, model_Cint_Candida_intermedia@Seq_2217
-OG0000114	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1019, data_Cint_SGZ50139.1	model_Cint_Candida_intermedia@Seq_2568, data_Cint_SGZ58011.1
-OG0000115	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4719, data_Cint_SGZ53008.1	data_Cint_SGZ50173.1, model_Cint_Candida_intermedia@Seq_303
-OG0000116	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4740, data_Cint_SGZ50184.1	data_Cint_SGZ52910.1, model_Cint_Candida_intermedia@Seq_1965
-OG0000117	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1292, data_Cint_SGZ56118.1	model_Cint_Candida_intermedia@Seq_4473, data_Cint_SGZ50201.1
-OG0000118	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_856, data_Cint_SGZ50203.1	model_Cint_Candida_intermedia@Seq_868, data_Cint_SGZ53143.1
-OG0000119	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50208.1, model_Cint_Candida_intermedia@Seq_292	data_Cint_SGZ50210.1, model_Cint_Candida_intermedia@Seq_3864
-OG0000120	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5193, data_Cint_SGZ50228.1	model_Cint_Candida_intermedia@Seq_2613, data_Cint_SGZ51522.1
-OG0000121	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50235.1, model_Cint_Candida_intermedia@Seq_3410	model_Cint_Candida_intermedia@Seq_885, data_Cint_SGZ56778.1
-OG0000122	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4900, data_Cint_SGZ50352.1	model_Cint_Candida_intermedia@Seq_2881, data_Cint_SGZ57242.1
-OG0000123	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5400, data_Cint_SGZ50458.1	model_Cint_Candida_intermedia@Seq_924, data_Cint_SGZ53516.1
-OG0000124	data_Cint	n1	1.0	Terminal	data_Cint_SGZ56414.1	data_Cint_SGZ50467.1
-OG0000124	model_Cint	n2	1.0	Terminal	model_Cint_Candida_intermedia@Seq_4305	model_Cint_Candida_intermedia@Seq_806
-OG0000125	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50579.1, model_Cint_Candida_intermedia@Seq_860	model_Cint_Candida_intermedia@Seq_5376, data_Cint_SGZ57729.1
-OG0000126	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53252.1, model_Cint_Candida_intermedia@Seq_3511	data_Cint_SGZ50624.1, model_Cint_Candida_intermedia@Seq_5169
-OG0000127	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3001, data_Cint_SGZ50784.1	data_Cint_SGZ55051.1, model_Cint_Candida_intermedia@Seq_2171
-OG0000128	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_55, data_Cint_SGZ53246.1	data_Cint_SGZ50817.1, model_Cint_Candida_intermedia@Seq_970
+OG0000058	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57790.1, data_Cint_SGZ57868.1, model_Cint_Seq_515	data_Cint_SGZ57909.1, model_Cint_Seq_4753
+OG0000058	data_Cint	n2	1.0	Terminal	data_Cint_SGZ57790.1	data_Cint_SGZ57868.1
+OG0000059	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3412, data_Cint_SGZ57784.1	data_Cint_SGZ46214.1, model_Cint_Seq_2102
+OG0000060	data_Cint	n1	1.0	Terminal	data_Cint_SGZ52478.1, data_Cint_SGZ52997.1	data_Cint_SGZ46220.1
+OG0000060	data_Cint	n2	1.0	Terminal	data_Cint_SGZ52478.1	data_Cint_SGZ52997.1
+OG0000061	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51000.1, model_Cint_Seq_2137	data_Cint_SGZ46228.1, model_Cint_Seq_4014
+OG0000062	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4844, data_Cint_SGZ46465.1	model_Cint_Seq_1876, data_Cint_SGZ48992.1
+OG0000063	N0	n0	1.0	Non-Terminal	data_Cint_SGZ46906.1, model_Cint_Seq_4932	model_Cint_Seq_4931, data_Cint_SGZ46658.1
+OG0000064	N0	n0	1.0	Non-Terminal	data_Cint_SGZ46691.1, model_Cint_Seq_1741	model_Cint_Seq_2799, data_Cint_SGZ54291.1
+OG0000065	N0	n0	1.0	Non-Terminal	model_Cint_Seq_5497, data_Cint_SGZ55320.1	data_Cint_SGZ46773.1, model_Cint_Seq_4074
+OG0000066	N0	n0	1.0	Non-Terminal	data_Cint_SGZ46885.1, model_Cint_Seq_3878	model_Cint_Seq_175, data_Cint_SGZ51184.1
+OG0000067	N0	n0	1.0	Non-Terminal	data_Cint_SGZ46892.1, model_Cint_Seq_257	model_Cint_Seq_2836, data_Cint_SGZ56501.1
+OG0000068	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1807, data_Cint_SGZ47366.1	data_Cint_SGZ46933.1, model_Cint_Seq_4965
+OG0000069	N0	n0	1.0	Non-Terminal	model_Cint_Seq_2532, data_Cint_SGZ54673.1	model_Cint_Seq_1600, data_Cint_SGZ46972.1
+OG0000070	N0	n0	1.0	Non-Terminal	data_Cint_SGZ55891.1, model_Cint_Seq_4767	data_Cint_SGZ47004.1, model_Cint_Seq_2821
+OG0000071	N0	n0	1.0	Non-Terminal	data_Cint_SGZ55885.1, model_Cint_Seq_2913	model_Cint_Seq_4265, data_Cint_SGZ47010.1
+OG0000072	N0	n0	1.0	Non-Terminal	model_Cint_Seq_573, data_Cint_SGZ47034.1	model_Cint_Seq_1067, data_Cint_SGZ47169.1
+OG0000073	N0	n0	1.0	Non-Terminal	model_Cint_Seq_5433, data_Cint_SGZ47037.1	data_Cint_SGZ52872.1, model_Cint_Seq_3780
+OG0000074	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47057.1, model_Cint_Seq_5093	data_Cint_SGZ57725.1, model_Cint_Seq_3467
+OG0000075	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47058.1, model_Cint_Seq_1759	model_Cint_Seq_1206, data_Cint_SGZ57723.1
+OG0000076	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1306, data_Cint_SGZ49277.1	data_Cint_SGZ47103.1, model_Cint_Seq_691
+OG0000077	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1077, data_Cint_SGZ47238.1	model_Cint_Seq_932, data_Cint_SGZ47851.1
+OG0000078	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49005.1, model_Cint_Seq_927	model_Cint_Seq_1743, data_Cint_SGZ47291.1
+OG0000079	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47331.1, model_Cint_Seq_349	model_Cint_Seq_1446, data_Cint_SGZ47332.1
+OG0000080	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3396, data_Cint_SGZ47403.1	model_Cint_Seq_2689, data_Cint_SGZ56673.1
+OG0000081	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56024.1, model_Cint_Seq_3193	model_Cint_Seq_2609, data_Cint_SGZ47439.1
+OG0000082	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1942, data_Cint_SGZ47577.1	data_Cint_SGZ57396.1, model_Cint_Seq_2712
+OG0000083	N0	n0	1.0	Non-Terminal	data_Cint_SGZ48883.1, model_Cint_Seq_669	model_Cint_Seq_1532, data_Cint_SGZ47592.1
+OG0000084	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47610.1, model_Cint_Seq_1857	model_Cint_Seq_1272, data_Cint_SGZ49143.1
+OG0000085	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47677.1, model_Cint_Seq_1326	model_Cint_Seq_2261, data_Cint_SGZ56422.1
+OG0000086	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4936, data_Cint_SGZ57542.1	model_Cint_Seq_1183, data_Cint_SGZ47691.1
+OG0000087	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56646.1, model_Cint_Seq_1784	data_Cint_SGZ47694.1, model_Cint_Seq_5359
+OG0000088	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47718.1, model_Cint_Seq_5209	model_Cint_Seq_1875, data_Cint_SGZ53289.1
+OG0000089	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47754.1, model_Cint_Seq_5308	model_Cint_Seq_1111, data_Cint_SGZ56278.1
+OG0000090	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57929.1, model_Cint_Seq_4905	data_Cint_SGZ47799.1, model_Cint_Seq_2133
+OG0000091	N0	n0	1.0	Non-Terminal	data_Cint_SGZ47842.1, model_Cint_Seq_4131	model_Cint_Seq_1931, data_Cint_SGZ55338.1
+OG0000092	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3578, data_Cint_SGZ55441.1	model_Cint_Seq_1267, data_Cint_SGZ47862.1
+OG0000093	N0	n0	1.0	Non-Terminal	model_Cint_Seq_118, data_Cint_SGZ51012.1	data_Cint_SGZ47884.1, model_Cint_Seq_766
+OG0000094	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1722, data_Cint_SGZ47970.1	model_Cint_Seq_5047, data_Cint_SGZ47941.1
+OG0000095	data_Cint	n1	1.0	Terminal	data_Cint_SGZ48078.1	data_Cint_SGZ54477.1, data_Cint_SGZ55596.1
+OG0000095	data_Cint	n2	1.0	Terminal	data_Cint_SGZ54477.1	data_Cint_SGZ55596.1
+OG0000096	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3857, data_Cint_SGZ48796.1	data_Cint_SGZ54839.1, model_Cint_Seq_688
+OG0000097	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3183, data_Cint_SGZ56146.1	model_Cint_Seq_1338, data_Cint_SGZ49326.1
+OG0000098	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1297, data_Cint_SGZ52435.1	data_Cint_SGZ49448.1, model_Cint_Seq_4526
+OG0000099	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4899, data_Cint_SGZ57825.1	model_Cint_Seq_2417, data_Cint_SGZ49478.1
+OG0000100	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49480.1, model_Cint_Seq_4958	data_Cint_SGZ52535.1, model_Cint_Seq_5123
+OG0000101	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3435, data_Cint_SGZ50992.1	data_Cint_SGZ49593.1, model_Cint_Seq_2909
+OG0000102	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1935, data_Cint_SGZ49598.1	data_Cint_SGZ56688.1, model_Cint_Seq_4294
+OG0000103	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49600.1, model_Cint_Seq_3332	model_Cint_Seq_2479, data_Cint_SGZ56684.1
+OG0000104	N0	n0	1.0	Non-Terminal	data_Cint_SGZ49614.1, model_Cint_Seq_4549	model_Cint_Seq_278, data_Cint_SGZ51001.1
+OG0000105	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4097, data_Cint_SGZ49619.1	model_Cint_Seq_1626, data_Cint_SGZ49622.1
+OG0000106	N0	n0	1.0	Non-Terminal	model_Cint_Seq_65, data_Cint_SGZ49631.1	model_Cint_Seq_3359, data_Cint_SGZ58038.1
+OG0000107	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4422, data_Cint_SGZ49674.1	data_Cint_SGZ52804.1, model_Cint_Seq_1130
+OG0000108	model_Cint	n1	1.0	Terminal	model_Cint_Seq_2927	model_Cint_Seq_975
+OG0000108	data_Cint	n2	1.0	Terminal	data_Cint_SGZ49707.1	data_Cint_SGZ55472.1
+OG0000109	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4760, data_Cint_SGZ56682.1	data_Cint_SGZ49734.1, model_Cint_Seq_672
+OG0000110	model_Cint	n1	1.0	Terminal	model_Cint_Seq_401	model_Cint_Seq_1663, model_Cint_Seq_3583
+OG0000110	model_Cint	n2	1.0	Terminal	model_Cint_Seq_1663	model_Cint_Seq_3583
+OG0000111	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1096, data_Cint_SGZ54210.1	data_Cint_SGZ49906.1, model_Cint_Seq_2862
+OG0000112	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3980, data_Cint_SGZ49926.1	model_Cint_Seq_718, data_Cint_SGZ51004.1
+OG0000113	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50044.1, model_Cint_Seq_2217	data_Cint_SGZ53377.1, model_Cint_Seq_773
+OG0000114	N0	n0	1.0	Non-Terminal	model_Cint_Seq_2568, data_Cint_SGZ58011.1	data_Cint_SGZ50139.1, model_Cint_Seq_1019
+OG0000115	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4719, data_Cint_SGZ53008.1	data_Cint_SGZ50173.1, model_Cint_Seq_303
+OG0000116	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4740, data_Cint_SGZ50184.1	model_Cint_Seq_1965, data_Cint_SGZ52910.1
+OG0000117	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50201.1, model_Cint_Seq_4473	model_Cint_Seq_1292, data_Cint_SGZ56118.1
+OG0000118	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50203.1, model_Cint_Seq_856	model_Cint_Seq_868, data_Cint_SGZ53143.1
+OG0000119	N0	n0	1.0	Non-Terminal	model_Cint_Seq_292, data_Cint_SGZ50208.1	data_Cint_SGZ50210.1, model_Cint_Seq_3864
+OG0000120	N0	n0	1.0	Non-Terminal	model_Cint_Seq_5193, data_Cint_SGZ50228.1	data_Cint_SGZ51522.1, model_Cint_Seq_2613
+OG0000121	N0	n0	1.0	Non-Terminal	model_Cint_Seq_885, data_Cint_SGZ56778.1	model_Cint_Seq_3410, data_Cint_SGZ50235.1
+OG0000122	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57242.1, model_Cint_Seq_2881	data_Cint_SGZ50352.1, model_Cint_Seq_4900
+OG0000123	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53516.1, model_Cint_Seq_924	data_Cint_SGZ50458.1, model_Cint_Seq_5400
+OG0000124	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4305, data_Cint_SGZ56414.1	model_Cint_Seq_806, data_Cint_SGZ50467.1
+OG0000125	N0	n0	1.0	Non-Terminal	model_Cint_Seq_860, data_Cint_SGZ50579.1	data_Cint_SGZ57729.1, model_Cint_Seq_5376
+OG0000126	N0	n0	1.0	Non-Terminal	data_Cint_SGZ50624.1, model_Cint_Seq_5169	model_Cint_Seq_3511, data_Cint_SGZ53252.1
+OG0000127	N0	n0	1.0	Non-Terminal	model_Cint_Seq_2171, data_Cint_SGZ55051.1	model_Cint_Seq_3001, data_Cint_SGZ50784.1
+OG0000128	N0	n0	1.0	Non-Terminal	model_Cint_Seq_970, data_Cint_SGZ50817.1	model_Cint_Seq_55, data_Cint_SGZ53246.1
 OG0000129	data_Cint	n1	1.0	Terminal	data_Cint_SGZ50848.1, data_Cint_SGZ54378.1	data_Cint_SGZ50846.1
 OG0000129	data_Cint	n2	1.0	Terminal	data_Cint_SGZ50848.1	data_Cint_SGZ54378.1
-OG0000130	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51766.1, model_Cint_Candida_intermedia@Seq_3828	model_Cint_Candida_intermedia@Seq_3853, data_Cint_SGZ50987.1
-OG0000131	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4994, data_Cint_SGZ51010.1	data_Cint_SGZ57636.1, model_Cint_Candida_intermedia@Seq_2941
-OG0000132	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51037.1, model_Cint_Candida_intermedia@Seq_1364	model_Cint_Candida_intermedia@Seq_2478, data_Cint_SGZ52095.1
-OG0000133	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4033, data_Cint_SGZ56488.1	data_Cint_SGZ51050.1, model_Cint_Candida_intermedia@Seq_1145
-OG0000134	N0	n0	1.0	Non-Terminal	data_Cint_SGZ55637.1, model_Cint_Candida_intermedia@Seq_2976	data_Cint_SGZ51311.1, model_Cint_Candida_intermedia@Seq_2908
-OG0000135	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3645, data_Cint_SGZ51329.1	model_Cint_Candida_intermedia@Seq_916, data_Cint_SGZ55954.1
-OG0000136	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51356.1, model_Cint_Candida_intermedia@Seq_194	data_Cint_SGZ53372.1, model_Cint_Candida_intermedia@Seq_5163
-OG0000137	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3311, data_Cint_SGZ51498.1	data_Cint_SGZ51500.1, model_Cint_Candida_intermedia@Seq_3078
-OG0000138	N0	n0	1.0	Non-Terminal	data_Cint_SGZ52895.1, model_Cint_Candida_intermedia@Seq_3838	model_Cint_Candida_intermedia@Seq_5007, data_Cint_SGZ51629.1
-OG0000139	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51764.1, model_Cint_Candida_intermedia@Seq_3266	data_Cint_SGZ56702.1, model_Cint_Candida_intermedia@Seq_80
-OG0000140	data_Cint	n1	1.0	Terminal	data_Cint_SGZ52605.1, data_Cint_SGZ52607.1	data_Cint_SGZ52603.1
-OG0000140	data_Cint	n2	1.0	Terminal	data_Cint_SGZ52605.1	data_Cint_SGZ52607.1
-OG0000141	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_4782, data_Cint_SGZ54822.1	model_Cint_Candida_intermedia@Seq_2972, data_Cint_SGZ52700.1
-OG0000142	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_5307, data_Cint_SGZ52714.1	model_Cint_Candida_intermedia@Seq_135, data_Cint_SGZ53473.1
-OG0000143	data_Cint	n1	1.0	Terminal	data_Cint_SGZ52915.1, data_Cint_SGZ52914.1	data_Cint_SGZ54715.1
-OG0000143	data_Cint	n2	1.0	Terminal	data_Cint_SGZ52915.1	data_Cint_SGZ52914.1
-OG0000144	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53080.1, model_Cint_Candida_intermedia@Seq_1577	data_Cint_SGZ54481.1, model_Cint_Candida_intermedia@Seq_2236
-OG0000145	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56014.1, model_Cint_Candida_intermedia@Seq_1118	data_Cint_SGZ53215.1, model_Cint_Candida_intermedia@Seq_3571
-OG0000146	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53348.1, model_Cint_Candida_intermedia@Seq_5019	model_Cint_Candida_intermedia@Seq_3431, data_Cint_SGZ54691.1
-OG0000147	data_Cint	n1	1.0	Terminal	data_Cint_SGZ58066.1	data_Cint_SGZ57761.1, data_Cint_SGZ53539.1
-OG0000147	data_Cint	n2	1.0	Terminal	data_Cint_SGZ57761.1	data_Cint_SGZ53539.1
-OG0000148	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3294, data_Cint_SGZ53577.1	model_Cint_Candida_intermedia@Seq_2795, data_Cint_SGZ57869.1
-OG0000149	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1548, data_Cint_SGZ57376.1	model_Cint_Candida_intermedia@Seq_846, data_Cint_SGZ53701.1
-OG0000150	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_784, data_Cint_SGZ57501.1	data_Cint_SGZ53894.1, model_Cint_Candida_intermedia@Seq_1373
-OG0000151	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2813, data_Cint_SGZ54345.1	data_Cint_SGZ54660.1, model_Cint_Candida_intermedia@Seq_1822
-OG0000152	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57097.1, model_Cint_Candida_intermedia@Seq_1351	data_Cint_SGZ54721.1, model_Cint_Candida_intermedia@Seq_4948
-OG0000153	N0	n0	1.0	Non-Terminal	data_Cint_SGZ54852.1, model_Cint_Candida_intermedia@Seq_2740	model_Cint_Candida_intermedia@Seq_2616, data_Cint_SGZ54850.1
-OG0000154	N0	n0	1.0	Non-Terminal	data_Cint_SGZ55325.1, model_Cint_Candida_intermedia@Seq_3529	data_Cint_SGZ56171.1, model_Cint_Candida_intermedia@Seq_1290
-OG0000155	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_1137, data_Cint_SGZ55821.1	model_Cint_Candida_intermedia@Seq_2293, data_Cint_SGZ56445.1
-OG0000156	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56566.1, model_Cint_Candida_intermedia@Seq_4775	model_Cint_Candida_intermedia@Seq_1816, data_Cint_SGZ55935.1
-OG0000157	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56639.1, model_Cint_Candida_intermedia@Seq_758	data_Cint_SGZ57444.1, model_Cint_Candida_intermedia@Seq_4728
-OG0000158	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56709.1, model_Cint_Candida_intermedia@Seq_3452	model_Cint_Candida_intermedia@Seq_3632, data_Cint_SGZ57706.1
-OG0000159	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_2965, data_Cint_SGZ57907.1	data_Cint_SGZ56870.1, model_Cint_Candida_intermedia@Seq_862
-OG0000160	data_Cint	n1	1.0	Terminal	data_Cint_SGZ57733.1	data_Cint_SGZ57737.1, data_Cint_SGZ57735.1
-OG0000160	data_Cint	n2	1.0	Terminal	data_Cint_SGZ57737.1	data_Cint_SGZ57735.1
-OG0000161	N0	n0	1.0	Non-Terminal	model_Cint_Candida_intermedia@Seq_3975, data_Cint_SGZ57777.1	model_Cint_Candida_intermedia@Seq_3337, data_Cint_SGZ57778.1
-OG0000162	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57786.1, model_Cint_Candida_intermedia@Seq_4113	data_Cint_SGZ57910.1, model_Cint_Candida_intermedia@Seq_1026
+OG0000130	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3853, data_Cint_SGZ50987.1	model_Cint_Seq_3828, data_Cint_SGZ51766.1
+OG0000131	N0	n0	1.0	Non-Terminal	model_Cint_Seq_2941, data_Cint_SGZ57636.1	model_Cint_Seq_4994, data_Cint_SGZ51010.1
+OG0000132	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51037.1, model_Cint_Seq_1364	data_Cint_SGZ52095.1, model_Cint_Seq_2478
+OG0000133	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56488.1, model_Cint_Seq_4033	data_Cint_SGZ51050.1, model_Cint_Seq_1145
+OG0000134	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51311.1, model_Cint_Seq_2908	data_Cint_SGZ55637.1, model_Cint_Seq_2976
+OG0000135	N0	n0	1.0	Non-Terminal	model_Cint_Seq_916, data_Cint_SGZ55954.1	model_Cint_Seq_3645, data_Cint_SGZ51329.1
+OG0000136	N0	n0	1.0	Non-Terminal	model_Cint_Seq_194, data_Cint_SGZ51356.1	data_Cint_SGZ53372.1, model_Cint_Seq_5163
+OG0000137	N0	n0	1.0	Non-Terminal	data_Cint_SGZ51498.1, model_Cint_Seq_3311	model_Cint_Seq_3078, data_Cint_SGZ51500.1
+OG0000138	N0	n0	1.0	Non-Terminal	model_Cint_Seq_5007, data_Cint_SGZ51629.1	model_Cint_Seq_3838, data_Cint_SGZ52895.1
+OG0000139	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3266, data_Cint_SGZ51764.1	model_Cint_Seq_80, data_Cint_SGZ56702.1
+OG0000140	data_Cint	n1	1.0	Terminal	data_Cint_SGZ52603.1	data_Cint_SGZ52607.1, data_Cint_SGZ52605.1
+OG0000140	data_Cint	n2	1.0	Terminal	data_Cint_SGZ52607.1	data_Cint_SGZ52605.1
+OG0000141	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4782, data_Cint_SGZ54822.1	model_Cint_Seq_2972, data_Cint_SGZ52700.1
+OG0000142	N0	n0	1.0	Non-Terminal	data_Cint_SGZ52714.1, model_Cint_Seq_5307	model_Cint_Seq_135, data_Cint_SGZ53473.1
+OG0000143	data_Cint	n1	1.0	Terminal	data_Cint_SGZ52914.1, data_Cint_SGZ52915.1	data_Cint_SGZ54715.1
+OG0000143	data_Cint	n2	1.0	Terminal	data_Cint_SGZ52914.1	data_Cint_SGZ52915.1
+OG0000144	N0	n0	1.0	Non-Terminal	data_Cint_SGZ54481.1, model_Cint_Seq_2236	model_Cint_Seq_1577, data_Cint_SGZ53080.1
+OG0000145	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56014.1, model_Cint_Seq_1118	data_Cint_SGZ53215.1, model_Cint_Seq_3571
+OG0000146	N0	n0	1.0	Non-Terminal	model_Cint_Seq_5019, data_Cint_SGZ53348.1	model_Cint_Seq_3431, data_Cint_SGZ54691.1
+OG0000147	data_Cint	n1	1.0	Terminal	data_Cint_SGZ58066.1	data_Cint_SGZ53539.1, data_Cint_SGZ57761.1
+OG0000147	data_Cint	n2	1.0	Terminal	data_Cint_SGZ53539.1	data_Cint_SGZ57761.1
+OG0000148	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57869.1, model_Cint_Seq_2795	model_Cint_Seq_3294, data_Cint_SGZ53577.1
+OG0000149	N0	n0	1.0	Non-Terminal	data_Cint_SGZ53701.1, model_Cint_Seq_846	model_Cint_Seq_1548, data_Cint_SGZ57376.1
+OG0000150	N0	n0	1.0	Non-Terminal	model_Cint_Seq_784, data_Cint_SGZ57501.1	data_Cint_SGZ53894.1, model_Cint_Seq_1373
+OG0000151	N0	n0	1.0	Non-Terminal	data_Cint_SGZ54345.1, model_Cint_Seq_2813	data_Cint_SGZ54660.1, model_Cint_Seq_1822
+OG0000152	N0	n0	1.0	Non-Terminal	model_Cint_Seq_1351, data_Cint_SGZ57097.1	model_Cint_Seq_4948, data_Cint_SGZ54721.1
+OG0000153	N0	n0	1.0	Non-Terminal	data_Cint_SGZ54850.1, model_Cint_Seq_2616	data_Cint_SGZ54852.1, model_Cint_Seq_2740
+OG0000154	N0	n0	1.0	Non-Terminal	model_Cint_Seq_3529, data_Cint_SGZ55325.1	model_Cint_Seq_1290, data_Cint_SGZ56171.1
+OG0000155	N0	n0	1.0	Non-Terminal	data_Cint_SGZ55821.1, model_Cint_Seq_1137	data_Cint_SGZ56445.1, model_Cint_Seq_2293
+OG0000156	N0	n0	1.0	Non-Terminal	data_Cint_SGZ55935.1, model_Cint_Seq_1816	model_Cint_Seq_4775, data_Cint_SGZ56566.1
+OG0000157	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57444.1, model_Cint_Seq_4728	model_Cint_Seq_758, data_Cint_SGZ56639.1
+OG0000158	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56709.1, model_Cint_Seq_3452	data_Cint_SGZ57706.1, model_Cint_Seq_3632
+OG0000159	N0	n0	1.0	Non-Terminal	data_Cint_SGZ56870.1, model_Cint_Seq_862	data_Cint_SGZ57907.1, model_Cint_Seq_2965
+OG0000160	data_Cint	n1	1.0	Terminal	data_Cint_SGZ57735.1, data_Cint_SGZ57737.1	data_Cint_SGZ57733.1
+OG0000160	data_Cint	n2	1.0	Terminal	data_Cint_SGZ57735.1	data_Cint_SGZ57737.1
+OG0000161	N0	n0	1.0	Non-Terminal	data_Cint_SGZ57778.1, model_Cint_Seq_3337	model_Cint_Seq_3975, data_Cint_SGZ57777.1
+OG0000162	N0	n0	1.0	Non-Terminal	model_Cint_Seq_4113, data_Cint_SGZ57786.1	data_Cint_SGZ57910.1, model_Cint_Seq_1026
