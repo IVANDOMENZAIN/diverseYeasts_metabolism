@@ -21,6 +21,8 @@ load('../models/candida_intermedia/cint_leloir.mat');
 %Find O2 exchange
 O2_ex = find(strcmpi(model.rxnNames,'oxygen exchange'))
 O2_ex = model.rxns(O2_ex);
+%Set minimal media with glucose as carbon source
+model = changeMedia(model,'r_1714',1);
 %Block oxygen exchange
 model = setParam(model,'lb',O2_ex,0);
 model = setParam(model,'ub',O2_ex,0);
@@ -102,15 +104,19 @@ printFluxes(tempModel,sol.x)
    % end
 %end
 %toBlock
-
 for i = 1:length(exchRxns)
     %if sol.x(i)<0
      %   exchRxns(i)
     tempModel = setParam(tempModel,'lb',exchRxns(i),0);
-    tempModel = setParam(tempModel,'ub',exchRxns(i),0);
+    tempModel = setParam(tempModel,'ub',exchRxns(i),1000);
+    tempModel = setParam(tempModel,'lb',O2_ex,0);
+    tempModel = setParam(tempModel,'ub',O2_ex,0);
     sol = solveLP(tempModel);
-    fprintf("Growth without rxn = %g\n",sol.f);
-    disp(exchRxns(i))
+    if abs(sol.f)<=1E-6
+        disp('Essential component')
+        fprintf("Growth without rxn = %g\n",sol.f);
+        disp(exchNames(i))
+    end
     tempModel = setParam(tempModel,'lb',exchRxns(i),-1000);
     tempModel = setParam(tempModel,'ub',exchRxns(i),1000);
   %  end
@@ -119,21 +125,79 @@ end
 %We can try choosing 2 values at random
 r = rand(length(exchRxns))
 
-
-for i = 1:length(exchRxns)
-    tempModel = setParam(tempModel,'lb',exchRxns(i),0);
-    tempModel = setParam(tempModel,'ub',exchRxns(i),0);
+msize = numel(exchRxns);
+exchRxns(randperm(msize, 2))
+i = 0;
+while i<=1000 
+    tempModel = setParam(tempModel,'lb',exchRxns,-1000);
+    x = exchRxns(randperm(msize, 2));
+    tempModel = setParam(tempModel,'lb',x(1),0);
+     tempModel = setParam(tempModel,'lb',x(2),0);
+    tempModel = setParam(tempModel,'ub',x(2),1000);
+    tempModel = setParam(tempModel,'ub',x(1),1000);
+    tempModel = setParam(tempModel,'lb',O2_ex,0);
+    tempModel = setParam(tempModel,'ub',O2_ex,0);
     sol = solveLP(tempModel);
-    fprintf("Growth without rxn = %g\n",sol.f);
-    disp(exchRxns(i))
+    if abs(sol.f)<=1E-6
+        disp('Essential component')
+        fprintf("Growth without rxn = %g\n",sol.f);
+        index = find(strcmp(exchRxns,x(1)));
+        disp(exchNames(index))
+        index = find(strcmp(exchRxns,x(2)));
+        disp(exchNames(index))
+    end
     %print(exchRxns(i), sol.f)
-    tempModel = setParam(tempModel,'lb',exchRxns(i),-1000);
-    tempModel = setParam(tempModel,'ub',exchRxns(i),1000);
+    tempModel = setParam(tempModel,'lb',x(1),-1000);
+    tempModel = setParam(tempModel,'lb',x(2),-1000);
+    i =i+1;
 end
+%Hard to get any conclusions
 
-
-
-
-fprintf(fid,'EXCHANGE FLUXES:\n');
-
-
+%Let's block component by component (in a cumulative way) and save those
+%exchanges that when blocked tje growth rate is reduced
+tempModel = setParam(tempModel,'lb',exchRxns,-1000);
+tempModel = setParam(tempModel,'ub',exchRxns,1000);
+tempModel = setParam(tempModel,'lb',O2_ex,0);
+tempModel = setParam(tempModel,'ub',O2_ex,0);
+model2    = tempModel;
+sol = solveLP(tempModel);
+growth = abs(sol.f);
+essentialExchs = [];
+allGrowthRates = [];
+essential = {'r_1654'; ... % ammonium exchange
+                    'r_1992'; ... % oxygen exchange
+                    'r_2005'; ... % phosphate exchange
+                    'r_2060'; ... % sulphate exchange
+                    'r_1861'; ... % iron exchange, for test of expanded biomass def
+                    'r_1832'; ... % hydrogen exchange
+                    'r_2100'; ... % water exchange
+                    'r_4593'; ... % chloride exchange
+                    'r_4595'; ... % Mn(2+) exchange
+                    'r_4596'; ... % Zn(2+) exchange
+                    'r_4597'; ... % Mg(2+) exchange
+                    'r_2049'; ... % sodium exchange
+                    'r_4594'; ... % Cu(2+) exchange
+                    'r_4600'; ... % Ca(2+) exchange
+                    'r_2020'; ...  % potassium exchange
+                    'r_4062'; ...
+                    'r_4064'};  
+[~,iB] = ismember(essential,exchRxns);
+%exchRxns(iB) = {};
+for i=1:length(exchRxns)
+    if ~ismember(exchRxns{i},essential)
+    tempModel = setParam(tempModel,'lb',exchRxns(i),0);
+    sol = solveLP(tempModel);
+    if abs(sol.f)<growth
+        fprintf("Growth without rxn = %g\n",sol.f);
+        disp(exchNames(i))
+    end
+    end
+        growth = abs(sol.f);
+    if ~isempty(growth)
+        allGrowthRates = [allGrowthRates; growth];
+    else
+        allGrowthRates = [allGrowthRates; NaN];
+    end
+end
+t = table(exchRxns,exchNames,allGrowthRates);
+writetable(t,'../results/growthRates_exchRxns.txt','delimiter','\t')

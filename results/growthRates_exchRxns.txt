@@ -1,0 +1,251 @@
+exchRxns	exchNames	allGrowthRates
+r_1542	(1->3)-beta-D-glucan exchange	98.5014202665279
+r_1545	(R)-carnitine exchange	98.5014202665279
+r_1546	(R)-lactate exchange	98.5014202665279
+r_1547	(R)-mevalonate exchange	98.5014202665279
+r_1548	(R)-pantothenate exchange	98.5014202665279
+r_1549	(R,R)-2,3-butanediol exchange	98.5014202665279
+r_1550	(S)-3-methyl-2-oxopentanoate exchange	98.5014202665279
+r_1551	(S)-lactate exchange	98.5014202665279
+r_1552	(S)-malate exchange	98.5014202665279
+r_1553	1-(sn-glycero-3-phospho)-1D-myo-inositol exchange	98.5014202665279
+r_1554	1-acylglycerophosphocholine exchange	98.5014202665279
+r_1563	2'-deoxyadenosine exchange	98.5014202665279
+r_1564	2'-deoxyguanosine exchange	98.5014202665279
+r_1565	2'-deoxyinosine exchange	98.5014202665279
+r_1566	2'-deoxyuridine exchange	98.5014202665279
+r_1572	2-isopropylmalate exchange	98.5014202665279
+r_1577	2-methylbutanal exchange	98.5014202665279
+r_1580	2-methylbutanol exchange	98.5014202665279
+r_1581	2-methylbutyl acetate exchange	98.5014202665279
+r_1586	2-oxoglutarate exchange	98.5014202665279
+r_1589	2-phenylethanol exchange	98.5014202665279
+r_1598	3-methylbutanal exchange	98.5014202665279
+r_1604	4-aminobenzoate exchange	98.5014202665279
+r_1621	5-aminolevulinate exchange	98.5014202665279
+r_1625	5-formyltetrahydrofolic acid exchange	98.5014202665279
+r_1627	7,8-diaminononanoate exchange	98.5014202665279
+r_1629	8-amino-7-oxononanoate exchange	98.5014202665279
+r_1630	9H-xanthine exchange	98.5014202665279
+r_1631	acetaldehyde exchange	98.5014202665279
+r_1634	acetate exchange	98.4985768978443
+r_1639	adenine exchange	98.4985768978443
+r_1641	adenosine 3',5'-bismonophosphate exchange	98.4985768978443
+r_1643	adenosine exchange	98.4985768978443
+r_1648	allantoate exchange	98.4985768978443
+r_1649	allantoin exchange	98.4985768978443
+r_1650	trehalose exchange	98.2386549140833
+r_1651	alpha-D-glucosamine 6-phosphate exchange	98.2386549140833
+r_1654	ammonium exchange	98.2386549140833
+r_1663	bicarbonate exchange	98.2386549140833
+r_1671	biotin exchange	98.2386549140833
+r_1672	carbon dioxide exchange	98.2386549140833
+r_1683	choline exchange	98.2386549140833
+r_1687	citrate exchange	98.2386549140833
+r_1702	cytidine exchange	98.2386549140833
+r_1705	cytosine exchange	98.2386549140833
+r_1706	D-arabinose exchange	98.2386549140833
+r_1709	D-fructose exchange	98.2386549140833
+r_1710	D-galactose exchange	98.2254153987381
+r_1711	D-galacturonate exchange	98.2254153987381
+r_1712	D-glucitol exchange	98.2254153987381
+r_1714	D-glucose exchange	97.9423308906166
+r_1715	D-mannose exchange	97.9423308906166
+r_1716	D-ribose exchange	97.9423308906166
+r_1718	D-xylose exchange	97.9423308906166
+r_1727	decanoate exchange	97.9423308906166
+r_1730	deoxycytidine exchange	97.9423308906166
+r_1749	dTTP exchange	97.9390629920576
+r_1753	episterol exchange	97.9390629920576
+r_1757	ergosterol exchange	97.9390629920576
+r_1761	ethanol exchange	97.9390629920576
+r_1764	ethanolamine exchange	97.9390629920576
+r_1765	ethyl acetate exchange	97.9390629920576
+r_1788	fecosterol exchange	97.9390629920576
+r_1791	FMN exchange	97.9390629920576
+r_1792	folic acid exchange	97.9390629920576
+r_1793	formate exchange	97.9390629920576
+r_1798	fumarate exchange	96.5116148326883
+r_1800	gamma-aminobutyrate exchange	96.5116148326883
+r_1806	glutathione disulfide exchange	96.5116148326883
+r_1807	glutathione exchange	96.5116148326883
+r_1808	glycerol exchange	96.5116148326883
+r_1810	L-glycine exchange	96.5116148326883
+r_1814	glycolaldehyde exchange	96.5116148326883
+r_1815	glyoxylate exchange	96.5116148326883
+r_1818	guanine exchange	96.5116148326883
+r_1820	guanosine exchange	96.4951882099228
+r_1832	H+ exchange	96.4951882099228
+r_1834	hexadecanal exchange	96.4951882099228
+r_1841	hypoxanthine exchange	96.4951882099228
+r_1843	indol-3-ylacetaldehyde exchange	96.4951882099228
+r_1847	inosine exchange	92.7490405271637
+r_1861	iron(2+) exchange	92.7490405271637
+r_1862	isoamyl acetate exchange	92.7490405271637
+r_1865	isoamylol exchange	92.7490405271637
+r_1866	isobutanol exchange	92.7490405271637
+r_1867	isobutyl acetate exchange	92.7490405271637
+r_1870	isobutyraldehyde exchange	92.7490405271637
+r_1873	L-alanine exchange	92.7490405271637
+r_1875	L-arabinitol exchange	92.7490405271637
+r_1878	L-arabinose exchange	92.7490405271637
+r_1879	L-arginine exchange	92.7490405271637
+r_1880	L-asparagine exchange	92.7252793531097
+r_1881	L-aspartate exchange	92.7252793531097
+r_1883	L-cysteine exchange	92.7252793531097
+r_1886	L-glucitol exchange	92.7252793531098
+r_1889	L-glutamate exchange	92.7252793531097
+r_1891	L-glutamine exchange	92.7252793531097
+r_1893	L-histidine exchange	92.7252793531097
+r_1896	L-homoserine exchange	92.7252793531097
+r_1897	L-isoleucine exchange	92.7252793531097
+r_1899	L-leucine exchange	92.7252793531097
+r_1900	L-lysine exchange	92.1622481553889
+r_1902	L-methionine exchange	92.1622481553889
+r_1903	L-phenylalanine exchange	91.7668890098428
+r_1904	L-proline exchange	91.7668890098428
+r_1906	L-serine exchange	85.7525302854624
+r_1909	L-sorbose exchange	85.7525302854624
+r_1911	L-threonine exchange	84.8564359295447
+r_1912	L-tryptophan exchange	84.7296449623993
+r_1913	L-tyrosine exchange	84.6167941988679
+r_1914	L-valine exchange	84.4293702292994
+r_1915	lanosterol exchange	84.4293702292994
+r_1916	laurate exchange	84.4293702292994
+r_1931	maltose exchange	84.4293702292994
+r_1947	myo-inositol exchange	84.4293702292994
+r_1952	N,N'-diformyldityrosine exchange	84.4293702292994
+r_1967	nicotinate exchange	84.4293702292994
+r_1968	NMN exchange	84.4293702292994
+r_1984	octanoate exchange	84.4293702292994
+r_1987	ornithine exchange	81.5271812555925
+r_1989	oxaloacetate(2-) exchange	81.5271812555925
+r_1992	oxygen exchange	81.5271812555925
+r_1993	palmitate exchange	81.5271812555925
+r_1994	palmitoleate exchange	81.5271812555925
+r_1999	pectin exchange	81.5271812555925
+r_2000	phenethyl acetate exchange	81.5271812555925
+r_2001	phenylacetaldehyde exchange	81.4226957183425
+r_2005	phosphate exchange	81.4226957183425
+r_2020	potassium exchange	81.4226957183425
+r_2024	putrescine exchange	81.4226957183428
+r_2028	pyridoxine exchange	81.4226957183428
+r_2033	pyruvate exchange	80.4153545850093
+r_2038	riboflavin exchange	80.4153545850093
+r_2043	S-adenosyl-L-methionine exchange	75.7286095040408
+r_2044	S-methyl-L-methionine exchange	75.7286095040408
+r_2046	sn-glycero-3-phosphocholine exchange	75.7286095040408
+r_2049	sodium exchange	75.7286095040408
+r_2051	spermidine exchange	75.7286095040408
+r_2052	spermine exchange	75.7286095040408
+r_2055	stearate exchange	75.7286095040408
+r_2056	succinate exchange	75.6200319890013
+r_2058	sucrose exchange	75.6200319890013
+r_2060	sulphate exchange	75.6200319890013
+r_2061	sulphite exchange	75.6200319890013
+r_2062	taurine exchange	75.6200319890013
+r_2066	thiamine(1+) diphosphate(1-) exchange	75.6200319890013
+r_2067	thiamine(1+) exchange	75.6200319890013
+r_2068	thiamine(1+) monophosphate exchange	75.6200319890013
+r_2073	thymidine exchange	75.6164816804639
+r_2083	tryptophol exchange	75.6164816804639
+r_2090	uracil exchange	75.6164816804639
+r_2091	urea exchange	75.6164816804639
+r_2092	uridine exchange	75.6164816804639
+r_2100	water exchange	75.6164816804639
+r_2102	xanthosine exchange	75.6164816804639
+r_2104	xylitol exchange	75.6164816804639
+r_2106	zymosterol exchange	75.6164816804639
+r_2111	growth	75.6164816804639
+r_2134	14-demethyllanosterol exchange	75.6164816804639
+r_2137	ergosta-5,7,22,24(28)-tetraen-3beta-ol exchange	75.6164816804639
+r_2187	butyrate exchange	75.6164816804639
+r_2188	hexanoate exchange	75.6164816804639
+r_2189	oleate exchange	75.6164816804639
+r_2193	myristate exchange	75.6164816804639
+r_4043	raffinose exchange	74.791160896786
+r_4044	melibiose exchange	74.791160896786
+r_4062	lipid backbone exchange	74.791160896786
+r_4064	lipid chain exchange	74.791160896786
+r_4442	cysteamine exchange	74.791160896786
+r_4494	methanol exchange	73.0865642792255
+r_4496	Ala-Gly exchange	73.0865642792255
+r_4497	3-oxalomalate(3-) exchange	68.9927216733774
+r_4498	6-O-alpha-D-glucopyranosyl-D-fructofuranose exchange	68.9927216733774
+r_4499	5-dehydro-D-gluconate exchange	68.9927216733774
+r_4500	D-tagatose exchange	68.9927216733774
+r_4501	turanose exchange	68.9927216733774
+r_4502	D-glucose 6-phosphate exchange	68.9927216733774
+r_4503	alpha-maltotriose exchange	68.9927216733774
+r_4504	D-glucose 1-phosphate exchange	68.9512054045088
+r_4505	methyl alpha-D-glucopyranoside exchange	68.9512054045088
+r_4506	D-Glucosamine exchange	68.9512054045088
+r_4507	glycerone exchange	68.9512054045088
+r_4508	Ala-Gln exchange	68.9448816484368
+r_4509	Ala-Leu exchange	68.4682935187624
+r_4510	Gly-Gln exchange	68.3022216452635
+r_4511	Ala-His exchange	67.949804502607
+r_4512	Gly-Asn exchange	67.7305215643275
+r_4513	Ala-Glu exchange	67.5457818355725
+r_4514	Gly-Met exchange	67.5457818355725
+r_4515	Ala-Asp exchange	67.1750394896016
+r_4516	Gly-Glu exchange	66.7575617240066
+r_4517	Ala-Thr exchange	59.5382668616119
+r_4518	Met-Ala exchange	59.5382668616119
+r_4519	L-citrulline exchange	59.3394573408275
+r_4520	2-aminobutanoate exchange	59.1230039398296
+r_4521	choline phosphate exchange	59.1230039398296
+r_4522	glycerol 1-phosphate exchange	59.1230039398296
+r_4523	2-phospho-D-glyceric acid exchange	59.1230039398296
+r_4524	GMP exchange	59.099848438489
+r_4525	3-phospho-serine exchange	55.2497313010462
+r_4526	O-phosphonatooxy-D-serine(2-) exchange	55.2497313010462
+r_4527	diphosphate exchange	55.2497313010462
+r_4528	triphosphate exchange	55.2497313010463
+r_4529	phosphoenolpyruvate exchange	55.2217157250285
+r_4530	N(omega)-phospho-L-arginine exchange	48.2279124107172
+r_4531	carbamoyl phosphate exchange	47.8823014356665
+r_4532	O-phosphoethanolamine exchange	47.8823014356665
+r_4533	cysteamine S-phosphate exchange	47.8823014356664
+r_4534	guanosine 2'-monophosphate exchange	47.8823014356665
+r_4535	glycerol 2-phosphate(2-) exchange	47.8823014356665
+r_4536	3'-GMP exchange	47.8723439837379
+r_4537	2-phosphoglycolate exchange	47.6930066522016
+r_4538	6-phospho-D-gluconate exchange	46.3155592740315
+r_4539	D-mannose 6-phosphate exchange	46.2001233512717
+r_4540	2',3'-cyclic GMP exchange	46.1363768075728
+r_4541	O(4)-phospho-L-tyrosine exchange	46.0200751463522
+r_4542	O-phospho-L-threonine exchange	44.6602610321086
+r_4543	3-phosphonato-D-glycerate(3-) exchange	38.6127821174529
+r_4544	adenosine 2'-phosphate exchange	38.6127821174528
+r_4545	3'-AMP exchange	38.6127821174528
+r_4546	2',3'-cyclic AMP exchange	38.6127821174528
+r_4547	D-mannose 1-phosphate exchange	28.5624968506502
+r_4548	AMP exchange	21.2455540246689
+r_4549	N(alpha)-acetyl-L-methionine exchange	21.2455540246688
+r_4550	L-Methionine S-oxide exchange	18.7721869802298
+r_4551	3-sulfino-L-alanine exchange	18.7721869802283
+r_4552	N-acetyl-L-cysteine exchange	18.7719201866368
+r_4553	L-cysteate exchange	18.6052300990656
+r_4554	2-hydroxyethane-1-sulfonate exchange	18.6052300990657
+r_4555	acetoacetate exchange	18.6052300990657
+r_4556	N-acetyl-L-glutamate exchange	16.9821121040405
+r_4557	UMP exchange	16.9667663754841
+r_4558	CMP exchange	16.9562148514704
+r_4559	thymidine 5'-monophosphate exchange	16.9562148514704
+r_4560	thymidine 3'-monophosphate exchange	16.8889799713298
+r_4561	cytidine 2'-phosphate exchange	16.8854989499174
+r_4562	uridine 2'-phosphate exchange	16.8854989499171
+r_4563	3'-UMP exchange	16.881426932427
+r_4564	2',3'-cyclic CMP exchange	16.8518035823819
+r_4565	2',3'-cyclic UMP exchange	0
+r_4593	chloride exchange	0
+r_4594	Cu2(+) exchange	0
+r_4595	Mn(2+) exchange	0
+r_4596	Zn(2+) exchange	0
+r_4597	Mg(2+) exchange	0
+r_4598	cofactor pseudoreaction	0
+r_4600	Ca(2+) exchange	0
+r_5234	Mannitol exchange	0
+r_5236	N-Acetyl-D-glucosamine exchange	0
+lac_ex	lactose exchange	NaN
