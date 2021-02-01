@@ -81,6 +81,7 @@ printFluxes(tempModel,sol.x)
 %see if this is still the case
 [a,b]= getExchangeRxns(tempModel);
 exchNames = tempModel.rxnNames(b);
+exchRxns = tempModel.rxns(b);
 tempModel.lb(b) = -1000;
 %close oxygen
 %Block oxygen exchange
@@ -89,3 +90,50 @@ tempModel = setParam(tempModel,'ub',O2_ex,0);
 
 sol = solveLP(tempModel)
 printFluxes(tempModel,sol.x)
+%There seems to be anaerobic growth if we open all of the exchange reactions
+%Now, we will close each reaction separately to see which affect growth rate.
+
+%toBlock = [];
+%for i = 1:length(sol.x)
+ %   if sol.x(i) < 0
+  %      toBlock(i) = sol.x(i);
+   % else
+        
+   % end
+%end
+%toBlock
+
+for i = 1:length(exchRxns)
+    %if sol.x(i)<0
+     %   exchRxns(i)
+    tempModel = setParam(tempModel,'lb',exchRxns(i),0);
+    tempModel = setParam(tempModel,'ub',exchRxns(i),0);
+    sol = solveLP(tempModel);
+    fprintf("Growth without rxn = %g\n",sol.f);
+    disp(exchRxns(i))
+    tempModel = setParam(tempModel,'lb',exchRxns(i),-1000);
+    tempModel = setParam(tempModel,'ub',exchRxns(i),1000);
+  %  end
+end
+
+%We can try choosing 2 values at random
+r = rand(length(exchRxns))
+
+
+for i = 1:length(exchRxns)
+    tempModel = setParam(tempModel,'lb',exchRxns(i),0);
+    tempModel = setParam(tempModel,'ub',exchRxns(i),0);
+    sol = solveLP(tempModel);
+    fprintf("Growth without rxn = %g\n",sol.f);
+    disp(exchRxns(i))
+    %print(exchRxns(i), sol.f)
+    tempModel = setParam(tempModel,'lb',exchRxns(i),-1000);
+    tempModel = setParam(tempModel,'ub',exchRxns(i),1000);
+end
+
+
+
+
+fprintf(fid,'EXCHANGE FLUXES:\n');
+
+
