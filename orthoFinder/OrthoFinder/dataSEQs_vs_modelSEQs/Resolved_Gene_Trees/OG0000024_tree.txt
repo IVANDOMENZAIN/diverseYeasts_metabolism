@@ -1,0 +1,1 @@
+((model_Cint_Seq_3940:0.176546,data_Cint_SGZ46321.1:0.0383314)n1:0.213736,((model_Cint_Seq_5235:0,data_Cint_SGZ52449.1:0)n3:0.39124,(data_Cint_SGZ47714.1:0.0498905,model_Cint_Seq_3713:0.15469)n4:0.534371)n2:0.213736)n0;
