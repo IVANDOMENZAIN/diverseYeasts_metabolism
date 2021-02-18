@@ -23,7 +23,7 @@ xyl = startsWith(samples,'X20_');
 
 samplesPos = [glu; cel; gal; lac; xyl];
 
-conditions = {'glc' 'cel' 'gal' 'lac' 'xyl'};
+conditions = {'glu' 'cel' 'gal' 'lac' 'xyl'};
 %Get only the counts from the RNAseq data
 rawCountsNum = rawCounts{:,3:end};
 %Let's plot all the reads in the samples as boxplots
@@ -108,37 +108,42 @@ hold off
 
 %pick one of the four _Csrc condition that you would like to compare to
 %the control
-normCounts_Csrc  = normCounts(:,lac);
-normCountsref    = normCounts(:,glu);
-
-%Perform the test for differential expression using a negative binomial model
-tLocal = nbintest(normCountsref,normCounts_Csrc,'VarianceLink','LocalRegression');
-% correct for multiple testing using the Benjamini Hochberg correction
-padj = mafdr(tLocal.pValue,'BHFDR',true);
-
-%create overview table of the results including the mean for both
-%conditions, the resulting log2 fold change and the calculated pValue 
-meanRef    = mean(normCountsref,2);
-mean_Csrc = mean(normCounts_Csrc,2);
-log2FC     = log2(mean_Csrc./meanRef);
-geneTable  = table(rawCounts.geneNames, meanRef,mean_Csrc,log2FC,tLocal.pValue,padj);
-%Add row and column names
-geneTable.Properties.RowNames      = rawCounts.genes;
-geneTable.Properties.VariableNames = {'geneNames' 'Mean_Ref','Mean__Csrc','Log2_FC','pVal','adjPVal'};
-
-%create a Volcano Plot for visual inspection of the data
-thresholds = [2 3];
-
-scatter(geneTable.Log2_FC,-log10(geneTable.adjPVal),30,'fill')
-DEgenesPos = abs(geneTable.Log2_FC)>thresholds(1) & -log10(geneTable.adjPVal)>thresholds(2);
-DEgenesDown = (geneTable.Log2_FC)<-thresholds(1) & -log10(geneTable.adjPVal)>thresholds(2);
-DEgenesUp = (geneTable.Log2_FC)>thresholds(1) & -log10(geneTable.adjPVal)>thresholds(2);
-disp(['There are ' num2str(sum(DEgenesPos)) ' DE genes, from which ' num2str(sum(DEgenesDown)) ' are dReg and ' num2str(sum(DEgenesDUp)) ' are upReg'])
-
-scatter(geneTable.Log2_FC,-log10(geneTable.adjPVal),30,'fill')
-mkdir('../results/RNA_DE_analysis')
-writetable(geneTable,'../results/RNA_DE_analysis/RNA_DE_glc_vs_lac.txt','delimiter','\t','QuoteStrings',false)
-
+for j = 1:length(conditions)
+    cond = conditions{j};
+    if ~strcmpi(cond,'glu')
+        disp(cond)
+        normCounts_Csrc  = normCounts(:,samplesPos(j,:));
+        normCountsref    = normCounts(:,samplesPos(1,:));
+        
+        %Perform the test for differential expression using a negative binomial model
+        tLocal = nbintest(normCountsref,normCounts_Csrc,'VarianceLink','LocalRegression');
+        % correct for multiple testing using the Benjamini Hochberg correction
+        padj = mafdr(tLocal.pValue,'BHFDR',true);
+        
+        %create overview table of the results including the mean for both
+        %conditions, the resulting log2 fold change and the calculated pValue
+        meanRef    = mean(normCountsref,2);
+        mean_Csrc = mean(normCounts_Csrc,2);
+        log2FC     = log2(mean_Csrc./meanRef);
+        geneTable  = table(rawCounts.geneNames, meanRef,mean_Csrc,log2FC,tLocal.pValue,padj);
+        %Add row and column names
+        geneTable.Properties.RowNames      = rawCounts.genes;
+        geneTable.Properties.VariableNames = {'geneNames' 'Mean_Ref','Mean__Csrc','Log2_FC','pVal','adjPVal'};
+        
+        %create a Volcano Plot for visual inspection of the data
+        thresholds = [2 3];
+        
+        scatter(geneTable.Log2_FC,-log10(geneTable.adjPVal),30,'fill')
+        DEgenesPos = abs(geneTable.Log2_FC)>thresholds(1) & -log10(geneTable.adjPVal)>thresholds(2);
+        DEgenesDown = (geneTable.Log2_FC)<-thresholds(1) & -log10(geneTable.adjPVal)>thresholds(2);
+        DEgenesUp = (geneTable.Log2_FC)>thresholds(1) & -log10(geneTable.adjPVal)>thresholds(2);
+        disp(['There are ' num2str(sum(DEgenesPos)) ' DE genes, from which ' num2str(sum(DEgenesDown)) ' are dReg and ' num2str(sum(DEgenesUp)) ' are upReg'])
+        disp(' ')
+        scatter(geneTable.Log2_FC,-log10(geneTable.adjPVal),30,'fill')
+        mkdir('../results/RNA_DE_analysis')
+        writetable(geneTable,['../results/RNA_DE_analysis/RNA_DE_glu_vs_' cond '.txt'],'delimiter','\t','QuoteStrings',false,'WriteRowNames',true)
+    end
+end
 % 
 % %%%Step 4: First analysis of DE genes
 % 
