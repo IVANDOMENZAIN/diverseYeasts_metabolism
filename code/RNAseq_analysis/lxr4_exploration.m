@@ -57,6 +57,7 @@ lxr4Rxns = find(contains(model.grRules,'Seq_2272'));
 %uniprot for its cerevisiae orthologues.
 %Let's correct gene association for the lxr4 rxns (oxi/red pathway) in the model
 try
+    idx = find(contains(model.orthologues,'G0RNA2'));
     idx = find(contains(model.grRules,'G0RNA2'));
     %correct gene association 
     model.grRules{idx} = 'Candida_intermedia@Seq_2272';
@@ -70,6 +71,11 @@ model.grRules = grRules;
 model.rxnGeneMat = rxnGeneMat;
 model.genes = model.genes(1:(end-1));
 %Update model 
+model.orthologues = model.orthologues(1:(end-1));
+model.proteins = model.proteins(1:(end-1));
+idx = find(strcmpi(model.genes,'Candida_intermedia@Seq_2272'));
+model.geneShortNames(idx) = {'lxr4'};
+model.geneShortNames = model.geneShortNames(1:(end-1));
 save('../../models/candida_intermedia/cintGEM_oxido.mat','model')
 
 

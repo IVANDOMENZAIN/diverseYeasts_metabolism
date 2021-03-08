@@ -6,16 +6,16 @@
 
 
 %load the model
-load('/Users/ramana/Documents/GitHub/diverseYeasts_metabolism/models/candida_intermedia/cintGEM_oxido.mat');
+load('../models/candida_intermedia/cintGEM_oxido.mat');
 model.genes = strrep(model.genes,'Candida_intermedia@','');
 %import the orthologue_unassigned genes file
-Y = readtable('/Users/ramana/Documents/GitHub/diverseYeasts_metabolism/orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups_UnassignedGenes.txt','delimiter','\t');
+%Y = readtable('../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups_UnassignedGenes.txt','delimiter','\t');
 %Checking the unassigned genes vs the genes in the model
-unassigned_genes = Y.model_Cint(~cellfun(@isempty,Y.model_Cint));
-C = find(ismember(model.genes,unassigned_genes));
+%unassigned_genes = Y.model_Cint(~cellfun(@isempty,Y.model_Cint));
+%C = find(ismember(model.genes,unassigned_genes));
 
 %checking the presence of the unassigned genes in the orthogroups
-orthogroups = readtable('/Users/ramana/Documents/GitHub/diverseYeasts_metabolism/orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
+orthogroups = readtable('../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
 [presence,idxs] = ismember(model.genes,orthogroups.model_Cint);
 % it works!
 idxs2 = find(presence);
@@ -23,4 +23,4 @@ idxs = idxs(presence);
 model.orthologues = model.genes;
 model.orthologues(idxs2) = orthogroups.data_Cint(idxs);
 
-save('/Users/ramana/Documents/GitHub/diverseYeasts_metabolism/models/candida_intermedia/cintGEM_oxido.mat','model');
+save('../models/candida_intermedia/cintGEM_oxido.mat','model');
