@@ -9,7 +9,7 @@
 %%%Step 1: Load RNAseq Data and normalize the data
 
 %Load RNAseq data
-rawCounts = readtable('../data/RNAseq/normalized_counts.txt','delimiter','\t');
+rawCounts = readtable('../../data/RNAseq/normalized_counts.txt','delimiter','\t');
 
 %Create logical vectors for easy access of the different conditions
 %now rawCounts(:,HiT) outputs only the three columns with the data for
@@ -141,7 +141,7 @@ for j = 1:length(conditions)
         disp(' ')
         scatter(geneTable.Log2_FC,-log10(geneTable.adjPVal),30,'fill')
         mkdir('../results/RNA_DE_analysis')
-        writetable(geneTable,['../results/RNA_DE_analysis/RNA_DE_glu_vs_' cond '.txt'],'delimiter','\t','QuoteStrings',false,'WriteRowNames',true)
+        writetable(geneTable,['../../results/RNA_DE_analysis/RNA_DE_glu_vs_' cond '.txt'],'delimiter','\t','QuoteStrings',false,'WriteRowNames',true)
     end
 end
 % 
