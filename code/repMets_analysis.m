@@ -2,6 +2,12 @@
 
 %load model 
 load('../models/candida_intermedia/cintGEM_oxido.mat')
+%Correct model grRules
+model.grRules = strrep(model.grRules,'Candida_intermedia@','');
+[grRules,rxnGeneMat] = standardizeGrRules(model,false);
+model.grRules = grRules;
+model.rxnGeneMat = rxnGeneMat;
+
 cSources = {'gal' 'lac' 'cel' 'xyl'};
 mkdir('../results/reporter_metabolites')
 for cSource=cSources
