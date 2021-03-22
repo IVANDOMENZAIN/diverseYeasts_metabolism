@@ -29,6 +29,7 @@ sol1 = solveLP(model,1);
 printFluxes(model,sol1.x)
 % Introduce changes to the model
 model_oxido = addGenesRaven(model,genesToAdd);
+model_oxido.proteins = [model_oxido.proteins; genesToAdd.genes'];
 model_oxido = addRxns(model_oxido,rxnsToAdd,3);
 %Evaluate if rxn can carry flux
 I  = haveFlux(model_oxido,1E-6,'ald_red_NADPH');
