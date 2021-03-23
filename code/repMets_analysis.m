@@ -8,10 +8,14 @@ model.grRules = strrep(model.grRules,'Candida_intermedia@','');
 model.grRules = grRules;
 model.rxnGeneMat = rxnGeneMat;
 
-
 cSources = {'gal' 'lac' 'cel' 'xyl'};
 mkdir('../results/reporter_metabolites')
 multiDim_data = table();
+
+%Exclude highly connected Mets
+toExclude = {'carbon dioxide' 'ATP' 'ADP' 'AMP' 'phosphate' 'diphosphate' 'H+' ...
+             'CMP' 'GDP' 'GTP' 'H2O' 'CTP' 'coenzyme A'};
+
 for cSource=cSources
     %load data
     str = cSource{1};
@@ -32,5 +36,5 @@ for cSource=cSources
     
     %Run reporter metabolites analysis!
     outputFile      = ['../results/reporter_metabolites/repMets_glu_vs_' str '.txt'];
-    repMets=get_repMets(model,genes,genePvalues,true,outputFile,geneFoldChanges);
-end 
+    repMets=get_repMets(model,genes,genePvalues,toExclude,true,outputFile,geneFoldChanges);
+end    
