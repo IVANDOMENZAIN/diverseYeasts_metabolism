@@ -8,8 +8,10 @@ model.grRules = strrep(model.grRules,'Candida_intermedia@','');
 model.grRules = grRules;
 model.rxnGeneMat = rxnGeneMat;
 
+
 cSources = {'gal' 'lac' 'cel' 'xyl'};
 mkdir('../results/reporter_metabolites')
+multiDim_data = table();
 for cSource=cSources
     %load data
     str = cSource{1};
@@ -17,7 +19,12 @@ for cSource=cSources
     disp(' ')
     DEresults = readtable(['../results/RNA_DE_analysis/RNA_DE_glu_vs_' str '.txt'],'delimiter','\t');
     DEmapping = readtable(['../results/RNA_DE_analysis/RNA_2_model_glu_vs_' str '.txt'],'delimiter','\t');
-    
+    %
+    if isempty(multiDim_data)
+        multiDim_data.genes = DEmapping.modelGenes;
+    end
+    eval(['multiDim_data.pVal_' str '=DEmapping.adjPval;'])
+        
     %prepare inputs for the rep mets function
     genes           = DEmapping.modelGenes;
     genePvalues     = DEmapping.adjPval;
@@ -25,5 +32,5 @@ for cSource=cSources
     
     %Run reporter metabolites analysis!
     outputFile      = ['../results/reporter_metabolites/repMets_glu_vs_' str '.txt'];
-    repMets=reporterMetabolites(model,genes,genePvalues,true,outputFile,geneFoldChanges);
-end
+    repMets=get_repMets(model,genes,genePvalues,true,outputFile,geneFoldChanges);
+end 
