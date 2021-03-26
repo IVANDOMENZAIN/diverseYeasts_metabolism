@@ -8,7 +8,7 @@ load('../models/candida_intermedia/cint_leloir.mat')
 %introducing the oxidoreductive pathway reactions from A.
 %niger/A.nidulans/T.reesei. Reference:﻿﻿10.1074/jbc.M112.372755
 newRxns = {'D-galactose[c] + NADPH[c] => galactitol[c] + NADP(+)[c]'... 
-           'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> L-sorbose[c] + NADP(+)[c]'};...
+           'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> D-glucitol[c] + NADP(+)[c]'};...
            %'D-Fructose[c] + ATP[c] <=> D-Fructose-6-Phosphate[c] + ADP[c]'};
 rxnsToAdd.equations = newRxns;
 
@@ -25,7 +25,7 @@ genesToAdd.geneShortNames = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};
 rxnsToAdd.grRules         = {'xyl1 or xyl1_2 or xyl1_3' 'G0RNA2'};
 %LEt's evaluate biomass production before integrating the pathway
 model = changeMedia(model,'lac_ex',1);
-sol1 = solveLP(model,1);
+sol1  = solveLP(model,1);
 printFluxes(model,sol1.x)
 % Introduce changes to the model
 model_oxido = addGenesRaven(model,genesToAdd);
