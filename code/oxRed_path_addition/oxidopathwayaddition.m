@@ -1,5 +1,12 @@
-%explore lactose metbolism in C. intermedia model
-load('../models/candida_intermedia/cint_leloir.mat')
+% This script introduces the oxido-reductive pathway into the CintGEM
+% growth capabilities on lactose are compared between a WT and
+% leloir-deletion mutant. Resulting model is saved in ../../models/candida_intermedia/
+% as:   cintGEM_oxido.mat
+%
+% Last edited: Ivan Domenzain 2021-04-12
+
+current = pwd;
+load('../../models/candida_intermedia/cint_leloir.mat')
 
 %Adding reactions from aspergillus niger oxidoreductive pathway. Reference:
 %10.1016/j.fbr.2007.02.006
@@ -24,8 +31,9 @@ genesToAdd.genes          = {'xyl1' 'xyl1_2' 'xyl1_3' 'G0RNA2'};
 genesToAdd.geneShortNames = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};  
 rxnsToAdd.grRules         = {'xyl1 or xyl1_2 or xyl1_3' 'G0RNA2'};
 %LEt's evaluate biomass production before integrating the pathway
+cd ..
 model = changeMedia(model,'lac_ex',1);
-sol1 = solveLP(model,1);
+sol1  = solveLP(model,1);
 printFluxes(model,sol1.x)
 % Introduce changes to the model
 model_oxido = addGenesRaven(model,genesToAdd);
@@ -75,6 +83,7 @@ writetable(t,'../results/lactose_pathways_comparison_Cint.txt','delimiter','\t',
 %Compare flux distributions using a RAVEN built-in function
 clc
 followChanged(model_oxido,[sol1.x; 0; 0],sol3.x,5E-1, 1E-6, 1E-8, {'ATP'})
+
 % Kamesh has shared that xyl1 displays cofactor cofactor promiscuity, let's
 % add this to the model
 % Define reaction names
@@ -107,3 +116,4 @@ model.lb(index)  = 0;
 model.ub(index)  = 1000;
 %save model (oxido-reductive pathway)
 save('../models/candida_intermedia/cintGEM_oxido.mat','model')
+cd(current)
