@@ -76,6 +76,11 @@ model.proteins = model.proteins(1:(end-1));
 idx = find(strcmpi(model.genes,'Candida_intermedia@Seq_2272'));
 model.geneShortNames(idx) = {'lxr4'};
 model.geneShortNames = model.geneShortNames(1:(end-1));
+%Correct grRules and rxnGEneMat
+model.grRules = strrep(model.grRules,'Candida_intermedia@','');
+[grRules,rxnGeneMat] = standardizeGrRules(model);
+model.grRules = grRules;
+model.rxnGeneMat = rxnGeneMat;
 save('../../models/candida_intermedia/cintGEM_oxido.mat','model')
 
 
