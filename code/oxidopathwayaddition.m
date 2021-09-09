@@ -1,5 +1,5 @@
 %explore lactose metbolism in C. intermedia model
-load('../models/candida_intermedia/cint_leloir.mat')
+load('cint_leloir.mat')
 
 %Adding reactions from aspergillus niger oxidoreductive pathway. Reference:
 %10.1016/j.fbr.2007.02.006
@@ -105,4 +105,4 @@ index = find(contains(model_oxido.rxns,'r_4222')); %Galactokinase
 model.lb(index)  = 0;
 model.ub(index)  = 1000;
 %save model (oxido-reductive pathway)
-save('../models/candida_intermedia/cintGEM_oxido.mat','model')
+save('cintGEM_oxido_AVR.mat','model')
