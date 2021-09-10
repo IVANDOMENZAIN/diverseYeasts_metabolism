@@ -6,7 +6,7 @@ load('Candida_intermedia.mat')
 model = ravenCobraWrapper(reducedModel);
 model.proteins = reducedModel.proteins;
 %substitute gene IDs
-%model = substituteGENEids(model);
+model = substituteGENEids(model);
 leloirGenes = {'YBR019C' 'YBR020W' 'YBR018C' 'YHL012W' 'YKL127W' 'YCL040W'};
 leloirShort = {'GAL10' 'GAL1' 'GAL7' 'YHL012W' 'PGM1' 'GLK1'};
 
@@ -50,11 +50,21 @@ model_leloir = addRxns(model,rxnsToAdd,3);
 %It wa also found that conversion from lactose to D-galactose (r_5119) is defined in
 %the reverse direction in this model
 idx = find(strcmpi(model_leloir.rxns,'r_5119'));
+printModel(model_leloir,idx)
 model_leloir.rev(idx) = 1;
 model_leloir.lb(idx) = -1000;
 model_leloir.ub(idx) = 1000;
+printModel(model_leloir,idx)
+
+%now let's just see where the lac exchange is! Index 3988
+lacEx = find(strcmpi(model_leloir.rxns,'lac_ex'));
+printModel(model_leloir,lacEx)
+
+
 model = changeMedia(model_leloir,1);
-save('cint_leloir.mat','model')
+
+
+save('cint_leloir_AVR.mat','model_leloir')
 
  
 

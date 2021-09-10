@@ -1,5 +1,6 @@
-%explore lactose metbolism in C. intermedia model
-load('cint_leloir.mat')
+%explore lactose metabolism in C. intermedia model
+clear;clc
+load('cint_leloir_AVR.mat')
 
 %Adding reactions from aspergillus niger oxidoreductive pathway. Reference:
 %10.1016/j.fbr.2007.02.006
@@ -24,9 +25,9 @@ genesToAdd.genes          = {'xyl1' 'xyl1_2' 'xyl1_3' 'G0RNA2'};
 genesToAdd.geneShortNames = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};  
 rxnsToAdd.grRules         = {'xyl1 or xyl1_2 or xyl1_3' 'G0RNA2'};
 %LEt's evaluate biomass production before integrating the pathway
-model = changeMedia(model,'lac_ex',1);
+model = changeMedia(model_leloir,'lac_ex',1);
 sol1 = solveLP(model,1);
-printFluxes(model,sol1.x)
+printFluxes(model,sol1.x) %Growth: 0.20682
 % Introduce changes to the model
 model_oxido = addGenesRaven(model,genesToAdd);
 model_oxido = addRxns(model_oxido,rxnsToAdd,3);
@@ -36,7 +37,7 @@ I2 = haveFlux(model_oxido,1E-6,'xyl_hex_red');
 %LEt's evaluate biomass production
 model_oxido = changeMedia(model_oxido,'lac_ex',1);
 sol2 = solveLP(model_oxido,1);
-printFluxes(model_oxido,sol2.x)
+printFluxes(model_oxido,sol2.x) %Growth: 0.20682
 %Let's evaluate the whole pathway
 rxns = {'ald_red_NADPH' 'r_4983' 'xyl_hex_red' 'r_5174' 'r_0323'};
 fluxes=haveFlux(model_oxido,1E-6,rxns);
@@ -49,8 +50,8 @@ index = find(contains(model_oxido.rxns,'r_4222')); %Galactokinase
 model_oxido.lb(index)  = 0;
 model_oxido.ub(index)  = 0;
 sol3 = solveLP(model_oxido,1);
-printFluxes(model_oxido,sol3.x)
-fluxes_2=haveFlux(model_oxido,1E-6,rxns);
+printFluxes(model_oxido,sol3.x) %Growth: 0.19358
+fluxes_2=haveFlux(model_oxido,1E-6,rxns); 
 %IT worked!!!! let's display results in a table
 formulas = constructEquations(model_oxido);
 %Get metabolic subSystems for each reaction
@@ -104,5 +105,8 @@ model.ub(index)  = 1000;
 index = find(contains(model_oxido.rxns,'r_4222')); %Galactokinase
 model.lb(index)  = 0;
 model.ub(index)  = 1000;
+sol4 = solveLP(model,1);
+printFluxes(model,sol4.x) %Growth: 0.20682
+
 %save model (oxido-reductive pathway)
 save('cintGEM_oxido_AVR.mat','model')
