@@ -8,6 +8,22 @@ printFluxes(model,sol.x)
 %it looks like other yeasts (such as galactose-fermenting S.
 %cerevisiae strains) display intracellular accumulation of galactitol (https://doi.org/10.1002/bit.21890), so
 
+% Max growth on lactose = 27.0712
+% Max growth on glucose = 27.0675 WHY. WHY. WHY. WHY.
+
+lacEx = find(strcmpi(model.rxns,'lac_ex'));
+printModel(model,lacEx)
+model.lb(lacEx)   = 0;
+model.ub(lacEx)   = 1000;
+
+glu_ex = find(contains(model.rxnNames,'glucose exchange'));
+printModel(model,glu_ex)
+model.lb(glu_ex)   = -1000;
+model.ub(glu_ex)   = 1000;
+
+sol = solveLP(model,1);
+printFluxes(model,sol.x)
+
 %Let's see if galactitol is produced
 gtoh_x = find(contains(model.rxnNames,'aldose reductase (NADH)'));
 sol.x(gtoh_x)
@@ -22,10 +38,10 @@ fluxes=haveFlux(model,1E-6,rxns);
 
 index = find(contains(model.rxns,'r_0458')); %Galactokinase
 model.lb(index)  = 0;
-model.ub(index)  = 0;
+model.ub(index)  = 1000;
 index = find(contains(model.rxns,'r_4222')); %Galactokinase
 model.lb(index)  = 0;
-model.ub(index)  = 0;
+model.ub(index)  = 1000;
 sol = solveLP(model,1);
 printFluxes(model,sol.x) %Growth: 0.19524
 
@@ -46,6 +62,15 @@ gtoh_cons = find(contains(model.rxns,'r_4983'));
 sol.x(gtoh_cons) %Same flux, the model is consuming all of the galactitol as soon as it's produced.
 % We need to figure out if there is an exchange reaction that excretes the
 % galactitol or if there's a bottleneck in r_4983 and it's being stuck inside of the cell
+
+%Let's also run flux through the whole pathway
+%The entire pathway just keeps moving forward!
+OR_path = find(contains(model.rxnNames,'L-xylo-3-hexulose reductase'))
+sol.x(OR_path)
+
+
+
+
 
 
 
