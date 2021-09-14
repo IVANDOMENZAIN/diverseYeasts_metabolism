@@ -9,7 +9,7 @@ printFluxes(model,sol.x)
 %cerevisiae strains) display intracellular accumulation of galactitol (https://doi.org/10.1002/bit.21890), so
 
 % Max growth on lactose = 27.0712
-% Max growth on glucose = 27.0675 WHY. WHY. WHY. WHY.
+% Max growth on glucose = 27.0675 With blocked Leloir
 
 lacEx = find(strcmpi(model.rxns,'lac_ex'));
 printModel(model,lacEx)
