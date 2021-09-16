@@ -224,6 +224,110 @@ xlabel("bounds")
 ylabel("gtOH production")
 legend("gtOH production as we open the bounds")
 
+%Now let's see some gradients
+
+glucose_grad = [];
+lactose_grad = [];
+growth_grad = [];
+gtOH_grad = [];
+
+for i = 1:1000
+    model.lb(glu_ex) = -i;
+    model.lb(lacEx) = -(1000-i);
+    sol = solveLP(model,1);
+    glucose_g = -sol.x(glu_ex);
+    lactose_g = -sol.x(lacEx);
+    growth_g = sol.x(grow);
+    gtOH_g = sol.x(gtoh_x);
+    %Let's fill the matrix with our outputs
+    glucose_grad = [glucose_grad; glucose_g];
+    lactose_grad = [lactose_grad; lactose_g];
+    growth_grad = [growth_grad; growth_g];
+    gtOH_grad = [gtOH_grad;gtOH_g];
+    i
+end
+
+%Now let's generate plots to see the results
+subplot(2,2,1)
+plot(i2, glucose_grad)
+xlabel("glucose bounds")
+ylabel("glucose intake")
+legend("glucose intake as we open both bounds")
+subplot(2,2,2)
+plot(i2, lactose_grad)
+xlabel("lactose bounds")
+ylabel("lactose intake")
+legend("lactose intake as we open both bounds")
+subplot(2,2,3)
+plot(i2, growth_grad)
+xlabel("bounds")
+ylabel("growth")
+legend("growth as we open the bounds")
+subplot(2,2,4)
+plot(i2, gtOH_grad)
+xlabel("bounds")
+ylabel("gtOH production")
+legend("gtOH production as we open the bounds")
+
+
+%Reverse gradient now
+
+%Now let's see some gradients
+
+glucose_darg = [];
+lactose_darg = [];
+growth_darg = [];
+gtOH_darg = [];
+
+for i = 1:1000
+    model.lb(glu_ex) = -(1000-i);
+    model.lb(lacEx) = -i;
+    sol = solveLP(model,1);
+    glucose_t = -sol.x(glu_ex);
+    lactose_t = -sol.x(lacEx);
+    growth_t = sol.x(grow);
+    gtOH_t = sol.x(gtoh_x);
+    %Let's fill the matrix with our outputs
+    glucose_darg = [glucose_darg; glucose_t];
+    lactose_darg = [lactose_darg; lactose_t];
+    growth_darg = [growth_darg; growth_t];
+    gtOH_darg = [gtOH_darg;gtOH_t];
+    i
+end
+
+%Now let's generate plots to see the results
+subplot(2,2,1)
+plot(i2, glucose_darg)
+xlabel("glucose bounds")
+ylabel("glucose intake")
+legend("glucose intake as we open both bounds")
+subplot(2,2,2)
+plot(i2, lactose_darg)
+xlabel("lactose bounds")
+ylabel("lactose intake")
+legend("lactose intake as we open both bounds")
+subplot(2,2,3)
+plot(i2, growth_darg)
+xlabel("bounds")
+ylabel("growth")
+legend("growth as we open the bounds")
+subplot(2,2,4)
+plot(i2, gtOH_darg)
+xlabel("bounds")
+ylabel("gtOH production")
+legend("gtOH production as we open the bounds")
+
+
+
+% Kamesh mentioned that peaks may overlap and that maybe galactitol wasn't
+% what appeared on the spectrum, but sorbitol or another sugar alcohol
+
+%Let's find an exchange reaction 
+
+
+
+
+
 
 
 
@@ -294,7 +398,7 @@ OR_path = find(contains(model.rxnNames,'L-xylo-3-hexulose reductase'))
 sol.x(OR_path)
 
 
-%Find sorbitol echange rxn
+
 %Add exchange rxn for galactitol
 
 %Would taking galactitol away switch off glycolysis?
