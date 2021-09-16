@@ -252,22 +252,22 @@ subplot(2,2,1)
 plot(i2, glucose_grad)
 xlabel("glucose bounds")
 ylabel("glucose intake")
-legend("glucose intake as we open both bounds")
+legend("glucose intake as we open glucose bounds and close lactose bounds")
 subplot(2,2,2)
 plot(i2, lactose_grad)
 xlabel("lactose bounds")
 ylabel("lactose intake")
-legend("lactose intake as we open both bounds")
+legend("lactose intake as we open glucose bounds and close lactose bounds")
 subplot(2,2,3)
 plot(i2, growth_grad)
 xlabel("bounds")
 ylabel("growth")
-legend("growth as we open the bounds")
+legend("growth as we open glucose bounds and close lactose bounds")
 subplot(2,2,4)
 plot(i2, gtOH_grad)
 xlabel("bounds")
 ylabel("gtOH production")
-legend("gtOH production as we open the bounds")
+legend("gtOH production as we open glucose bounds and close lactose bounds")
 
 
 %Reverse gradient now
@@ -300,33 +300,104 @@ subplot(2,2,1)
 plot(i2, glucose_darg)
 xlabel("glucose bounds")
 ylabel("glucose intake")
-legend("glucose intake as we open both bounds")
+legend("glucose intake as we open lactose bounds and close glucose bounds")
 subplot(2,2,2)
 plot(i2, lactose_darg)
 xlabel("lactose bounds")
 ylabel("lactose intake")
-legend("lactose intake as we open both bounds")
+legend("lactose intake as we open lactose bounds and close glucose bounds")
 subplot(2,2,3)
 plot(i2, growth_darg)
 xlabel("bounds")
 ylabel("growth")
-legend("growth as we open the bounds")
+legend("growth as we open lactose bounds and close glucose bounds")
 subplot(2,2,4)
 plot(i2, gtOH_darg)
 xlabel("bounds")
 ylabel("gtOH production")
-legend("gtOH production as we open the bounds")
+legend("gtOH production as we open lactose bounds and close glucose bounds")
+
+%Let's now just plot growth comparisons
+subplot(3,2,1)
+plot(i2, growth_glu)
+xlabel("glucose bounds")
+ylabel("growth")
+legend("growth as we open the bounds")
+subplot(3,2,2)
+plot(i2, growth_lac)
+xlabel("lactose bounds")
+ylabel("growth")
+legend("growth as we open the bounds")
+subplot(3,2,3)
+plot(i2, growth_2)
+xlabel("bounds")
+ylabel("growth")
+legend("growth as we open both bounds")
+subplot(3,2,4)
+plot(i2, growth_grad)
+xlabel("bounds")
+ylabel("growth")
+legend("growth as we open glucose bounds and close lactose bounds")
+subplot(3,2,5)
+plot(i2, growth_darg)
+xlabel("bounds")
+ylabel("growth")
+legend("growth as we open lactose bounds and close glucose bounds")
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Let's go back to echange of 1 on lactose
+model.lb(lacEx) = -1;
+model.lb(glu_ex) = 0;
+sol = solveLP(model,1);
+printFluxes(model,sol.x)
+
+%We see that after a certain point growth is slowed down and so is the
+%intake of lactose. (even though we're not actually doing anything on C.
+%intermedia, we can try looking into this now and then doing that stuff on
+%the improved model.
+
+
+
+
 
 
 
 % Kamesh mentioned that peaks may overlap and that maybe galactitol wasn't
 % what appeared on the spectrum, but sorbitol or another sugar alcohol
 
-%Let's find an exchange reaction 
+%Let's find out if any of the products in the pathway is secreted
+model.rxnNames(find(contains(model.rxnNames,'D-fructose exchange')))
+%We have a fructose exchange, but it's not a sugar alcohol.
+%What happens to everything if we add a galactitol exchange reaction?
 
+% Define reaction equation
+exchange_gtOH = 'galactitol[c] => '
+rxnsToAdd.equations = {exchange_gtOH}; 
+% Define reaction names
+rxnsToAdd.rxns     = {'gtOH_ex'};
+rxnsToAdd.rxnNames = {'galactitol exchange'};
+% Define objective and bounds
+rxnsToAdd.c  = [0];
+rxnsToAdd.lb = [0];
+rxnsToAdd.ub = [1000];
 
+%Add to model
+model_gtOH = addRxns(model,rxnsToAdd,3);
 
+%Evaluate if rxn can carry flux
+I = haveFlux(model_gtOH,1E-6,'gtOH_ex'); %It can!!! Let's take it for a 
+%test run with high lactose
 
+model_gtOH.lb(lacEx) = -1;
+sol = solveLP(model_gtOH,1);
+gtol = find(contains(model_gtOH.rxns,'gtOH_ex')); 
+model_gtOH.lb(gtol)  = 0;
+model_gtOH.ub(gtol)  = 1000;
+sol = solveLP(model_gtOH,1);
+printFluxes(model_gtOH,sol.x) %It grows the same as without exch rxn
 
 
 
