@@ -365,6 +365,9 @@ printFluxes(model,sol.x)
 
 
 
+
+
+
 % Kamesh mentioned that peaks may overlap and that maybe galactitol wasn't
 % what appeared on the spectrum, but sorbitol or another sugar alcohol
 
@@ -388,150 +391,84 @@ rxnsToAdd.ub = [1000];
 model_gtOH = addRxns(model,rxnsToAdd,3);
 
 %Evaluate if rxn can carry flux
-I = haveFlux(model_gtOH,1E-6,'gtOH_ex'); %It can!!! Let's take it for a 
+I = haveFlux(model_gtOH,1E-6,'gtOH_ex') %It can!!! Let's take it for a 
 %test run with high lactose
 
 model_gtOH.lb(lacEx) = -1;
 sol = solveLP(model_gtOH,1);
-gtol = find(contains(model_gtOH.rxns,'gtOH_ex')); 
+gtol = find(contains(model_gtOH.rxns,'gtOH_ex'));
+grow = find(contains(model_gtOH.rxns,'r_2111'));
 model_gtOH.lb(gtol)  = 0;
 model_gtOH.ub(gtol)  = 1000;
+
+index = find(contains(model_gtOH.rxns,'r_0458')); %Galactokinase
+model_gtOH.lb(index)  = 0;
+model_gtOH.ub(index)  = 0;
+index = find(contains(model_gtOH.rxns,'r_4222')); %Galactokinase
+model_gtOH.lb(index)  = 0;
+model_gtOH.ub(index)  = 0;
+sol = solveLP(model_gtOH,1);
+printFluxes(model_gtOH,sol.x) %Growth: 0.19524
+
 sol = solveLP(model_gtOH,1);
 printFluxes(model_gtOH,sol.x) %It grows the same as without exch rxn
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+model_growth=setParam(model_gtOH,'obj',{'r_2111'},1);
+sol=solveLP(model_growth,1);
+printFluxes(model_growth, sol.x, true, 10^-7);
 
+model_gtol=setParam(model_gtOH,'obj',{'gtOH_ex'},1);
+solgtol=solveLP(model_gtol,1);
+printFluxes(model_gtol, solgtol.x, true, 10^-7);
 
 
+followChanged(model_gtol,sol.x,solgtol.x, 50, 0.5, 0.5);
 
+load 'pcPathway.mat' pathway;
 
+drawMap('Growth vs galactitol',pathway,model_gtol,solgtol.x,sol.x,model_growth,'test2.pdf',10^-5);
 
 
 
-
-
-
-
-
-
-
-
-
-% Max growth on lactose = 27.0712 but it only eats 708.0419 of the 1000
-lacEx = find(strcmpi(model.rxns,'lac_ex'));
-printModel(model,lacEx)
-model.lb(lacEx)   = -1000;
-model.ub(lacEx)   = 1000;
-sol = solveLP(model,1);
-printFluxes(model,sol.x)
-%Now let's block glucose as well
-glu_ex = find(contains(model.rxnNames,'glucose exchange'));
-printModel(model,glu_ex)
-model.lb(glu_ex)   = 0;
-model.ub(glu_ex)   = 0;
-sol = solveLP(model,1);
-printFluxes(model,sol.x)
-
-%Now let's do the opposite
-model.lb(lacEx)   = 0;
-model.ub(lacEx)   = 0;
-%Now let's block glucose as well
-model.lb(glu_ex)   = -1000;
-model.ub(glu_ex)   = 1000;
-sol = solveLP(model,1);
-printFluxes(model,sol.x) %There's a lower growth rate on glucose (?) and it eats it all (-1000)
-
-
-
-
-
-
-
-
-
-
-%what happens if we up the lactose consumption?
-model.lb(3988)   = -1000;
-model.ub(3988)   = 1000;
-sol = solveLP(model,1);
-printFluxes(model,sol.x)
-sol.x(gtoh_x) %We have the same quantity of lactose being converted into galactitol, so maybe it's not being utilized further??
-%The other reaction that utilizes galactitol is r_4983, let's see how it
-%carries flux
-gtoh_cons = find(contains(model.rxns,'r_4983'));
-sol.x(gtoh_cons) %Same flux, the model is consuming all of the galactitol as soon as it's produced.
-% We need to figure out if there is an exchange reaction that excretes the
-% galactitol or if there's a bottleneck in r_4983 and it's being stuck inside of the cell
-
-%Let's also run flux through the whole pathway
-%The entire pathway just keeps moving forward!
-OR_path = find(contains(model.rxnNames,'L-xylo-3-hexulose reductase'))
-sol.x(OR_path)
-
-
-
-%Add exchange rxn for galactitol
-
-%Would taking galactitol away switch off glycolysis?
-
-getModelParameters(model)
-model.parameters.gR_Exp
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% gtoh = find(contains(model.metNames,'galactitol'));
-% model.metNames(gtoh)
-% model.metComps(gtoh) %We already have gtoh(c) and gtoh(e)
-% sol.x(gtoh) %No flux in any of them
-% %Let's find the galactitol exchange reaction
-% gtoh_x = find(contains(model.rxnNames,'aldose reductase (NADH)'));
-% model.rxnNames(gtoh_x)
-% printModel(model,gtoh_x) %D-glucitol[e] =>  [0 1000]
 % 
-% lac_x = find(contains(model.rxnNames,'lactose exchange'));
-% model.rxnNames(lac_x) %lactose[e] <=>  [-1 1000]
-% printModel(model,lac_x)
+% printModelStats(model_gtOH,true,true)
 % 
-% % %it looks like it doesn't exist in the model! Let's add it
-% % newRxns = {'galactitol[e] <=>'};
-% % rxnsToAdd.equations = newRxns;
-% % rxnsToAdd.rxnNames = {'galactitol exchange'};
-% % rxnsToAdd.rxns     = {'gtoh_ex'};
-% % %Define objective and bounds
-% % rxnsToAdd.c  = 0;
-% % rxnsToAdd.lb = 0;
-% % rxnsToAdd.ub = 1000;
-% % % %genes to add
-% % rxnsToAdd.grRules = {'xyl1_2'};
-% % % Introduce changes to the model
-% % model_oxido = addRxns(model_oxido,rxnsToAdd,3);
+% %D-glucose appears as a dead-end metabolite
+% %The reactions we introduced are not elementally balanced
 % 
-% %Before we start adding reactions, 
+% % model=simplifyModel(model,true,false,true,true);
+% % printModelStats(model,true,true)
+% 
+% printFluxes(model_gtOH, sol.x, false, 10^-7);
+% 
+% sol=solveLP(model,1);
+% printFluxes(model, sol.x, false, 10^-7);
+% 
+% model=setParam(model,'obj',{'r_2111'},1);
+% sol=solveLP(model,1);
+% printFluxes(model, sol.x, true, 10^-7);
+
+
+
+
+
+%IF FLUXES ARE CMOLES THEN WHY ARE WE USING 1 LACTOSE AND NOT 2
+
+lactose_grad = [];
+growth_grad = [];
+gtOH_grad = [];
+
+for i = 1:1000
+    model_gtOH.lb(lacEx) = -i;
+    sol = solveLP(model_gtOH,1);
+    lactose_g = -sol.x(lacEx);
+    growth_g = sol.x(grow);
+    gtOH_g = sol.x(gtol);
+    %Let's fill the matrix with our outputs
+    lactose_grad = [lactose_grad; lactose_g];
+    growth_grad = [growth_grad; growth_g];
+    gtOH_grad = [gtOH_grad;gtOH_g];
+    i
+end
