@@ -72,6 +72,7 @@ sol.x(gtoh_x) %Galactitol production is 1
 % let's now open lactose bounds a little bit
 model.lb(lacEx)   = -500;
 model.lb(glu_ex)   = 0;
+model.ub(glu_ex)   = 0;
 sol = solveLP(model,1);
 printFluxes(model,sol.x) %Lactose absorption is 500
 sol.x(gtoh_x) %Galactitol too
@@ -87,6 +88,51 @@ sol.x(gtoh_x) %Galactitol too
 % Just looking for growth reaction:
 grow = find(contains(model.rxns,'r_2111'));
 
+%Let's check glycolysis
+hexo = find(contains(model.rxnNames,'D-fructose:ATP'));
+sol.x(hexo)
+
+sorbitol = find(contains(model.rxnNames,'sorbitol'));
+sol.x(sorbitol)
+
+%find out where we're getting out sorbitol from
+
+
+
+%what happens to galactose as soon as it enters the cell
+
+model.rxnNames(find(contains(model.rxnNames,'galactosidase')))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hexulose = find(contains(model.rxnNames,'arabitol'));
+
+%Let's just shut down the hexokinase for fructose, which we think is being
+%used by the OR pathway
+model.lb(lacEx)   = 0;
+model.ub(lacEx)   = 0;
+%WHERE THE HELL IS GLUCOSE GOING
+
+f6p = find(contains(model.rxnNames,'phosphofructokinase'));
+sol.x(f6p)
+
+
+pep = find(contains(model.rxnNames,'enolase'));
+sol.x(pep)
+
+pyruvate = find(contains(model.rxnNames,'pyruvate kinase'));
+sol.x(pyruvate)
 %Define empty matrix to fill during loop, this will be used for plot
 %later
 
@@ -141,10 +187,10 @@ sol.x(gtoh_x) %No galactitol again
 %Define empty matrix to fill during loop, this will be used for plot
 %later
 
-glucose = [];
-growth_glu = [];
-gtOH_glu = [];
-i2 = [];
+glucose = zeros(1000,1);
+growth_glu = zeros(1000,1);
+gtOH_glu = zeros(1000,1);
+i2 = zeros(1000,1);
 
 for i = 1:1000
     model.lb(glu_ex) = -i;
@@ -177,13 +223,14 @@ xlabel("glucose bounds")
 ylabel("growth")
 legend("growth as we open the bounds")
 
+
 %Now let's do it for the both of them!
 
-glucose_2 = [];
-lactose_2 = [];
-growth_2 = [];
-gtOH_2 = [];
-i2 = [];
+glucose_2 = zeros(1000,1);
+lactose_2 = zeros(1000,1);
+growth_2 = zeros(1000,1);
+gtOH_2 = zeros(1000,1);
+i2 = zeros(1000,1);
 
 for i = 1:1000
     model.lb(glu_ex) = -i;
@@ -230,6 +277,7 @@ glucose_grad = [];
 lactose_grad = [];
 growth_grad = [];
 gtOH_grad = [];
+i2 = [];
 
 for i = 1:1000
     model.lb(glu_ex) = -i;
@@ -244,8 +292,10 @@ for i = 1:1000
     lactose_grad = [lactose_grad; lactose_g];
     growth_grad = [growth_grad; growth_g];
     gtOH_grad = [gtOH_grad;gtOH_g];
+    i2 = [i2;i];    
     i
 end
+
 
 %Now let's generate plots to see the results
 subplot(2,2,1)
@@ -273,11 +323,12 @@ legend("gtOH production as we open glucose bounds and close lactose bounds")
 %Reverse gradient now
 
 %Now let's see some gradients
-
+i2 = [];   
 glucose_darg = [];
 lactose_darg = [];
 growth_darg = [];
 gtOH_darg = [];
+
 
 for i = 1:1000
     model.lb(glu_ex) = -(1000-i);
@@ -292,6 +343,7 @@ for i = 1:1000
     lactose_darg = [lactose_darg; lactose_t];
     growth_darg = [growth_darg; growth_t];
     gtOH_darg = [gtOH_darg;gtOH_t];
+    i2 = [i2;i];   
     i
 end
 
