@@ -42,7 +42,7 @@ sol = solveLP(model,1);
 sol.x(index) %Leloir unblocked
 sol.x(gtoh_x) %galactitol back to no production.
 
-% Galactitol is an overflow metabolite, so high fluxes of lactose should
+% If galactitol is an overflow metabolite, high fluxes of lactose should
 % induce production.
 sol.x(index) %Leloir is still unblocked
 glu_ex = find(contains(model.rxnNames,'glucose exchange'));
