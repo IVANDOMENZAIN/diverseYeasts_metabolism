@@ -1,4 +1,9 @@
 %explore galactitol production in C. intermedia model
+
+initCobraToolbox %takes a while
+
+%% 
+
 load('..\models\candida_intermedia\cintGEM_oxido_AVR.mat')
 %See how exchange fluxes look
 sol = solveLP(model,1);
@@ -21,6 +26,10 @@ fluxes=haveFlux(model,1E-6,rxns);
 %let's see what happens when we block the leloir pathway:
 index = find(contains(model.rxns,'r_0458')); %Galactokinase
 model.lb(index)  = 0;
+
+model.grRules(find(contains(model.rxns,'r_0458')))
+model.grRules(find(contains(model.rxns,'r_4222')))
+
 model.ub(index)  = 0;
 index = find(contains(model.rxns,'r_4222')); %Galactokinase
 model.lb(index)  = 0;
@@ -33,7 +42,7 @@ gtoh_x = find(contains(model.rxnNames,'aldose reductase (NADH)'));
 sol.x(gtoh_x)
 %It was! Flux was 1
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
 
 %Now, let's just reset everything and increase the consumption of lactose
 load('..\models\candida_intermedia\cintGEM_oxido_AVR.mat')
@@ -57,6 +66,9 @@ sol.x(gtoh_x) %We still have no production at high lactose rates
 %let's see what happens when we block the leloir pathway:
 index = find(contains(model.rxns,'r_0458')); %Galactokinase
 model.lb(index)  = 0;
+
+MODEL
+
 model.ub(index)  = 0;
 index = find(contains(model.rxns,'r_4222')); %Galactokinase
 model.lb(index)  = 0;
@@ -102,10 +114,6 @@ sol.x(sorbitol)
 %what happens to galactose as soon as it enters the cell
 
 model.rxnNames(find(contains(model.rxnNames,'galactosidase')))
-
-
-
-
 
 
 

@@ -29,8 +29,10 @@ end
 %is wrong, let's fix it! (according to KEGG)
 % YBR018C -> r_0459
 idx = find(strcmpi(model.rxns,'r_0459'));
+printModel(model,idx)
 model.lb(idx) = -1000;
 model.rev(idx) = 1;
+printModel(model,idx)
 %It was found that one of the reactions encoded by GAL10 is missing in Cint
 %let's introduce it 
 %obtain grRule for the GAL10 encoded rxns (already present)
