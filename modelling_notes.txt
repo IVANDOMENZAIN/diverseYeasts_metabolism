@@ -1,0 +1,44 @@
+- We started from a GEM of C. intermedia metabolism, extracted from: https://doi.org/10.15252/msb.202110427. The model was constructed by using automated homology searches between 332 different yeast species genomes/proteomes and the model organism S. cerevisae, complemented with the genomes of other well studied filamentous fungi.
+
+- This yielded a non-curated metabolic network, comprising 3991 rxns, 2762 mets and 1044 genes. At this initial stage the model was able to carry flux through its biomass pseudoreaction, however unconstrained values were returned.
+
+- What did we know initially? C. intermedia is able to grow on lactose, xylose  and galactose as sole carbon sources. 
+
+
+- Some literature suggests that C. intermedia displays two different mechanisms for lactose utilization: the well-conserved leloir pathway and an oxido-reductive pathway that connects lactose and galactose directly into glycolysis. (Checar paper del diagrama chido). Parallelly, the oxido-reductive pathway for lactose utilization has been previously described in A. niger (10.1016/j.fbr.2007.02.006).
+
+- Entonces Hipótesis: There exists an alternative pathway to leloir for lactose utilization in C. intermedia.
+
+- We decided to curate lactose metabolism in the draft model, assuming the the ox-red path is present. With this exploration of in silico mutants, production capabilities and hypothesis testing was enabled.
+
+1.- Lactose metabolism was explored in the original draft model, where some reactions in the leloir and oxido-reductive pathway were found, however incomplete. Therefore, the model was not able to grow on lactose as a sole carbon source, as oposed to the experimental evidence.
+
+- The following reactions were added (based on literature research, citar paper del mapa chingón):
+ 
+ * Lactose uptake: lactose[e] ->[]  
+ * aldose reductase (NAPDH): 'D-galactose[c] + NADPH[c] => galactitol[c] + NADP(+)[c]'     {'xyl1 or xyl1_2 or xyl1_3
+ * L-xylo-3-hexulose reductase: 'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> L-sorbose[c] + NADP(+)[c]'};... G0RNA2 (lxr4)
+ * aldose reductase (NADH): 'D-galactose[c] + NADH[c] => galactitol[c] + NAD[c]'   xyl1_2
+
+rxnsToAdd.rxnNames = {'aldose reductase (NADH)'};
+
+ This returned a functional model, able to grow both on lactose and galactose as sole carbon sources.
+
+ 2.- WE tested the hypothesis "C. intermedia is able to grow on lactose/galactose by purely relying on the oxido-reductive pathway". We tested growth on a galactokinase mutant, observing a slight growth deffect when compared to WT model (all of this was in silico). 
+
+ 3.- Kamesh constructed the galactokinase mutants, veryfying the initial hypotesis in vivo.
+
+ 4.- On parallel, we ran RNAseq DE analysis comparing transcriptomics from C. intermedia cultures growing in glucose, lactose, galactose and xylose. With this changes in expression levels and statistical significance  were calculated for each gene using glucose as the reference condition.
+ 6.- As we had different data sources referring to different gene identifiers systems, we ran orthofinder between the sequences in the FASTA file and those used for the initial model reconstruction and the RNAseq dataset. This returned a table of orthologous sequences across the three sources and allowed us to verify that LXR4, xyl1, xyl1_2 and xyl1_3 were all contained in the initial draft model, nonetheless their corresponding reactions were not present. This suggested indirectly that the ox.red pathway is present in C. intermedia by bioinformatics means.
+
+
+ 5.- Reporter metabolites analysis was ran by using both, the manually curated model and the results  from RNASeq DE. This returned a list of reporter metabolites, suggesting the relevant metabolic nodes when switching metabolism from one carbon source to another.
+
+ - When looking at the most significant reporter metabolites for the glucose vs. lactose case, we noticed that five metabolites in the leloir pathway are significantly affected by transcriptional upregulation of genes. Namely, D-galactose, UDP-4-dehydro-6-deoxy-alpha-D-glucose, alpha-D-galactose 1-phosphate, UDP-D-galactose, lactose. This is consistent with the experimental observations of WT strains not being able to accumulate galactitol (which is present in the ox-red pathway). This suggests that the transcriptional machinery of C. intermedia favours the leloir pathway when growing on lactose even though a second alternative exists. -----> Challenge identified! we're going against evolution!!!! :O
+
+ - When looking the most significant reporter metabolites for the glucose vs. galactose case, we found that only the metabolites in the ox-red pathway are affected by transcriptional upregulation of genes (D-sorbitol, D-galactose and galactitol). This suggests that when growing solely on galactose, C. intermedia favours the expression of the oxido-reductive pathway in contrast to Leloir.
+
+
+
+
+
