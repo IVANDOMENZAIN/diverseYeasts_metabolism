@@ -68,12 +68,11 @@ end
 
 %we found that Seq_2189 is annotated as XYL2 in the genome and in the RNA_2_model_glu_vs_gal file is 5 times log2 fold upregulated and 2.5 times in lactose. the p value is significant.
 %found also that Glucitol is present once again in the list of reporter
-%metabolites. Checked the associated genes (Seq_5357 = YALI0B16192G is 3
-%fold upregulation with low p-value), (Seq_2923 = SOU2 -1.5 fold change and
-%low p-value), (Seq_2552 = lad highly upreg in galactose)
+%metabolites. Checked the associated genes and found two new ones (Seq_5357
+%= YALI0B16192G which is a putative reductase, is 3 fold upregulation with low p-value), (Seq_2923 = SOU2 which is a sorbose dehydrogenase -1.5 fold change and
+%low p-value), (Seq_2552 = lad highly 6 fold upreg in galactose only)
 %also found galactose in the repmets_glu_gal but no surprises. another one
-%is Seq_2272 = YMR226c which I have deleted, but its not really
-%significant in lactose, but is in galactose.
+%is Seq_2272 = YMR226c which I have deleted, but its not really significant in lactose, but is in galactose.
 
 
 
