@@ -1,6 +1,8 @@
 % Kamesh Peri.      Last update: 2024-03-12
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 load('../models/candida_intermedia/cintGEM_oxido.mat')
+sol = solveLP(model,1);
+printFluxes(model,sol.x,true)
 Ptot = 0.438; %average across chemostats in g protein / gCDW
 
 %identify relevant rxns and mets associated to D-galactose in the model 
@@ -94,6 +96,8 @@ modelMod = rescalePseudoReaction(modelMod,'carbohydrate',fC);
 %If model contain SLIMER reactions (separate pseudoreactions for
 %lipid chains and backbones
 modelMod = rescalePseudoReaction(modelMod,'lipid backbone',fL);
+sol = solveLP(modelMod,1)
+pause
 %Check how stoichiometries have changed for each of the biomass components
 constructEquations(modelMod,posBiomass)
 constructEquations(model,posProt)
@@ -108,8 +112,19 @@ constructEquations(modelMod,posLip)
 [~,X] = getFraction(modelMod,comps,'R',X);
 [~,X] = getFraction(modelMod,comps,'D',X);
 [~,X] = getFraction(modelMod,comps,'L',X);
-
-%GAM = fitGAM(model,false);
+pause
+%block lactose uptake
+modelMod = setParam(modelMod,'lb','lac_ex',-1);
+modelMod = setParam(modelMod, 'obj', 'r_2111', +1); % growth
+%model = setParam(model, 'ub', 'r_2111', +1000); % growth
+%model = setParam(model, 'lb', 'r_2111', 0); % growth
+%model = setParam(model, 'lb', 'r_4041', 0); % biomass
+%model = setParam(model, 'ub', 'r_4041', 1000); % biomass
+sol = solveLP(modelMod,1);
+printFluxes(modelMod,sol.x)
+pause
+%modelMod = changeMedia_batch(modelMod,'D-glucose exchange');
+GAM = fitGAM(modelMod);
 % 
 % %Change GAM:
 % xr_pos = strcmp(model.rxns,parameters.bioRxn);
