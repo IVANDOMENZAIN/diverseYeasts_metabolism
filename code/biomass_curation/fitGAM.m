@@ -8,13 +8,14 @@ function GAM = fitGAM(model)
 %
 
 %Load chemostat data:
-fid = fopen('../data/chemostatData_glucose.txt','r');
+fid = fopen('../../data/chemostatData_glucose.txt','r');
 exp_data = textscan(fid,'%f32 %f32 %f32 %f32','Delimiter','\t','HeaderLines',1);
 exp_data = [exp_data{1} exp_data{2} exp_data{3} exp_data{4}];
+%exp_data = [exp_data{1} exp_data{2}];
 fclose(fid);
 %GAMs to span:
 disp('Estimating GAM:')
-GAM = 20:5:100;
+GAM = 5:5:100;
 %1st iteration:
 GAM = iteration(model,GAM,exp_data);
 %2nd iteration:
@@ -26,6 +27,7 @@ disp(['Fitted GAM = ' num2str(GAM) ' -> Error = ' num2str(error)])
 
 %Plot fit:
 mod_data = simulateChemostat(model,exp_data,GAM);
+mod_data = abs(mod_data);
 figure
 hold on
 cols = [0,1,0;0,0,1;1,0,0];
@@ -51,7 +53,9 @@ fitting = ones(size(GAM))*1000;
 for i = 1:length(GAM)
     %Simulate model and calculate fitting:
     mod_data   = simulateChemostat(model,exp_data,GAM(i));
-    R          = (mod_data - exp_data)./exp_data;
+    R          = (abs(mod_data) - exp_data)./exp_data;
+    %R          = (abs(mod_data(2)) - exp_data(2))/exp_data(2);
+    %fitting(i) = R*100;
     fitting(i) = sqrt(sum(sum(R.^2)));
     disp(['GAM = ' num2str(GAM(i)) ' -> Error = ' num2str(fitting(i))])
 end

@@ -1,8 +1,18 @@
 % Kamesh Peri.      Last update: 2024-03-12
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-load('../models/candida_intermedia/cintGEM_oxido.mat')
+load('../../models/candida_intermedia/cintGEM_oxido.mat')
+%verify growth on lactose
+model = changeMedia_batch(model,'lactose exchange',1);
+sol = solveLP(model,1);
+disp('Growth on lactose')
+printFluxes(model,sol.x,true)
+disp(' ')
+%verify growth on glucose
+model = changeMedia_batch(model,'D-glucose exchange',1);
+disp('Growth on D-glucose')
 sol = solveLP(model,1);
 printFluxes(model,sol.x,true)
+disp(' ')
 Ptot = 0.438; %average across chemostats in g protein / gCDW
 
 %identify relevant rxns and mets associated to D-galactose in the model 
@@ -96,8 +106,7 @@ modelMod = rescalePseudoReaction(modelMod,'carbohydrate',fC);
 %If model contain SLIMER reactions (separate pseudoreactions for
 %lipid chains and backbones
 modelMod = rescalePseudoReaction(modelMod,'lipid backbone',fL);
-sol = solveLP(modelMod,1)
-pause
+modelMod = rescalePseudoReaction(modelMod,'lipid chain',fL);
 %Check how stoichiometries have changed for each of the biomass components
 constructEquations(modelMod,posBiomass)
 constructEquations(model,posProt)
@@ -112,27 +121,19 @@ constructEquations(modelMod,posLip)
 [~,X] = getFraction(modelMod,comps,'R',X);
 [~,X] = getFraction(modelMod,comps,'D',X);
 [~,X] = getFraction(modelMod,comps,'L',X);
-pause
+clc
 %block lactose uptake
-modelMod = setParam(modelMod,'lb','lac_ex',-1);
-modelMod = setParam(modelMod, 'obj', 'r_2111', +1); % growth
-%model = setParam(model, 'ub', 'r_2111', +1000); % growth
-%model = setParam(model, 'lb', 'r_2111', 0); % growth
-%model = setParam(model, 'lb', 'r_4041', 0); % biomass
-%model = setParam(model, 'ub', 'r_4041', 1000); % biomass
-sol = solveLP(modelMod,1);
-printFluxes(modelMod,sol.x)
-pause
+modelMod = changeMedia_batch(modelMod,'D-glucose exchange',1);
 %modelMod = changeMedia_batch(modelMod,'D-glucose exchange');
 GAM = fitGAM(modelMod);
 % 
-% %Change GAM:
-% xr_pos = strcmp(model.rxns,parameters.bioRxn);
-% for i = 1:length(model.mets)
-%     S_ix  = model.S(i,xr_pos);
-%     isGAM = sum(strcmp({'ATP','ADP','H2O','H+','phosphate'},model.metNames{i})) == 1;
-%     if S_ix ~= 0 && isGAM
-%         GAMpol = 0;
-%         model.S(i,xr_pos) = sign(S_ix)*(GAM + GAMpol);
-%     end
-% end
+%Change GAM:
+xr_pos = strcmp(model.rxns,'r_4041');
+for i = 1:length(model.mets)
+    S_ix  = model.S(i,xr_pos);
+    isGAM = sum(strcmp({'ATP','ADP','H2O','H+','phosphate'},model.metNames{i})) == 1;
+    if S_ix ~= 0 && isGAM
+        GAMpol = 0;
+        model.S(i,xr_pos) = sign(S_ix)*(GAM + GAMpol);
+    end
+end

@@ -12,7 +12,7 @@ function model = changeMedia_batch(model,c_source,flux)
 %   Usage: model = changeMedia_batch(model,c_source,flux)
 %
 % Benjamin J. Sanchez	2018-12-11
-% Ivan Domenzain        2019-10-09
+% Ivan Domenzain        2024-03-13
 
 % Give the carbon source (c_source) input variable with the following
 % format: c_source  = 'D-glucose exchange (reversible)'
@@ -54,7 +54,10 @@ model = setParam(model, 'ub', 'r_2111', +1000); % growth
 model = setParam(model, 'lb', 'r_2111', 0); % growth
 model = setParam(model, 'lb', 'r_4041', 0); % biomass
 model = setParam(model, 'ub', 'r_4041', 1000); % biomass
-sol=solveLP(model,1);
-printFluxes(model,sol.x,true)
-pause
+%verify growth
+temp = setParam(model, 'obj', 'r_4041', 1); % biomass
+sol=solveLP(temp);
+if isempty(sol.x)
+    warning('Model is not feasible with the imposed media constraints')
+end
 end
