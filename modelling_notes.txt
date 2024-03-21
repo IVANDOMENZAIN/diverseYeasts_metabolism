@@ -39,7 +39,9 @@ rxnsToAdd.rxnNames = {'aldose reductase (NADH)'};
 
  - When looking the most significant reporter metabolites for the glucose vs. galactose case, we found that only the metabolites in the ox-red pathway are affected by transcriptional upregulation of genes (D-sorbitol, D-galactose and galactitol). This suggests that when growing solely on galactose, C. intermedia favours the expression of the oxido-reductive pathway in contrast to Leloir.
 
+- We noticed two more interesting genes: SOU2 and YALI which were associated to Sorbitol (on galactose) in the reporter metabolite analysis. These genes were up and downregualted, respectively with significant p-values. Deletion mutants aare being constructed alone and in combination with xyl2, lad1 and ymr deletion strains. 
 
+- Date 21.03: We have fit the GAM using the chemostat data we obtain a relatively low value compared to S. cerevisiae (around 30) but we realized that Cint has complex 1. So, we decided to re-fit P/O ratio as the model has the one from S. cerevisiae. 
 
 
 
