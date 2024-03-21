@@ -1,4 +1,4 @@
-function mod_data = simulateChemostat(model,exp_data,GAM)
+function mod_data = simulateChemostat(model,exp_data,GAM,POratio)
 %Modify GAM withouth changing the protein content:
 parameters.exch_names{1} = 'growth';
 parameters.exch_names{2} = 'D-glucose exchange';
@@ -11,7 +11,11 @@ pos(1)      = find(strcmp(model.rxnNames,exch_names{1}));
 pos(2)      = find(strcmp(model.rxnNames,exch_names{2}));
 pos(3)      = find(strcmp(model.rxnNames,exch_names{3}));
 pos(4)      = find(strcmp(model.rxnNames,exch_names{4}));
-model = changeGAM(model,parameters,GAM);
+if nargin<4
+    model = changeGAM(model,parameters,GAM);
+else
+    model = changePOratio(model,POratio);
+end
 %Simulate chemostats:
 mod_data = zeros(size(exp_data));
 for i = 1:length(exp_data(:,1))
@@ -27,8 +31,8 @@ for i = 1:length(exp_data(:,1))
     %minimize glucose
     model = setParam(model,'obj',model.rxns(pos(2)),1);
     sol   = solveLP(model,1);
-    %printFluxes(model,sol.x,true)
-    %pause
+    printFluxes(model,sol.x,true)
+    pause
     %Store relevant variables:
     mod_data(i,:) = sol.x(pos)';
 end
