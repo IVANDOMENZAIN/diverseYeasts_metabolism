@@ -125,18 +125,19 @@ clc
 %block lactose uptake
 modelMod = changeMedia_batch(modelMod,'D-glucose exchange',1);
 %modelMod = changeMedia_batch(modelMod,'D-glucose exchange');
-% GAM = fitGAM(modelMod);
-% % 
-% %Change GAM:
-% xr_pos = strcmp(modelMod.rxns,'r_4041');
-% for i = 1:length(modelMod.mets)
-%     S_ix  = modelMod.S(i,xr_pos);
-%     isGAM = sum(strcmp({'ATP','ADP','H2O','H+','phosphate'},modelMod.metNames{i})) == 1;
-%     if S_ix ~= 0 && isGAM
-%         GAMpol = 0;
-%         modelMod.S(i,xr_pos) = sign(S_ix)*(GAM + GAMpol);
-%     end
-% end
+GAM = fitGAM(modelMod);
+% 
+%Change GAM:
+xr_pos = strcmp(modelMod.rxns,'r_4041');
+for i = 1:length(modelMod.mets)
+    S_ix  = modelMod.S(i,xr_pos);
+    isGAM = sum(strcmp({'ATP','ADP','H2O','H+','phosphate'},modelMod.metNames{i})) == 1;
+    if S_ix ~= 0 && isGAM
+        GAMpol = 0;
+        modelMod.S(i,xr_pos) = sign(S_ix)*(GAM + GAMpol);
+    end
+end
+% pause
 %the initially obtained value corresponds to 30.8 GAM, a low value in
 %comparison with S. cerevisiae, additionally, the fitting of the
 %respiratory quotient looks odd in the generated figure, (low O2
@@ -155,7 +156,7 @@ fluxes = table(modelMod.rxnNames(oxpos),model.rxns(oxpos),names',formulas,oxFlux
 x = find(strcmp(modelMod.rxns,'r_5195'));
 temp = setParam(modelMod,'obj','r_0226',1);
 temp = changeMedia_batch(temp,'D-glucose exchange',1);
-sol = solveLP(temp,1)
+sol = solveLP(temp,1);
 printFluxes(modelMod,sol.x,true)
 %Identify reactions to fit (complex IV, complex III ('r_0438', 'r_0439')
 POratio = fitPOratio(modelMod);

@@ -23,14 +23,14 @@ met(1) = find(strcmp(model.mets,'s_0794')); %cytoplasmic
 met(2) =  find(strcmp(model.mets,'s_0799'));%mito
 
 alpha  = abs(full(model.S(met(2),rxn(2))));
-%alphas = (alpha-0.2):0.01:(alpha+1);
-alphas = 2:0.01:3;
+alphas = (alpha-0.5*alpha):0.01:(alpha+alpha);
+%alphas = 2:0.01:3;
 [POratio,error] = iteration(model,alphas,exp_data);
 %If verbose output is not required, then the only displayed value is the optimal one
 disp(['Fitted POratio = ' num2str(POratio) ' -> Error = ' num2str(error)])
 
 %Plot fit:
-mod_data = simulateChemostat(model,exp_data,POratio,true);
+mod_data = simulateChemostat(model,exp_data,1,POratio);
 mod_data = abs(mod_data);
 figure
 hold on
@@ -56,9 +56,14 @@ fitting = ones(size(POratio))*1000;
 
 for i = 1:length(POratio)
     %Simulate model and calculate fitting:
-    mod_data   = simulateChemostat(model,exp_data,POratio(i));
-    R          = (abs(mod_data) - exp_data)./exp_data;
-    %R          = (abs(mod_data(2)) - exp_data(2))/exp_data(2);
+    mod_data   = simulateChemostat(model,exp_data,1,POratio(i));
+    %mod_data = abs(mod_data(:,[3,4]));
+    %exp_data = abs(exp_data(:,[3,4]));
+    expData = abs(exp_data);%(:,[3,4]));
+    %disp(expData)
+    %disp(mod_data)
+    R          = (abs(mod_data) - expData)./expData;
+    %R          = abs((abs(mod_data(3)) - abs(exp_data(3))))/abs(exp_data(3));
     %fitting(i) = R*100;
     fitting(i) = sqrt(sum(sum(R.^2)));
     disp(['POratio = ' num2str(POratio(i)) ' -> Error = ' num2str(fitting(i))])

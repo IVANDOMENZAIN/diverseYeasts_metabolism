@@ -22,17 +22,13 @@ for i = 1:length(exp_data(:,1))
     %Fix biomass
     model = setParam(model,'lb',model.rxns(pos(1)),exp_data(i,1));
     %set an arbitrarily high glucose uptake rate
+    model = setParam(model,'ub',model.rxns(pos(2)),0);
     model = setParam(model,'lb',model.rxns(pos(2)),-10);
-    %provide oxygen
-    %model = setParam(model,'lb',model.rxns(pos(3)),-1000);
-    %block CO2 uptake and allow its production
-    %model = setParam(model,'ub',model.rxns(pos(4)),1000);
-    %model = setParam(model,'lb',model.rxns(pos(4)),0);
     %minimize glucose
     model = setParam(model,'obj',model.rxns(pos(2)),1);
     sol   = solveLP(model,1);
-    printFluxes(model,sol.x,true)
-    pause
+    %printFluxes(model,sol.x,true)
+    %pause
     %Store relevant variables:
     mod_data(i,:) = sol.x(pos)';
 end
