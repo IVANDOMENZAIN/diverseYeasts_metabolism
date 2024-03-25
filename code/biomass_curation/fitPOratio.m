@@ -1,7 +1,4 @@
-%fit P/O ratio
 function POratio = fitPOratio(model)
-%
-
 %Load chemostat data:
 fid = fopen('../../data/chemostatData_glucose.txt','r');
 exp_data = textscan(fid,'%f32 %f32 %f32 %f32','Delimiter','\t','HeaderLines',1);
@@ -23,7 +20,7 @@ met(1) = find(strcmp(model.mets,'s_0794')); %cytoplasmic
 met(2) =  find(strcmp(model.mets,'s_0799'));%mito
 
 alpha  = abs(full(model.S(met(2),rxn(2))));
-alphas = (alpha-0.5*alpha):0.01:(alpha+alpha);
+alphas = (alpha-0.5*alpha):0.01:(alpha+0.5*alpha);
 %alphas = 2:0.01:3;
 [POratio,error] = iteration(model,alphas,exp_data);
 %If verbose output is not required, then the only displayed value is the optimal one
@@ -65,8 +62,9 @@ for i = 1:length(POratio)
     R          = (abs(mod_data) - expData)./expData;
     %R          = abs((abs(mod_data(3)) - abs(exp_data(3))))/abs(exp_data(3));
     %fitting(i) = R*100;
+    R = R(:,[2,3,4]);
     fitting(i) = sqrt(sum(sum(R.^2)));
-    disp(['POratio = ' num2str(POratio(i)) ' -> Error = ' num2str(fitting(i))])
+    %disp(['POratio = ' num2str(POratio(i)) ' -> Error = ' num2str(fitting(i))])
 end
 
 %Choose best:

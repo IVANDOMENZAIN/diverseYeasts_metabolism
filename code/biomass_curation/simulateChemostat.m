@@ -12,7 +12,7 @@ pos(2)      = find(strcmp(model.rxnNames,exch_names{2}));
 pos(3)      = find(strcmp(model.rxnNames,exch_names{3}));
 pos(4)      = find(strcmp(model.rxnNames,exch_names{4}));
 if nargin<4
-    model = changeGAM(model,parameters,GAM);
+    model = changeGAM(model,GAM);
 else
     model = changePOratio(model,POratio);
 end

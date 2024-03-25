@@ -1,6 +1,9 @@
 % Kamesh Peri.      Last update: 2024-03-12
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 load('../../models/candida_intermedia/cintGEM_oxido.mat')
+%unconstrain NGAM
+x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
+model.lb(x) = 0;
 %verify growth on lactose
 model = changeMedia_batch(model,'lactose exchange',1);
 sol = solveLP(model,1);
@@ -124,34 +127,30 @@ constructEquations(modelMod,posLip)
 clc
 %block lactose uptake
 modelMod = changeMedia_batch(modelMod,'D-glucose exchange',1);
-%modelMod = changeMedia_batch(modelMod,'D-glucose exchange');
+%correct stoichiometry in complex I, lets start with the base S. cerevisiae
+%value 1.266 (as a basis coeff. for proton translocation)
+modelMod = changePOratio(modelMod,1.266);
+
+for j=1:5
 GAM = fitGAM(modelMod);
-% 
-%Change GAM:
-xr_pos = strcmp(modelMod.rxns,'r_4041');
-for i = 1:length(modelMod.mets)
-    S_ix  = modelMod.S(i,xr_pos);
-    isGAM = sum(strcmp({'ATP','ADP','H2O','H+','phosphate'},modelMod.metNames{i})) == 1;
-    if S_ix ~= 0 && isGAM
-        GAMpol = 0;
-        modelMod.S(i,xr_pos) = sign(S_ix)*(GAM + GAMpol);
-    end
+modelMod =changeGAM(modelMod,GAM);
+POratio = fitPOratio(modelMod);
+modelMod = changePOratio(modelMod,POratio);
 end
-% pause
 %the initially obtained value corresponds to 30.8 GAM, a low value in
 %comparison with S. cerevisiae, additionally, the fitting of the
 %respiratory quotient looks odd in the generated figure, (low O2
 %consumption and high CO2 production, in comparison to experimental data).
-%Thus, let's check the OxPhos step
-oxphosRxns = {'r_0773' 'r_0770' 'r_0439' 'r_0438' 'r_0437' 'r_5195' 'r_0226' 'r_1021'};
-[~,oxpos] = ismember(modelMod.rxns,oxphosRxns);
-oxpos = find(oxpos);
-%get a solution
-sol = solveLP(modelMod,1);
-oxFluxes = sol.x(oxpos);
- formulas = constructEquations(modelMod,oxpos);
- names = {' ' 'complexII' 'complexI' 'complexIV' 'complexIII' 'ATPsynthetase'};
-fluxes = table(modelMod.rxnNames(oxpos),model.rxns(oxpos),names',formulas,oxFluxes);
+% %Thus, let's check the OxPhos step
+% oxphosRxns = {'r_0773' 'r_0770' 'r_0439' 'r_0438' 'r_0437' 'r_5195' 'r_0226' 'r_1021'};
+% [~,oxpos] = ismember(modelMod.rxns,oxphosRxns);
+% oxpos = find(oxpos);
+% %get a solution
+% sol = solveLP(modelMod,1);
+% oxFluxes = sol.x(oxpos);
+%  formulas = constructEquations(modelMod,oxpos);
+%  names = {' ' 'complexII' 'complexI' 'complexIV' 'complexIII' 'ATPsynthetase'};
+% fluxes = table(modelMod.rxnNames(oxpos),model.rxns(oxpos),names',formulas,oxFluxes);
 %modify some names for simplicity
 x = find(strcmp(modelMod.rxns,'r_5195'));
 temp = setParam(modelMod,'obj','r_0226',1);
@@ -159,4 +158,4 @@ temp = changeMedia_batch(temp,'D-glucose exchange',1);
 sol = solveLP(temp,1);
 printFluxes(modelMod,sol.x,true)
 %Identify reactions to fit (complex IV, complex III ('r_0438', 'r_0439')
-POratio = fitPOratio(modelMod);
+

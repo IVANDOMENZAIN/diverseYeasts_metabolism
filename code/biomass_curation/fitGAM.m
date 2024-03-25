@@ -56,10 +56,9 @@ for i = 1:length(GAM)
     R          = (abs(mod_data) - exp_data)./exp_data;
     %R          = (abs(mod_data(2)) - exp_data(2))/exp_data(2);
     %fitting(i) = R*100;
+    R = R(:,[2, 3, 4]);
     fitting(i) = sqrt(sum(sum(R.^2)));
-    disp(exp_data)
-    disp(mod_data)
-    disp(['GAM = ' num2str(GAM(i)) ' -> Error = ' num2str(fitting(i))])
+    %disp(['GAM = ' num2str(GAM(i)) ' -> Error = ' num2str(fitting(i))])
 end
 
 %Choose best:
