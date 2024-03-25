@@ -39,8 +39,4 @@ rxnsToAdd.rxnNames = {'aldose reductase (NADH)'};
 
  - When looking the most significant reporter metabolites for the glucose vs. galactose case, we found that only the metabolites in the ox-red pathway are affected by transcriptional upregulation of genes (D-sorbitol, D-galactose and galactitol). This suggests that when growing solely on galactose, C. intermedia favours the expression of the oxido-reductive pathway in contrast to Leloir.
 
-- Date: 08.03.24: L-glucitol 'C01722' is duplicated in the model. We need to make sure that we unify it. Suggestion: Write a script that looks for all duplicated compounds according to annotations and unifies them. 
-
-
-
-
+7.- We have written a script that readjusts biomass composition according to an experimental total protein content. Then P/O ratio coefficient in complex I was corrected (due to its unknown origin) and reconciled with the PO ratio coefficients in yeastGEM. Once this is done, a series of iterative fitting of both GAM and PO ratio coefficients yielded almost unperturbed results. In summary, glucose is acceptably predicted, while oxygen consumption is higher than CO2 in Cint model as opposed to that observed for other yeasts. This points at a possible revisiting the raw data to see if there are any discrepancies. 
