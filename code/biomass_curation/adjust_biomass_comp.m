@@ -2,8 +2,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 load('../../models/candida_intermedia/cintGEM_oxido.mat')
 %unconstrain NGAM
-x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
-model.lb(x) = 0;
+%x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
+%model.lb(x) = 0;
 %verify growth on lactose
 model = changeMedia_batch(model,'lactose exchange',1);
 sol = solveLP(model,1);
@@ -131,7 +131,7 @@ modelMod = changeMedia_batch(modelMod,'D-glucose exchange',1);
 %value 1.266 (as a basis coeff. for proton translocation)
 modelMod = changePOratio(modelMod,1.266);
 
-for j=1:5
+for j=1:1
 GAM = fitGAM(modelMod);
 modelMod =changeGAM(modelMod,GAM);
 POratio = fitPOratio(modelMod);
@@ -142,15 +142,14 @@ end
 %respiratory quotient looks odd in the generated figure, (low O2
 %consumption and high CO2 production, in comparison to experimental data).
 % %Thus, let's check the OxPhos step
-% oxphosRxns = {'r_0773' 'r_0770' 'r_0439' 'r_0438' 'r_0437' 'r_5195' 'r_0226' 'r_1021'};
-% [~,oxpos] = ismember(modelMod.rxns,oxphosRxns);
-% oxpos = find(oxpos);
-% %get a solution
-% sol = solveLP(modelMod,1);
-% oxFluxes = sol.x(oxpos);
-%  formulas = constructEquations(modelMod,oxpos);
-%  names = {' ' 'complexII' 'complexI' 'complexIV' 'complexIII' 'ATPsynthetase'};
-% fluxes = table(modelMod.rxnNames(oxpos),model.rxns(oxpos),names',formulas,oxFluxes);
+oxphosRxns = {'r_0773' 'r_0770' 'r_0439' 'r_0438' 'r_0437' 'r_5195' 'r_0226' 'r_1021'};
+[~,oxpos] = ismember(modelMod.rxns,oxphosRxns);
+%get a solution
+sol = solveLP(modelMod,1);
+oxFluxes = sol.x(oxpos);
+ formulas = constructEquations(modelMod,oxpos);
+ names = {' ' 'complexII' 'complexI' 'complexIV' 'complexIII' 'ATPsynthetase'};
+fluxes = table(modelMod.rxnNames(oxpos),model.rxns(oxpos),names',formulas,oxFluxes);
 %modify some names for simplicity
 x = find(strcmp(modelMod.rxns,'r_5195'));
 temp = setParam(modelMod,'obj','r_0226',1);
