@@ -62,7 +62,7 @@ for i = 1:length(POratio)
     R          = (abs(mod_data) - expData)./expData;
     %R          = abs((abs(mod_data(3)) - abs(exp_data(3))))/abs(exp_data(3));
     %fitting(i) = R*100;
-    R = R(:,[2,3,4]);
+    R = R(:,[2,4]);
     fitting(i) = sqrt(sum(sum(R.^2)));
     %disp(['POratio = ' num2str(POratio(i)) ' -> Error = ' num2str(fitting(i))])
 end
