@@ -4,6 +4,7 @@ load('../../models/candida_intermedia/cintGEM_oxido.mat')
 %unconstrain NGAM
 %x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
 %model.lb(x) = 0;
+model.ub(x) = 1000;
 %verify growth on lactose
 model = changeMedia_batch(model,'lactose exchange',1);
 sol = solveLP(model,1);
@@ -13,8 +14,15 @@ disp(' ')
 %verify growth on glucose
 model = changeMedia_batch(model,'D-glucose exchange',1);
 disp('Growth on D-glucose')
+oxphosRxns = {'r_0773' 'r_0770' 'r_0439' 'r_0438' 'r_0437' 'r_5195' 'r_0226' 'r_1021'};
+[~,oxpos] = ismember(model.rxns,oxphosRxns);
+oxpos = find(oxpos);
+%get a solution
 sol = solveLP(model,1);
-printFluxes(model,sol.x,true)
+oxFluxes = sol.x(oxpos);
+ formulas = constructEquations(model,oxpos);
+ names = {' ' 'complexII' 'complexI' 'complexIV' 'complexIII' 'ATPsynthetase'};
+fluxes = table(model.rxnNames(oxpos),model.rxns(oxpos),names',formulas,oxFluxes);
 disp(' ')
 Ptot = 0.438; %average across chemostats in g protein / gCDW
 
@@ -129,13 +137,16 @@ clc
 modelMod = changeMedia_batch(modelMod,'D-glucose exchange',1);
 %correct stoichiometry in complex I, lets start with the base S. cerevisiae
 %value 1.266 (as a basis coeff. for proton translocation)
-modelMod = changePOratio(modelMod,1.266);
+modelMod = changePOratio(modelMod,2);
 
 for j=1:1
-GAM = fitGAM(modelMod);
-modelMod =changeGAM(modelMod,GAM);
-POratio = fitPOratio(modelMod);
-modelMod = changePOratio(modelMod,POratio);
+    GAM = fitGAM(modelMod);
+    modelMod =changeGAM(modelMod,GAM);
+    POratio  = fitPOratio(modelMod);
+    modelMod = changePOratio(modelMod,POratio);
+    %NGAM = fitNGAM(modelMod);
+    %modelMod =changeNGAM(modelMod,NGAM);
+    %
 end
 %the initially obtained value corresponds to 30.8 GAM, a low value in
 %comparison with S. cerevisiae, additionally, the fitting of the
@@ -144,6 +155,7 @@ end
 % %Thus, let's check the OxPhos step
 oxphosRxns = {'r_0773' 'r_0770' 'r_0439' 'r_0438' 'r_0437' 'r_5195' 'r_0226' 'r_1021'};
 [~,oxpos] = ismember(modelMod.rxns,oxphosRxns);
+oxpos = find(oxpos);
 %get a solution
 sol = solveLP(modelMod,1);
 oxFluxes = sol.x(oxpos);
@@ -156,5 +168,7 @@ temp = setParam(modelMod,'obj','r_0226',1);
 temp = changeMedia_batch(temp,'D-glucose exchange',1);
 sol = solveLP(temp,1);
 printFluxes(modelMod,sol.x,true)
-%Identify reactions to fit (complex IV, complex III ('r_0438', 'r_0439')
+%save curated model
+model = modelMod;
+save('../../models/candida_intermedia/cintGEM_oxido_curated.mat','model')
 
