@@ -49,6 +49,9 @@ modelConst = setParam(model,'lb','r_0459',0);
 modelConst = setParam(modelConst,'ub','r_0459',0);
 modelConst = setParam(modelConst,'lb','r_4527',0);
 modelConst = setParam(modelConst,'ub','r_4527',0);
+%block cytosolic ATPase
+%modelConst = setParam(modelConst,'ub','r_0227',0);
+%modelConst = setParam(modelConst,'lb','r_0227',0);
 
 modelConst = changeMedia_batch(modelConst,'lactose exchange',1);
 lac_pos = find(strcmp(modelConst.rxnNames,'lactose exchange'));
@@ -60,4 +63,62 @@ error(2) = (bioYield_glu-exp_val(2))/exp_val(2);
 %compare flux dist
 formulas = constructEquations(model);
 FCs = (sol_lac.x+1E-6)./(sol_glu.x+1E-6);
-fluxTable = table(model.rxns,model.rxnNames,formulas,sol_glu.x,sol_lac.x,FCs,model.grRules);
+fluxTable_glcVsLac = table(model.rxns,model.rxnNames,formulas,sol_glu.x,sol_lac.x,FCs,model.grRules);
+galacPos = find(strcmpi(model.metNames,'galactitol'));
+disp(model.metNames(galacPos))
+disp(model.metComps(galacPos))
+galacRxn = find(model.S(galacPos(2),:));
+constructEquations(model,galacRxn)
+%simulate max. galactitol production
+modelConst = setParam(modelConst,'obj',galacPos,1);
+modelConst.ub(galacRxn) =1000;
+sol_lac   = solveLP(modelConst,1);
+galactitol = sol_lac.x(galacRxn)/abs(sol_lac.x(lac_pos));
+%the model does not have any reaction for secreting galactitol, introduce
+%it
+newRxns = {'galactitol[e] <=> '};
+rxnsToAdd.equations = newRxns; 
+% Define reaction names
+rxnsToAdd.rxns     = {'galactitol exchange'};
+rxnsToAdd.rxnNames = {'galactitol exchange'};
+% Define objective and bounds
+rxnsToAdd.c  = [0];
+rxnsToAdd.lb = [0];
+rxnsToAdd.ub = [1000];
+rxnsToAdd.grRules = {''};
+modelConst = addRxns(modelConst,rxnsToAdd,3);
+%It wa also found that conversion from lactose to D-galactose (r_5119) is defined in
+%the reverse direction in this model
+model = modelConst;
+save('../../models/candida_intermedia/cint_GEM_curated.mat','model')
+
+%simulate galactitol accumulation
+modelConst = setParam(modelConst,'obj',galacRxn,1);
+sol_lac   = solveLP(modelConst,1);
+galactitol = sol_lac.x(galacRxn)/abs(sol_lac.x(lac_pos));
+printFluxes(modelConst,sol_lac.x,true)
+%simulate growth of GAL mutant
+GALgenes = {'Seq_1935' 'Seq_4294' ... %gal1
+            'Seq_3460' ... %gal10
+            'Seq_2479' 'Seq_3332'};
+GALmutant = removeGenes(modelConst,GALgenes,true,false,true);
+%simulate growth
+GALmutant = setParam(GALmutant,'obj',bio_pos,1);
+sol_lac_mut   = solveLP(GALmutant,1);
+
+modelConst = setParam(modelConst,'obj',bio_pos,1);
+sol_lac_WT   = solveLP(modelConst,1);
+indxs = (abs(sol_lac_mut.x)+abs(sol_lac_WT.x))>0;
+formulas = constructEquations(modelConst);
+FCs = (sol_lac_mut.x+1E-6)/(sol_lac_WT.x+1E-6);
+fluxTable = table(modelConst.rxns,modelConst.rxnNames,modelConst.grRules,formulas,sol_lac_WT.x,sol_lac_mut.x);
+%simulate growth on galactitol
+GALmutant = setParam(GALmutant,'obj',bio_pos,1);
+GALmutant = changeMedia_batch(GALmutant,'galactitol exchange',1);
+sol_lac_mut   = solveLP(GALmutant,1);
+modelConst = setParam(modelConst,'obj',bio_pos,1);
+modelConst = changeMedia_batch(modelConst,'galactitol exchange',1);
+sol_lac_WT   = solveLP(modelConst,1);
+indxs = (abs(sol_lac_mut.x)+abs(sol_lac_WT.x))>0;
+FCs = (sol_lac_mut.x+1E-6)/(sol_lac_WT.x+1E-6);
+fluxTable = table(modelConst.rxns(indxs),modelConst.rxnNames(indxs),modelConst.grRules(indxs),formulas(indxs),sol_lac_WT.x(indxs),sol_lac_mut.x(indxs),FCs(indxs));
