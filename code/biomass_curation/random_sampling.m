@@ -61,6 +61,27 @@ oxRed_genes = {'Seq_2552' 'xyl1_2' 'xyl1' 'xyl1_3' 'Seq_2272' 'Seq_2189' 'Seq_42
 oxred_gene_table = geneTable(b',:);
 oxred_gene_solutions = newMat(b,:);
 sum_oxred_simul = sum(oxred_gene_solutions,1);
-all_oxred = find(sum_oxred_simul>=3);
+all_oxred = find(sum_oxred_simul>=2);
 reduced_solutions_AlloxredGenes = solutions(:,all_oxred); 
 allOxRed_solutions = table(model.rxns,model.rxnNames,model.grRules,formulas,reduced_solutions_AlloxredGenes);
+writetable(allOxRed_solutions,'../../results/randomSampling_WT_lactose_oxredGenes.txt','delimiter','\t','QuoteStrings',false)
+[a,b] = getExchangeRxns(model);
+allOxRed_solutions_exch = allOxRed_solutions(b,:);
+%identify secreted products
+logicalSol = (reduced_solutions_AlloxredGenes(b,:)>0);
+sumLogicalSol = sum(logicalSol,2);
+[a,b] = sort(sumLogicalSol,'descend');
+allOxRed_solutions_exch = allOxRed_solutions_exch(b,:);
+%get a table that sorts all solutions by number of times metabolites are secreted
+topMets = find(a>=5);
+allOxRed_solutions_exch = allOxRed_solutions_exch(topMets,:);
+%interesting mets 
+target_mets = [allOxRed_solutions_exch.Var1,allOxRed_solutions_exch.Var4];
+allOxRed_solutions_exch = allOxRed_solutions_exch(5:end,:);
+%now we got a list of the interesting exchange reactions to explore in the
+%solutions from random sampling
+%let's try to understand how is L-sorbose secreted by the model
+x=find(strcmp(model.rxns,'r_1909'));
+indexes = find(reduced_solutions_AlloxredGenes(x,:)>flux_threshold);
+sorbose_solutions = table(model.rxns,model.rxnNames,model.grRules,formulas,reduced_solutions_AlloxredGenes(:,indexes));
+
