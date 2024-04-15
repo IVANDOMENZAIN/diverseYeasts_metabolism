@@ -17,7 +17,7 @@ constructEquations(model,x,true)
 save('../../models/candida_intermedia/cint_GEM_curated.mat','model')
 
 model = changeMedia_batch(model,'lactose exchange',1);
-nSamples = 1000;
+nSamples = 10000;
 [~, goodRxns] = randomSampling(model,2,false,false,true);
 [solutions, goodRxns]=randomSampling(model,nSamples,false,false,true,goodRxns,true);
 solutions = full(solutions);
@@ -79,7 +79,7 @@ oxRed_genes = {'Seq_2552' 'xyl1_2' 'xyl1' 'xyl1_3' 'Seq_2272' 'Seq_2189' 'Seq_42
 oxred_gene_table     = geneTable(b',:);
 oxred_gene_solutions = newMat(b,:);
 sum_oxred_simul      = sum(oxred_gene_solutions,1);
-all_oxred            = find(sum_oxred_simul>=2);
+all_oxred            = find(sum_oxred_simul>=1);
 reduced_solutions_AlloxredGenes = solutions(:,all_oxred); 
 allOxRed_solutions = table(model.rxns,model.rxnNames,model.grRules,formulas,reduced_solutions_AlloxredGenes);
 writetable(allOxRed_solutions,'../../results/randomSampling_WT_lactose_oxredGenes.txt','delimiter','\t','QuoteStrings',false)
@@ -114,27 +114,5 @@ indexes = [indexes,x];
 sorbose_gene_table = table(model.genes,model.geneShortNames,model.proteins,newMat(:,indexes));
 writetable(sorbose_gene_table,'../../results/sorbose_gene_table.txt','delimiter','\t','QuoteStrings',false)
 
-%Generate random sampling for GAL mutant
-%simulate growth of GAL mutant
-GALgenes = {'Seq_1935' 'Seq_4294' ... %gal1
-            'Seq_3460' ... %gal10
-            'Seq_2479' 'Seq_3332'};
-GALmutant = removeGenes(model,GALgenes,true,false,true);
-%GALmutant = setParam(GALmutant,'lb','r_4041',0.1);
-GALmutant = changeMedia_batch(GALmutant,'lactose exchange',1);
-[~, goodRxns] = randomSampling(GALmutant,2,false,false,true);
-[solutions_mut, goodRxns]=randomSampling(GALmutant,1000,false,false,true,goodRxns,true);
-x = find(strcmp(model.rxns,'r_4041'));
-indexes = find(solutions_mut(x,:)>flux_threshold);
-table_solutions = table(model.rxns,model.rxnNames,model.grRules,formulas,solutions_mut);
-writetable(table_solutions,'../../results/GALmut_random_solutions.txt','delimiter','\t','QuoteStrings',false)
-%GEt gene matrix for gal mutant solutions
-geneRndMat       = zeros(G,S);
-[grRules,rxnGeneMat,indexes2check] = standardizeGrRules(GALmutant);
-GALmutant.rxnGeneMat = rxnGeneMat;
-newMat = rxnGeneMat';
-temp   = abs(solutions_mut) >= flux_threshold;
-newMat = logical(newMat*temp);
-GALmut_gene_table_allSolutions = table(GALmutant.genes,GALmutant.geneShortNames,newMat);
-writetable(GALmut_gene_table_allSolutions,'../../results/GALmut_gene_table_allSolutions.txt','delimiter','\t','QuoteStrings',false)
+
 
