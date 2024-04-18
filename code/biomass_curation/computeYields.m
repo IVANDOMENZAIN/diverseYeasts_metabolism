@@ -74,23 +74,6 @@ modelConst = setParam(modelConst,'obj',galacPos,1);
 modelConst.ub(galacRxn) =1000;
 sol_lac   = solveLP(modelConst,1);
 galactitol = sol_lac.x(galacRxn)/abs(sol_lac.x(lac_pos));
-%the model does not have any reaction for secreting galactitol, introduce
-%it
-newRxns = {'galactitol[e] <=> '};
-rxnsToAdd.equations = newRxns; 
-% Define reaction names
-rxnsToAdd.rxns     = {'galactitol exchange'};
-rxnsToAdd.rxnNames = {'galactitol exchange'};
-% Define objective and bounds
-rxnsToAdd.c  = [0];
-rxnsToAdd.lb = [0];
-rxnsToAdd.ub = [1000];
-rxnsToAdd.grRules = {''};
-modelConst = addRxns(modelConst,rxnsToAdd,3);
-%It wa also found that conversion from lactose to D-galactose (r_5119) is defined in
-%the reverse direction in this model
-model = modelConst;
-save('../../models/candida_intermedia/cint_GEM_curated.mat','model')
 
 %simulate galactitol accumulation
 modelConst = setParam(modelConst,'obj',galacRxn,1);

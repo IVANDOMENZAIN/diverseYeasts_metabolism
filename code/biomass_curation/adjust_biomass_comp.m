@@ -17,6 +17,23 @@ y = y(1);
 model.S(y,x) = 1;
 constructEquations(model,x,true)
 
+%the model does not have any reaction for secreting galactitol, introduce
+%it
+newRxns = {'galactitol[e] <=> '};
+rxnsToAdd.equations = newRxns; 
+% Define reaction names
+rxnsToAdd.rxns     = {'galactitol exchange'};
+rxnsToAdd.rxnNames = {'galactitol exchange'};
+% Define objective and bounds
+rxnsToAdd.c  = [0];
+rxnsToAdd.lb = [0];
+rxnsToAdd.ub = [1000];
+rxnsToAdd.grRules = {''};
+model = addRxns(model,rxnsToAdd,3);
+%It wa also found that conversion from lactose to D-galactose (r_5119) is defined in
+%the reverse direction in this model
+
+
 %from chemostat data it was found that the GUR at 0 dilution rate must
 %correspond to 0.03 mmol/gDw h, fix this GUR and max. NGAM to obtain its LB
 x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
