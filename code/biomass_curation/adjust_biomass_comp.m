@@ -1,10 +1,32 @@
 % Kamesh Peri.      Last update: 2024-03-12
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 load('../../models/candida_intermedia/cintGEM_oxido.mat')
-%unconstrain NGAM
-%x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
-%model.lb(x) = 0;
+%%correct reaction
+% * L-xylo-3-hexulose reductase: 'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> L-sorbose[c] + NADP(+)[c]'};... G0RNA2 (lxr4)
+%by this:  * L-xylo-3-hexulose reductase: 'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> D-glucitol[c] + NADP(+)[c]'};... G0RNA2 (lxr4)
+rxnName = 'xyl_hex_red';
+x = find(strcmp(model.rxns,'xyl_hex_red'));
+products = find(model.S(:,x)>0);
+disp(model.metNames(products))
+products = products(1);
+disp(model.metNames(products))
+model.S(products,x) = 0;
+y = find(strcmpi(model.metNames,'D-glucitol')); 
+model.metComps(y)
+y = y(1);
+model.S(y,x) = 1;
+constructEquations(model,x,true)
+
+%from chemostat data it was found that the GUR at 0 dilution rate must
+%correspond to 0.03 mmol/gDw h, fix this GUR and max. NGAM to obtain its LB
+x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
+model = changeMedia_batch(model,'D-glucose exchange',0.03);
+model.lb(x) = 0;
 model.ub(x) = 1000;
+temp = setParam(model,'obj',x,1);
+sol = solveLP(temp);
+model.lb(x) = sol.x(x);
+
 %verify growth on lactose
 model = changeMedia_batch(model,'lactose exchange',1);
 sol = solveLP(model,1);
@@ -135,39 +157,15 @@ constructEquations(modelMod,posLip)
 clc
 %block lactose uptake
 modelMod = changeMedia_batch(modelMod,'D-glucose exchange',1);
-%correct stoichiometry in complex I, lets start with the base S. cerevisiae
-%value 1.266 (as a basis coeff. for proton translocation)
+%correct stoichiometry in complex I, lets start with the theoretical valuer of
+% 2 (as a basis coeff. for proton translocation)
 modelMod = changePOratio(modelMod,2);
-
 for j=1:1
     GAM = fitGAM(modelMod);
     modelMod =changeGAM(modelMod,GAM);
     POratio  = fitPOratio(modelMod);
     modelMod = changePOratio(modelMod,POratio);
-    %NGAM = fitNGAM(modelMod);
-    %modelMod =changeNGAM(modelMod,NGAM);
-    %
 end
-%the initially obtained value corresponds to 30.8 GAM, a low value in
-%comparison with S. cerevisiae, additionally, the fitting of the
-%respiratory quotient looks odd in the generated figure, (low O2
-%consumption and high CO2 production, in comparison to experimental data).
-% %Thus, let's check the OxPhos step
-oxphosRxns = {'r_0773' 'r_0770' 'r_0439' 'r_0438' 'r_0437' 'r_5195' 'r_0226' 'r_1021'};
-[~,oxpos] = ismember(modelMod.rxns,oxphosRxns);
-oxpos = find(oxpos);
-%get a solution
-sol = solveLP(modelMod,1);
-oxFluxes = sol.x(oxpos);
- formulas = constructEquations(modelMod,oxpos);
- names = {' ' 'complexII' 'complexI' 'complexIV' 'complexIII' 'ATPsynthetase'};
-fluxes = table(modelMod.rxnNames(oxpos),model.rxns(oxpos),names',formulas,oxFluxes);
-%modify some names for simplicity
-x = find(strcmp(modelMod.rxns,'r_5195'));
-temp = setParam(modelMod,'obj','r_0226',1);
-temp = changeMedia_batch(temp,'D-glucose exchange',1);
-sol = solveLP(temp,1);
-printFluxes(modelMod,sol.x,true)
 %save curated model
 model = modelMod;
 save('../../models/candida_intermedia/cintGEM_oxido_curated.mat','model')
