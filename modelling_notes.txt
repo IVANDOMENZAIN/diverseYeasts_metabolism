@@ -42,4 +42,10 @@ rxnsToAdd.rxnNames = {'aldose reductase (NADH)'};
 7.- We have written a script that readjusts biomass composition according to an experimental total protein content. Then P/O ratio coefficient in complex I was corrected (due to its unknown origin) and reconciled with the PO ratio coefficients in yeastGEM. Once this is done, a series of iterative fitting of both GAM and PO ratio coefficients yielded almost unperturbed results. In summary, glucose is acceptably predicted, while oxygen consumption is higher than CO2 in Cint model as opposed to that observed for other yeasts. This points at a possible revisiting the raw data to see if there are any discrepancies. 
 
 - 04/12/2024: We have discovered that we introduce the LXR4 reaction wrongly, we have corrected to the following representation, in accordance with literature:
- * L-xylo-3-hexulose reductase: 'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> D-glucitol[c] + NADP(+)[c]'};... G0RNA2 (lxr4)
+ * L-xylo-3-hexulose reductase: 'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> D-glucitol[c] + NADP(+)[c]'};... G0RNA2 (lxr4).
+
+
+- 04/18/2024: We ran rep mets with the updated model. Results are practically the same. In summary the top significant metabolites are: 
+
+*galactose in lactose condition (no other ox-red mets were found among the significant ones)
+*In the galactose condition, NADH is the top reporter met (check if We can blame ox-.red genes for this?), additionally we find glucitol, sorbose and galactitol under the 0.005 significance threshold. 
