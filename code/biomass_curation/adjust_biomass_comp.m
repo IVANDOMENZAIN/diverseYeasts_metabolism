@@ -185,5 +185,17 @@ for j=1:1
 end
 %save curated model
 model = modelMod;
-save('../../models/candida_intermedia/cintGEM_oxido_curated.mat','model')
+%correct reveersibilities of lactose metabolism, start with leloir
+[~,b] = ismember(galGenes,model.genes);
+model = setParam(model,'lb','r_0459',-1000); %GAL7
+model = setParam(model,'lb','galMut',-1000); %GAL10 (mutarotase part)
+model.rev(find(strcmp(model.rxns,'galMut'))) = 1;
+%now for Ox-red
+x = find(strcmp(model.rxns,'ald_red_NADH'));
+model.rev(x) =1;
+model.lb(x) = -1000;
+x = find(strcmp(model.rxns,'ald_red_NADPH'));
+model.rev(x) =1;
+model.lb(x) = -1000;
+save('../../models/candida_intermedia/cintGEM_curated.mat','model')
 
