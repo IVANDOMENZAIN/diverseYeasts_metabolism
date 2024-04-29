@@ -1,5 +1,4 @@
 function [fluxTable,geneTable,geneTable_summary,exch_table] = runRandomSampling(model,nSamples,flux_threshold)
-%[~, goodRxns] = randomSampling(model,1,false,false,true);
 solutions  =randomSampling(model,nSamples,true,false,true,[],true);
 solutions = full(solutions);
 %get statistical info on flux distributions
