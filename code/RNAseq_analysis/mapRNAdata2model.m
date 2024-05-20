@@ -10,13 +10,27 @@ threshold = 0.01;
 conditions = {'gal' 'lac' 'cel' 'xyl'};
 nanMat   = zeros(length(model.orthologues),5);
 nanMat(:,:) = nan;
+
+orthoIDs = model.orthologues;
+for k=1:length(orthoIDs)
+    if contains(model.orthologues{k},';')
+        x = strsplit(model.orthologues{k},';');
+        orthoIDs{k} = x{1};
+    end 
+end
+
 for j = 1:length(conditions)
     newTable = table();
     cond = conditions{j};
     disp(cond)
+    %Get RNAseq like gene IDs from model
     newTable.dataGenes = (model.orthologues);
+    %open RNAseq results file for the given condition 
     DE_results = readtable(['../../results/RNA_DE_analysis/RNA_DE_glu_vs_' cond '.txt'],'delimiter','\t');
-    [iA,iB] = ismember(model.orthologues,DE_results.Row);
+    %find which genes in the model are also part of the RNAseq dataset
+
+
+    [iA,iB] = ismember(orthoIDs,DE_results.Row);
     newTable.geneNames = cell(height(newTable),1);
     newTable.geneNames(find(iA)) = DE_results.geneNames(iB(iB>0));
     newTable.modelGenes = model.genes;
@@ -34,8 +48,7 @@ for j = 1:length(conditions)
     
     newTable.adjPval = zeros(height(newTable),1);
     newTable.adjPval(find(iA)) = DE_results.adjPVal(iB(iB>0));  
-    %Map the rxns and metsthat are linked to each gene
-    
+    %Map the rxns and mets that are linked to each gene
     %Create a metGeneMatrix
     metGeneMat = logical(model.S)*(model.rxnGeneMat);
     newTable.rxns = cell(height(newTable),1);
