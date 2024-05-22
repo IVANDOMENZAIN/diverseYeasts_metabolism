@@ -46,6 +46,7 @@ Thumbs.db
 *.mlappinstall 
 *.mltbx
 helpsearch*/
+.Rhistory
 
 # Non-complying tables #
 ########################
@@ -54,3 +55,6 @@ helpsearch*/
 *.png
 *.jpg
 *.tiff
+*.pdf
+*.afdesign
+*.fig
