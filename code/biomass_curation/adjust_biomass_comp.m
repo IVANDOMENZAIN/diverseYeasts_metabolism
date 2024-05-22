@@ -17,6 +17,27 @@ y = y(1);
 model.S(y,x) = 1;
 constructEquations(model,x,true)
 
+
+rxnsToAdd = struct();
+newRxns = {'galactitol[c] + NAD[c] => D-tagatose[c] + NADH[c] + H+[c]'};...
+           %'D-Fructose[c] + ATP[c] <=> D-Fructose-6-Phosphate[c] + ADP[c]'};
+rxnsToAdd.rxns = {'galactitol_dhd'};
+rxnsToAdd.equations = newRxns;
+
+% Define reaction names
+rxnsToAdd.rxnNames = {'galactitol dehydrogenase'};% 'hxk'};
+%Define objective and bounds
+rxnsToAdd.c  = [0];
+rxnsToAdd.lb = [0];
+rxnsToAdd.ub = [1000];
+% %genes to add
+genesToAdd.genes          = {'galactitol_dh'};
+genesToAdd.geneShortNames = {'galactitol_dh'};  
+rxnsToAdd.grRules         = {'galactitol_dh'};
+% Introduce changes to the model
+model_oxido = addGenesRaven(model,genesToAdd);
+model_oxido.proteins = [model_oxido.proteins; genesToAdd.genes'];
+model_oxido = addRxns(model_oxido,rxnsToAdd,3);
 %the model does not have any reaction for secreting galactitol, introduce
 %it
 newRxns = {'galactitol[e] <=> '};
@@ -29,11 +50,45 @@ rxnsToAdd.c  = [0];
 rxnsToAdd.lb = [0];
 rxnsToAdd.ub = [1000];
 rxnsToAdd.grRules = {''};
-model = addRxns(model,rxnsToAdd,3);
-%It wa also found that conversion from lactose to D-galactose (r_5119) is defined in
-%the reverse direction in this model
+model_oxido = addRxns(model_oxido,rxnsToAdd,3);
+model = model_oxido;
 
+%correct reveersibilities of lactose metabolism, start with leloir
+%[~,b] = ismember(galGenes,model.genes);
+model = setParam(model,'lb','r_0459',-1000); %GAL7
+model = setParam(model,'lb','galMut',-1000); %GAL10 (mutarotase part)
+model.rev(find(strcmp(model.rxns,'galMut'))) = 1;
+%now for Ox-red
+x = find(strcmp(model.rxns,'ald_red_NADH'));
+model.rev(x) =0;
+model.lb(x) = 0;
+x = find(strcmp(model.rxns,'ald_red_NADPH'));
+model.rev(x) =0;
+model.lb(x) = 0;
 
+%verify growth on lactose
+disp('Growth on glucose')
+model = changeMedia_batch(model,'D-glucose exchange',1);
+sol = solveLP(model,1);
+printFluxes(model,sol.x,true)
+disp(' ')
+disp('Growth on lactose')
+model = changeMedia_batch(model,'lactose exchange',1);
+sol = solveLP(model,1);
+printFluxes(model,sol.x,true)
+disp(' ')
+disp('Growth on D-galactose')
+model = changeMedia_batch(model,'D-galactose exchange',1);
+sol = solveLP(model,1);
+printFluxes(model,sol.x,true)
+disp(' ')
+disp('Growth on lactose')
+model = changeMedia_batch(model,'lactose exchange',1);
+model = setParam(model,'obj',3736,1); %GAL7
+sol = solveLP(model,1);
+printFluxes(model,sol.x,true)
+disp(' ')
+pause
 %from chemostat data it was found that the GUR at 0 dilution rate must
 %correspond to 0.03 mmol/gDw h, fix this GUR and max. NGAM to obtain its LB
 x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
@@ -43,45 +98,30 @@ model.ub(x) = 1000;
 temp = setParam(model,'obj',x,1);
 sol = solveLP(temp);
 model.lb(x) = sol.x(x);
+%correct stoichiometry in complex I, lets start with the theoretical valuer of
+% 2 (as a basis coeff. for proton translocation)
+%introducing the oxidoreductive pathway reactions from A.
+%niger/A.nidulans/T.reesei. Reference:﻿﻿10.1074/jbc.M112.372755
+model = changePOratio(model,2.2);
 
-%verify growth on lactose
-model = changeMedia_batch(model,'lactose exchange',1);
-sol = solveLP(model,1);
-disp('Growth on lactose')
-printFluxes(model,sol.x,true)
-disp(' ')
-%verify growth on glucose
-model = changeMedia_batch(model,'D-glucose exchange',1);
-disp('Growth on D-glucose')
-oxphosRxns = {'r_0773' 'r_0770' 'r_0439' 'r_0438' 'r_0437' 'r_5195' 'r_0226' 'r_1021'};
-[~,oxpos] = ismember(model.rxns,oxphosRxns);
-oxpos = find(oxpos);
-%get a solution
-sol = solveLP(model,1);
-oxFluxes = sol.x(oxpos);
- formulas = constructEquations(model,oxpos);
- names = {' ' 'complexII' 'complexI' 'complexIV' 'complexIII' 'ATPsynthetase'};
-fluxes = table(model.rxnNames(oxpos),model.rxns(oxpos),names',formulas,oxFluxes);
-disp(' ')
 Ptot = 0.438; %average across chemostats in g protein / gCDW
 
-%identify relevant rxns and mets associated to D-galactose in the model 
 posBiomass = find(contains(model.rxnNames,'biomass'));
 constructEquations(model,posBiomass)
 %the biomass rxn is the modular one, print the pseudoreaction for each of
 %the different modular components (carbs, lipids, prots, etc.
-posProt = find(contains(model.rxnNames,'rotein pseudoreaction'));
-constructEquations(model,posProt)
-posLip = find(contains(model.rxnNames,'ipid backbone pseudoreaction'));
-constructEquations(model,posLip)
-posCarb = find(contains(model.rxnNames,'arbohydrate pseudoreaction'));
-constructEquations(model,posCarb)
-posIon = find(contains(model.rxnNames,'ion pseudoreaction'));
-constructEquations(model,posIon)
-posRNA = find(contains(model.rxnNames,'RNA pseudoreaction'));
-constructEquations(model,posRNA)
-posDNA = find(contains(model.rxnNames,'DNA pseudoreaction'));
-constructEquations(model,posDNA)
+% posProt = find(contains(model.rxnNames,'rotein pseudoreaction'));
+% constructEquations(model,posProt)
+% posLip = find(contains(model.rxnNames,'ipid backbone pseudoreaction'));
+% constructEquations(model,posLip)
+% posCarb = find(contains(model.rxnNames,'arbohydrate pseudoreaction'));
+% constructEquations(model,posCarb)
+% posIon = find(contains(model.rxnNames,'ion pseudoreaction'));
+% constructEquations(model,posIon)
+% posRNA = find(contains(model.rxnNames,'RNA pseudoreaction'));
+% constructEquations(model,posRNA)
+% posDNA = find(contains(model.rxnNames,'DNA pseudoreaction'));
+% constructEquations(model,posDNA)
 
 %Components of biomass:  (from yeastGEM)
 %        id         MW [g/mol]  class     name
@@ -121,14 +161,7 @@ comps = {'s_0404'	89.09       'P'     % A     Alanine         ala
          's_3714'   852.83      'N'     % heme a
          's_1405'   376.36      'N'     % riboflavin
          's_1467'   96.06       'N'};   % sulphate
-%check if the biomass components also correspond to those in yeastGEM (in 
-%terms of metabolite identifiers
-compMets = comps(:,1);
-for i=1:length(compMets)
-    met = compMets(i);
-    pos = find(strcmp(model.mets, met));
-    disp(['met: ' model.mets{pos} ' metname: ' model.metNames{pos}])
-end
+
 %WITH THIS we have checked that all the metabolites composing the biomass
 %reaction are all consistent with those in yeastGEM
 
@@ -158,13 +191,13 @@ modelMod = rescalePseudoReaction(modelMod,'carbohydrate',fC);
 modelMod = rescalePseudoReaction(modelMod,'lipid backbone',fL);
 modelMod = rescalePseudoReaction(modelMod,'lipid chain',fL);
 %Check how stoichiometries have changed for each of the biomass components
-constructEquations(modelMod,posBiomass)
-constructEquations(model,posProt)
-constructEquations(modelMod,posProt)
-constructEquations(model,posCarb)
-constructEquations(modelMod,posCarb)
-constructEquations(model,posLip)
-constructEquations(modelMod,posLip)
+% constructEquations(modelMod,posBiomass)
+% constructEquations(model,posProt)
+% constructEquations(modelMod,posProt)
+% constructEquations(model,posCarb)
+% constructEquations(modelMod,posCarb)
+% constructEquations(model,posLip)
+% constructEquations(modelMod,posLip)
 %recompute the sum of mass fractions (Protein + carbohydrates + lipid backbones + RNA + DNA) 
 [~,X] = getFraction(modelMod,comps,'P',0);
 [~,X] = getFraction(modelMod,comps,'C',X);
@@ -172,30 +205,24 @@ constructEquations(modelMod,posLip)
 [~,X] = getFraction(modelMod,comps,'D',X);
 [~,X] = getFraction(modelMod,comps,'L',X);
 clc
-%block lactose uptake
-modelMod = changeMedia_batch(modelMod,'D-glucose exchange',1);
-%correct stoichiometry in complex I, lets start with the theoretical valuer of
-% 2 (as a basis coeff. for proton translocation)
-modelMod = changePOratio(modelMod,2);
+
 for j=1:1
     GAM = fitGAM(modelMod);
     modelMod =changeGAM(modelMod,GAM);
     POratio  = fitPOratio(modelMod);
     modelMod = changePOratio(modelMod,POratio);
 end
+
 %save curated model
 model = modelMod;
-%correct reveersibilities of lactose metabolism, start with leloir
-[~,b] = ismember(galGenes,model.genes);
-model = setParam(model,'lb','r_0459',-1000); %GAL7
-model = setParam(model,'lb','galMut',-1000); %GAL10 (mutarotase part)
-model.rev(find(strcmp(model.rxns,'galMut'))) = 1;
-%now for Ox-red
-x = find(strcmp(model.rxns,'ald_red_NADH'));
-model.rev(x) =1;
-model.lb(x) = -1000;
-x = find(strcmp(model.rxns,'ald_red_NADPH'));
-model.rev(x) =1;
-model.lb(x) = -1000;
+model = changeMedia_batch(model,'lactose exchange',1);
+model = setParam(model,'obj',3736,1);
+%block ATP:D-tagatose 6-phosphotransferase
+model = setParam(model,'ub','r_4393',0);
+model = setParam(model,'lb','r_4393',0);
+
+
+sol = solveLP(model,1);
+printFluxes(model,sol.x,true)
 save('../../models/candida_intermedia/cintGEM_curated.mat','model')
 
