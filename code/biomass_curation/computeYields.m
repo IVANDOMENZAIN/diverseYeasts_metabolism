@@ -1,10 +1,10 @@
-load('../../models/candida_intermedia/cintGEM_oxido_curated.mat')
+load('../../models/candida_intermedia/cintGEM_curated.mat')
 exp_val(1) = 0.66; %glucose
 exp_val(2) = 0.59;
 %unconstrain NGAM
-x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
-model.lb(x) = 0;
-model.ub(x) = 1000;
+%x = find(strcmpi(model.rxnNames,'non-growth associated maintenance reaction'));
+%model.lb(x) = 0;
+%model.ub(x) = 1000;
 %simulate growth on carbon-limited conditions (glucose)
 model = changeMedia_batch(model,'D-glucose exchange',1);
 bio_pos = find(strcmp(model.rxnNames,'growth'));
