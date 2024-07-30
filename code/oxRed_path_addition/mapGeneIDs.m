@@ -79,11 +79,11 @@ end
 
 %LEt's substitute the IDs for the manually introduced genes
 pos = find(strcmpi(model.orthologues,'xyl1'));
-model.orthologues{pos} = 'SGZ54938.1';
+model.orthologues{pos} = 'CIC11T00000000334';
 pos = find(strcmpi(model.orthologues,'xyl1_2'));
-model.orthologues{pos} = 'SGZ56686.1';
+model.orthologues{pos} = 'CIC11T00000000893';
 pos = find(strcmpi(model.orthologues,'xyl1_3'));
-model.orthologues{pos} = 'SGZ50191.1';
+model.orthologues{pos} = 'CIC11T00000005922';
 
 %add version control
 genes = model.genes;

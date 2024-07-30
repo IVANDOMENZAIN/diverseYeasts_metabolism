@@ -1066,7 +1066,7 @@ Seq_5399	Candida_intermedia@Seq_5399	CIC11T00000003340	Metschnikowia_proteae@Seq
 Seq_5435	Candida_intermedia@Seq_5435	CIC11T00000001216	Metschnikowia_matae@Seq_2907
 Seq_598	Candida_intermedia@Seq_598	CIC11T00000001269	Geotrichum_candidum@Seq_5694
 Seq_843	Candida_intermedia@Seq_843	CIC11T00000000769	Lodderomyces_elongisporus@Seq_5442
-xyl1	xyl1	SGZ54938.1	xyl1
-xyl1_2	xyl1_2	SGZ56686.1	xyl1_2
-xyl1_3	xyl1_3	SGZ50191.1	xyl1_3
+xyl1	xyl1	CIC11T00000000334	xyl1
+xyl1_2	xyl1_2	CIC11T00000000893	xyl1_2
+xyl1_3	xyl1_3	CIC11T00000005922	xyl1_3
 lxr4	lxr4	lxr4	lxr4
