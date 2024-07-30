@@ -1,7 +1,8 @@
 %An orthofinder run comparing a T. reesei LXR4 sequence vs. the FASTA file
 %used for the model reconstruction revealed that this gene has an
 %orthologue in C. intermedia (Seq_2272)
-
+clc
+clear
 %Let's try to find the gene in our model
 load('../../models/candida_intermedia/cintGEM_oxido_orthologs.mat')
 %search gene in model
@@ -71,7 +72,8 @@ model.genes = model.genes(1:(end-1));
 model.orthologues = model.orthologues(1:(end-1));
 model.proteins = model.proteins(1:(end-1));
 idx = find(strcmpi(model.genes,'Candida_intermedia@Seq_2272'));
-model.geneShortNames(idx) = {'lxr4'};
+model.geneShortNames(idx) = {'LXR4'};
+model.proteins(idx) = {'lxr4'};
 model.geneShortNames = model.geneShortNames(1:(end-1));
 %Correct grRules and rxnGEneMat
 model.grRules = strrep(model.grRules,'Candida_intermedia@','');
