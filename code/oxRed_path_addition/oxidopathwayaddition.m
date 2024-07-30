@@ -25,9 +25,9 @@ rxnsToAdd.c  = [0 0];
 rxnsToAdd.lb = [0 -1000];
 rxnsToAdd.ub = [1000 1000];
 % %genes to add
-genesToAdd.genes          = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};
-genesToAdd.geneShortNames = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};  
-rxnsToAdd.grRules         = {'xyl1 or xyl1_2 or xyl1_3' 'lxr4'};
+genesToAdd.genes          = {'Candida_intermedia@Seq_110' 'lxr4'};
+genesToAdd.geneShortNames = {'xyl1_3' 'lxr4'};  
+rxnsToAdd.grRules         = {'Candida_intermedia@Seq_2193 or Candida_intermedia@Seq_4254 or Candida_intermedia@Seq_110' 'lxr4'};
 %LEt's evaluate biomass production before integrating the pathway
 cd ..
 model = changeMedia_batch(model,'lactose exchange',1);
@@ -97,7 +97,7 @@ rxnsToAdd.c  = 0;
 rxnsToAdd.lb = 0;
 rxnsToAdd.ub = 1000;
 % %genes to add
-rxnsToAdd.grRules = {'xyl1_2'};
+rxnsToAdd.grRules = {'Candida_intermedia@Seq_4254'};
 % Introduce changes to the model
 model_oxido = addRxns(model_oxido,rxnsToAdd,3);
 %Evaluate if rxn can carry flux
