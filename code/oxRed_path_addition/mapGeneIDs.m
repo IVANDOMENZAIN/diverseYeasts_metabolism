@@ -1,6 +1,6 @@
 current = pwd;
 %load model
-load('../models/candida_intermedia/cintGEM_oxido.mat');
+load('../../models/candida_intermedia/cintGEM_oxido.mat');
 %correct gene IDs (shorter strings)
 model.genes = strrep(model.genes,'Candida_intermedia@','');
 %We've run orthofinder using the FASTA files that were used for the model
@@ -13,21 +13,18 @@ model.genes = strrep(model.genes,'Candida_intermedia@','');
 %model.orthologues
 
 %checking the presence of the unassigned genes in the orthogroups
-orthogroups     = readtable('../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
+orthogroups     = readtable('../../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
 [presence,idxs] = ismember(model.genes,orthogroups.model_Cint);
 % it works!
 idxs2 = find(presence);
 idxs = idxs(presence);
 model.orthologues = model.genes;
 model.orthologues(idxs2) = orthogroups.data_Cint(idxs);
-%overwrite the model
-save('../../models/candida_intermedia/cintGEM_oxido.mat','model');
 
 %In the FASTA file used for the RNAseq dataset there seem to be two kind of
 %IDs for each gene (IDs: SGZXXXX and IDs CIC11Cxxxx), When checking the RNA
 %dataset it seems that all genes are reported with the latter kind, so
 %let's correct that in our model
-
 
 %Open fasta file (the one used for RNAse1)
 dataset = readtable('../../orthoFinder/data_Cint.txt','HeaderLines',0);
@@ -53,7 +50,7 @@ newDataset = table(column1,column2,'VariableNames',{'IDs_1' 'IDs_2'});
 %Correct second column of IDs
 newDataset.IDs_2 = strrep(newDataset.IDs_2,'CIC11C','CIC11T');
 %Let's correct orthologues IDs in the model 
-load('../../models/candida_intermedia/cintGEM_oxido.mat')
+%load('../../models/candida_intermedia/cintGEM_oxido_orthologs.mat')
 [presence,iB] = ismember(model.orthologues,newDataset.IDs_1);
 iA = find(presence);
 iB = iB(iB~=0);
@@ -82,14 +79,24 @@ end
 
 %LEt's substitute the IDs for the manually introduced genes
 pos = find(strcmpi(model.orthologues,'xyl1'));
-model.orthologues{pos} = 'CIC11T00000000334';
+model.orthologues{pos} = 'SGZ54938.1';
 pos = find(strcmpi(model.orthologues,'xyl1_2'));
-model.orthologues{pos} = 'CIC11T00000000893';
+model.orthologues{pos} = 'SGZ56686.1';
 pos = find(strcmpi(model.orthologues,'xyl1_3'));
-model.orthologues{pos} = 'CIC11T00000005922';
+model.orthologues{pos} = 'SGZ50191.1';
+
+%add version control
+genes = model.genes;
+shortnames = model.geneShortNames;
+orthologues = model.orthologues;
+proteins = model.proteins;
+gene_table = table(genes,shortNames,orthologues,proteins);
+writetable(gene_table,'../../models/candida_intermedia/gene_table_CintOxido_orthologues.txt','Delimiter','\t','QuoteStrings',false);
+%overwrite the model
+save('../../models/candida_intermedia/cintGEM_oxido_orthologs.mat','model');
 
 %WARNING: WE cannot find any orthologue fo lxr4 (trichoderma reesei)
 %in the available sequence files for C. intermedia
 
 %But let's save the model
-save('../../models/candida_intermedia/cintGEM_oxido.mat','model')
+save('../../models/candida_intermedia/cintGEM_oxido_orthologs.mat','model')
