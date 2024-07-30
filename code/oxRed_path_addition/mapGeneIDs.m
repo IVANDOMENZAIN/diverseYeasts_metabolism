@@ -90,7 +90,7 @@ genes = model.genes;
 shortnames = model.geneShortNames;
 orthologues = model.orthologues;
 proteins = model.proteins;
-gene_table = table(genes,shortNames,orthologues,proteins);
+gene_table = table(genes,shortnames,orthologues,proteins);
 writetable(gene_table,'../../models/candida_intermedia/gene_table_CintOxido_orthologues.txt','Delimiter','\t','QuoteStrings',false);
 %overwrite the model
 save('../../models/candida_intermedia/cintGEM_oxido_orthologs.mat','model');

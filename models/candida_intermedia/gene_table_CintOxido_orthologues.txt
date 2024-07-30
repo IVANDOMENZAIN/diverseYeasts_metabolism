@@ -1,4 +1,4 @@
-genes	shortNames	orthologues	proteins
+genes	shortnames	orthologues	proteins
 Seq_878	Candida_intermedia@Seq_878	CIC11T00000001711	YAL012W
 Seq_4470	Candida_intermedia@Seq_4470	CIC11T00000004475	YGR199W
 Seq_3000	Candida_intermedia@Seq_3000	CIC11T00000000106	YAL044C

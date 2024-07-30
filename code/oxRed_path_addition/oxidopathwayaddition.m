@@ -3,7 +3,7 @@
 % leloir-deletion mutant. Resulting model is saved in ../../models/candida_intermedia/
 % as:   cintGEM_oxido.mat
 %
-% Last edited: Ivan Domenzain 2021-04-12
+% Last edited: Ivan Domenzain 2024-07-30
 
 current = pwd;
 load('../../models/candida_intermedia/cint_leloir.mat')
