@@ -1,0 +1,212 @@
+followChanged(model,solMG.x, solMO.x,50, 1E-2,0.05,'ATP')
+These reactions have flux values that differ by more than 50 percent, absolute values above 0.01, and a total difference above 0.05 (5 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+ATP 
+
+r_0227: ATP[c] + H2O[c] => ADP[c] + H+[e] + phosphate[c]
+	ATPase, cytosolic
+	Flux: 1.5726 Reference flux: 0.58124 Difference: 0.99141
+
+r_0458: ATP[c] + D-galactose[c] => ADP[c] + alpha-D-galactose 1-phosphate[c] + H+[c]
+	galactokinase
+	Flux: 0 Reference flux: 1 Difference: -1
+
+r_0533: ATP[c] + D-fructose[c] => ADP[c] + D-fructose 6-phosphate[c] + H+[c]
+	hexokinase (D-fructose:ATP)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0886: ATP[c] + D-fructose 6-phosphate[c] => ADP[c] + D-fructose 1,6-bisphosphate[c] + H+[c]
+	phosphofructokinase
+	Flux: 0.45772 Reference flux: 0.81657 Difference: -0.35885
+
+r_0887: ATP[c] + sedoheptulose 7-phosphate[c] => ADP[c] + H+[c] + sedoheptulose 1,7-bisphosphate[c]
+	phosphofructokinase (s7p)
+	Flux: 0.42248 Reference flux: 0.23782 Difference: 0.18466
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,'ATP')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above ATP (3992 reactions)
+
+{Index exceeds the number of array elements. Index must not exceed 0.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('followChanged', '/Users/ramana/RAVEN/core/followChanged.m', 100)" style="font-weight:bold">followChanged</a> (<a href="matlab: opentoline('/Users/ramana/RAVEN/core/followChanged.m',100,0)">line 100</a>)
+    fluxText=['Flux: ' num2str(fluxesA(fluxIndexes(i))) ' Reference flux: ' num2str(fluxesB(fluxIndexes(i))) ' Difference: ' num2str(fluxesA(fluxIndexes(i))-fluxesB(fluxIndexes(i)))];
+} 
+diary '../results/CintGEM_lactose_flux_leloir_vs_oxRed_ATP.txt'
+followChanged(model,solMG.x, solMO.x,25,0.05,'ATP')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above ATP (3992 reactions)
+
+{Index exceeds the number of array elements. Index must not exceed 0.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('followChanged', '/Users/ramana/RAVEN/core/followChanged.m', 100)" style="font-weight:bold">followChanged</a> (<a href="matlab: opentoline('/Users/ramana/RAVEN/core/followChanged.m',100,0)">line 100</a>)
+    fluxText=['Flux: ' num2str(fluxesA(fluxIndexes(i))) ' Reference flux: ' num2str(fluxesB(fluxIndexes(i))) ' Difference: ' num2str(fluxesA(fluxIndexes(i))-fluxesB(fluxIndexes(i)))];
+} 
+diary '../results/CintGEM_lactose_flux_leloir_vs_oxRed_ATP.txt'
+followChanged(model,solMG.x, solMO.x,0.25,0.05,0.05,'ATP')
+These reactions have flux values that differ by more than 0.25 percent, absolute values above 0.05, and a total difference above 0.05 (9 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+ATP 
+
+r_0227: ATP[c] + H2O[c] => ADP[c] + H+[e] + phosphate[c]
+	ATPase, cytosolic
+	Flux: 1.5726 Reference flux: 0.58124 Difference: 0.99141
+
+r_0446: ATP[c] + formate[c] + THF[c] <=> 10-formyl-THF[c] + ADP[c] + phosphate[c]
+	formate-tetrahydrofolate ligase
+	Flux: -0.8219 Reference flux: -1.0962 Difference: 0.27427
+
+r_0458: ATP[c] + D-galactose[c] => ADP[c] + alpha-D-galactose 1-phosphate[c] + H+[c]
+	galactokinase
+	Flux: 0 Reference flux: 1 Difference: -1
+
+r_0533: ATP[c] + D-fructose[c] => ADP[c] + D-fructose 6-phosphate[c] + H+[c]
+	hexokinase (D-fructose:ATP)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0886: ATP[c] + D-fructose 6-phosphate[c] => ADP[c] + D-fructose 1,6-bisphosphate[c] + H+[c]
+	phosphofructokinase
+	Flux: 0.45772 Reference flux: 0.81657 Difference: -0.35885
+
+r_0887: ATP[c] + sedoheptulose 7-phosphate[c] => ADP[c] + H+[c] + sedoheptulose 1,7-bisphosphate[c]
+	phosphofructokinase (s7p)
+	Flux: 0.42248 Reference flux: 0.23782 Difference: 0.18466
+
+r_0892: 1,3-bisphospho-D-glycerate[c] + ADP[c] <=> 3-phosphonato-D-glycerate(3-)[c] + ATP[c]
+	phosphoglycerate kinase
+	Flux: 2.1205 Reference flux: 2.2833 Difference: -0.16279
+
+r_1110: ADP[c] + ATP[m] <=> ADP[m] + ATP[c]
+	ADP/ATP transporter
+	Flux: 22.0507 Reference flux: 21.1047 Difference: 0.94603
+
+r_0226: ADP[m] + 3 H+[c] + phosphate[m] => ATP[m] + 2 H+[m] + H2O[m]
+	ATP synthase
+	Flux: 22.0895 Reference flux: 21.144 Difference: 0.94545
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,0.05,'ATP')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above 0.05 (6 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+ATP 
+
+r_0227: ATP[c] + H2O[c] => ADP[c] + H+[e] + phosphate[c]
+	ATPase, cytosolic
+	Flux: 1.5726 Reference flux: 0.58124 Difference: 0.99141
+
+r_0446: ATP[c] + formate[c] + THF[c] <=> 10-formyl-THF[c] + ADP[c] + phosphate[c]
+	formate-tetrahydrofolate ligase
+	Flux: -0.8219 Reference flux: -1.0962 Difference: 0.27427
+
+r_0458: ATP[c] + D-galactose[c] => ADP[c] + alpha-D-galactose 1-phosphate[c] + H+[c]
+	galactokinase
+	Flux: 0 Reference flux: 1 Difference: -1
+
+r_0533: ATP[c] + D-fructose[c] => ADP[c] + D-fructose 6-phosphate[c] + H+[c]
+	hexokinase (D-fructose:ATP)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0886: ATP[c] + D-fructose 6-phosphate[c] => ADP[c] + D-fructose 1,6-bisphosphate[c] + H+[c]
+	phosphofructokinase
+	Flux: 0.45772 Reference flux: 0.81657 Difference: -0.35885
+
+r_0887: ATP[c] + sedoheptulose 7-phosphate[c] => ADP[c] + H+[c] + sedoheptulose 1,7-bisphosphate[c]
+	phosphofructokinase (s7p)
+	Flux: 0.42248 Reference flux: 0.23782 Difference: 0.18466
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,0.05,'ATP')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above 0.05 (6 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+ATP 
+
+r_0227: ATP[c] + H2O[c] => ADP[c] + H+[e] + phosphate[c]
+	ATPase, cytosolic
+	Flux: 1.5726 Reference flux: 0.58124 Difference: 0.99141
+
+r_0446: ATP[c] + formate[c] + THF[c] <=> 10-formyl-THF[c] + ADP[c] + phosphate[c]
+	formate-tetrahydrofolate ligase
+	Flux: -0.8219 Reference flux: -1.0962 Difference: 0.27427
+
+r_0458: ATP[c] + D-galactose[c] => ADP[c] + alpha-D-galactose 1-phosphate[c] + H+[c]
+	galactokinase
+	Flux: 0 Reference flux: 1 Difference: -1
+
+r_0533: ATP[c] + D-fructose[c] => ADP[c] + D-fructose 6-phosphate[c] + H+[c]
+	hexokinase (D-fructose:ATP)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0886: ATP[c] + D-fructose 6-phosphate[c] => ADP[c] + D-fructose 1,6-bisphosphate[c] + H+[c]
+	phosphofructokinase
+	Flux: 0.45772 Reference flux: 0.81657 Difference: -0.35885
+
+r_0887: ATP[c] + sedoheptulose 7-phosphate[c] => ADP[c] + H+[c] + sedoheptulose 1,7-bisphosphate[c]
+	phosphofructokinase (s7p)
+	Flux: 0.42248 Reference flux: 0.23782 Difference: 0.18466
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,0.01,'ATP')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above 0.01 (6 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+ATP 
+
+r_0227: ATP[c] + H2O[c] => ADP[c] + H+[e] + phosphate[c]
+	ATPase, cytosolic
+	Flux: 1.5726 Reference flux: 0.58124 Difference: 0.99141
+
+r_0446: ATP[c] + formate[c] + THF[c] <=> 10-formyl-THF[c] + ADP[c] + phosphate[c]
+	formate-tetrahydrofolate ligase
+	Flux: -0.8219 Reference flux: -1.0962 Difference: 0.27427
+
+r_0458: ATP[c] + D-galactose[c] => ADP[c] + alpha-D-galactose 1-phosphate[c] + H+[c]
+	galactokinase
+	Flux: 0 Reference flux: 1 Difference: -1
+
+r_0533: ATP[c] + D-fructose[c] => ADP[c] + D-fructose 6-phosphate[c] + H+[c]
+	hexokinase (D-fructose:ATP)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0886: ATP[c] + D-fructose 6-phosphate[c] => ADP[c] + D-fructose 1,6-bisphosphate[c] + H+[c]
+	phosphofructokinase
+	Flux: 0.45772 Reference flux: 0.81657 Difference: -0.35885
+
+r_0887: ATP[c] + sedoheptulose 7-phosphate[c] => ADP[c] + H+[c] + sedoheptulose 1,7-bisphosphate[c]
+	phosphofructokinase (s7p)
+	Flux: 0.42248 Reference flux: 0.23782 Difference: 0.18466
+
+diary off
+followChanged(model,solMG.x, solMO.x,10,0.05,0.01,'ATP')
+These reactions have flux values that differ by more than 10 percent, absolute values above 0.05, and a total difference above 0.01 (6 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+ATP 
+
+r_0227: ATP[c] + H2O[c] => ADP[c] + H+[e] + phosphate[c]
+	ATPase, cytosolic
+	Flux: 1.5726 Reference flux: 0.58124 Difference: 0.99141
+
+r_0446: ATP[c] + formate[c] + THF[c] <=> 10-formyl-THF[c] + ADP[c] + phosphate[c]
+	formate-tetrahydrofolate ligase
+	Flux: -0.8219 Reference flux: -1.0962 Difference: 0.27427
+
+r_0458: ATP[c] + D-galactose[c] => ADP[c] + alpha-D-galactose 1-phosphate[c] + H+[c]
+	galactokinase
+	Flux: 0 Reference flux: 1 Difference: -1
+
+r_0533: ATP[c] + D-fructose[c] => ADP[c] + D-fructose 6-phosphate[c] + H+[c]
+	hexokinase (D-fructose:ATP)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0886: ATP[c] + D-fructose 6-phosphate[c] => ADP[c] + D-fructose 1,6-bisphosphate[c] + H+[c]
+	phosphofructokinase
+	Flux: 0.45772 Reference flux: 0.81657 Difference: -0.35885
+
+r_0887: ATP[c] + sedoheptulose 7-phosphate[c] => ADP[c] + H+[c] + sedoheptulose 1,7-bisphosphate[c]
+	phosphofructokinase (s7p)
+	Flux: 0.42248 Reference flux: 0.23782 Difference: 0.18466
+
+diary off

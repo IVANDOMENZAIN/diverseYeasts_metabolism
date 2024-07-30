@@ -1,0 +1,138 @@
+followChanged(model,solMG.x, solMO.x,50, 1E-2,0.05,'NADPH')
+These reactions have flux values that differ by more than 50 percent, absolute values above 0.01, and a total difference above 0.05 (3 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADPH 
+
+r_0466: D-glucose 6-phosphate[c] + NADP(+)[c] => 6-O-phosphono-D-glucono-1,5-lactone[c] + H+[c] + NADPH[c]
+	glucose 6-phosphate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+r_0889: 6-phospho-D-gluconate[c] + NADP(+)[c] => carbon dioxide[c] + D-ribulose 5-phosphate[c] + NADPH[c]
+	phosphogluconate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+xyl_hex_red: H+[c] + NADPH[c] + L-xylo-3-hexulose[c] <=> D-glucitol[c] + NADP(+)[c]
+	L-xylo-3-hexulose reductase
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,0.25,0.05,0.05,'NADPH')
+These reactions have flux values that differ by more than 0.25 percent, absolute values above 0.05, and a total difference above 0.05 (5 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADPH 
+
+r_0466: D-glucose 6-phosphate[c] + NADP(+)[c] => 6-O-phosphono-D-glucono-1,5-lactone[c] + H+[c] + NADPH[c]
+	glucose 6-phosphate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+r_0471: 2-oxoglutarate[c] + ammonium[c] + H+[c] + NADPH[c] => H2O[c] + L-glutamate[c] + NADP(+)[c]
+	glutamate dehydrogenase (NADP)
+	Flux: 1.7853 Reference flux: 1.9431 Difference: -0.15776
+
+r_0732: 5,10-methylenetetrahydrofolate[c] + NADP(+)[c] <=> 5,10-methenyl-THF[c] + NADPH[c]
+	methylenetetrahydrofolate dehydrogenase (NADP)
+	Flux: 0.88134 Reference flux: 1.1565 Difference: -0.27516
+
+r_0889: 6-phospho-D-gluconate[c] + NADP(+)[c] => carbon dioxide[c] + D-ribulose 5-phosphate[c] + NADPH[c]
+	phosphogluconate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+xyl_hex_red: H+[c] + NADPH[c] + L-xylo-3-hexulose[c] <=> D-glucitol[c] + NADP(+)[c]
+	L-xylo-3-hexulose reductase
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,0.05,'NADPH')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above 0.05 (4 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADPH 
+
+r_0466: D-glucose 6-phosphate[c] + NADP(+)[c] => 6-O-phosphono-D-glucono-1,5-lactone[c] + H+[c] + NADPH[c]
+	glucose 6-phosphate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+r_0732: 5,10-methylenetetrahydrofolate[c] + NADP(+)[c] <=> 5,10-methenyl-THF[c] + NADPH[c]
+	methylenetetrahydrofolate dehydrogenase (NADP)
+	Flux: 0.88134 Reference flux: 1.1565 Difference: -0.27516
+
+r_0889: 6-phospho-D-gluconate[c] + NADP(+)[c] => carbon dioxide[c] + D-ribulose 5-phosphate[c] + NADPH[c]
+	phosphogluconate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+xyl_hex_red: H+[c] + NADPH[c] + L-xylo-3-hexulose[c] <=> D-glucitol[c] + NADP(+)[c]
+	L-xylo-3-hexulose reductase
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,0.05,'NADPH')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above 0.05 (4 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADPH 
+
+r_0466: D-glucose 6-phosphate[c] + NADP(+)[c] => 6-O-phosphono-D-glucono-1,5-lactone[c] + H+[c] + NADPH[c]
+	glucose 6-phosphate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+r_0732: 5,10-methylenetetrahydrofolate[c] + NADP(+)[c] <=> 5,10-methenyl-THF[c] + NADPH[c]
+	methylenetetrahydrofolate dehydrogenase (NADP)
+	Flux: 0.88134 Reference flux: 1.1565 Difference: -0.27516
+
+r_0889: 6-phospho-D-gluconate[c] + NADP(+)[c] => carbon dioxide[c] + D-ribulose 5-phosphate[c] + NADPH[c]
+	phosphogluconate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+xyl_hex_red: H+[c] + NADPH[c] + L-xylo-3-hexulose[c] <=> D-glucitol[c] + NADP(+)[c]
+	L-xylo-3-hexulose reductase
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,0.01,'NADPH')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above 0.01 (4 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADPH 
+
+r_0466: D-glucose 6-phosphate[c] + NADP(+)[c] => 6-O-phosphono-D-glucono-1,5-lactone[c] + H+[c] + NADPH[c]
+	glucose 6-phosphate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+r_0732: 5,10-methylenetetrahydrofolate[c] + NADP(+)[c] <=> 5,10-methenyl-THF[c] + NADPH[c]
+	methylenetetrahydrofolate dehydrogenase (NADP)
+	Flux: 0.88134 Reference flux: 1.1565 Difference: -0.27516
+
+r_0889: 6-phospho-D-gluconate[c] + NADP(+)[c] => carbon dioxide[c] + D-ribulose 5-phosphate[c] + NADPH[c]
+	phosphogluconate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+xyl_hex_red: H+[c] + NADPH[c] + L-xylo-3-hexulose[c] <=> D-glucitol[c] + NADP(+)[c]
+	L-xylo-3-hexulose reductase
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,10,0.05,0.01,'NADPH')
+These reactions have flux values that differ by more than 10 percent, absolute values above 0.05, and a total difference above 0.01 (4 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADPH 
+
+r_0466: D-glucose 6-phosphate[c] + NADP(+)[c] => 6-O-phosphono-D-glucono-1,5-lactone[c] + H+[c] + NADPH[c]
+	glucose 6-phosphate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+r_0732: 5,10-methylenetetrahydrofolate[c] + NADP(+)[c] <=> 5,10-methenyl-THF[c] + NADPH[c]
+	methylenetetrahydrofolate dehydrogenase (NADP)
+	Flux: 0.88134 Reference flux: 1.1565 Difference: -0.27516
+
+r_0889: 6-phospho-D-gluconate[c] + NADP(+)[c] => carbon dioxide[c] + D-ribulose 5-phosphate[c] + NADPH[c]
+	phosphogluconate dehydrogenase
+	Flux: 1.2727 Reference flux: 0.71885 Difference: 0.55389
+
+xyl_hex_red: H+[c] + NADPH[c] + L-xylo-3-hexulose[c] <=> D-glucitol[c] + NADP(+)[c]
+	L-xylo-3-hexulose reductase
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off

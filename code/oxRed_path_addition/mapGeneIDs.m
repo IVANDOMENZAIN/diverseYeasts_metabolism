@@ -1,6 +1,6 @@
 current = pwd;
 %load model
-load('../../models/candida_intermedia/cintGEM_oxido.mat');
+load('../models/candida_intermedia/cintGEM_oxido.mat');
 %correct gene IDs (shorter strings)
 model.genes = strrep(model.genes,'Candida_intermedia@','');
 %We've run orthofinder using the FASTA files that were used for the model
@@ -13,7 +13,7 @@ model.genes = strrep(model.genes,'Candida_intermedia@','');
 %model.orthologues
 
 %checking the presence of the unassigned genes in the orthogroups
-orthogroups     = readtable('../../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
+orthogroups     = readtable('../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
 [presence,idxs] = ismember(model.genes,orthogroups.model_Cint);
 % it works!
 idxs2 = find(presence);

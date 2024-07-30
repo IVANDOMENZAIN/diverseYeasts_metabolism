@@ -1,0 +1,198 @@
+followChanged(model,solMG.x, solMO.x,50, 1E-2,0.05,'NADH')
+These reactions have flux values that differ by more than 50 percent, absolute values above 0.01, and a total difference above 0.05 (3 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADH 
+
+r_0323: D-glucitol[c] + NAD[c] => D-fructose[c] + H+[c] + NADH[c]
+	D-sorbitol dehydrogenase (D-fructose producing)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_4983: NAD[c] + galactitol[c] <=> H+[c] + NADH[c] + L-xylo-3-hexulose[c]
+	MNXR117337
+	Flux: 1 Reference flux: 0 Difference: 1
+
+ald_red_NADH: D-galactose[c] + NADH[c] => NAD[c] + galactitol[c]
+	aldose reductase (NADH)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,0.25,0.05,0.05,'NADH')
+These reactions have flux values that differ by more than 0.25 percent, absolute values above 0.05, and a total difference above 0.05 (10 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADH 
+
+r_0163: ethanol[c] + NAD[c] => acetaldehyde[c] + H+[c] + NADH[c]
+	alcohol dehydrogenase (ethanol to acetaldehyde)
+	Flux: 0.71621 Reference flux: 0.85792 Difference: -0.14172
+
+r_0165: acetaldehyde[m] + H+[m] + NADH[m] => ethanol[m] + NAD[m]
+	mitochondrial alcohol dehydrogenase
+	Flux: 0.71621 Reference flux: 0.85792 Difference: -0.14172
+
+r_0323: D-glucitol[c] + NAD[c] => D-fructose[c] + H+[c] + NADH[c]
+	D-sorbitol dehydrogenase (D-fructose producing)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0445: formate[c] + NAD[c] => carbon dioxide[c] + NADH[c]
+	formate dehydrogenase
+	Flux: 0.8248 Reference flux: 1.0991 Difference: -0.27431
+
+r_0486: glyceraldehyde 3-phosphate[c] + NAD[c] + phosphate[c] <=> 1,3-bisphospho-D-glycerate[c] + H+[c] + NADH[c]
+	glyceraldehyde-3-phosphate dehydrogenase
+	Flux: 2.1205 Reference flux: 2.2833 Difference: -0.16279
+
+r_0501: L-glycine[m] + NAD[m] + THF[m] => 5,10-methylenetetrahydrofolate[m] + ammonium[m] + carbon dioxide[m] + NADH[m]
+	glycine cleavage system
+	Flux: 0.40684 Reference flux: 0.54391 Difference: -0.13707
+
+r_0891: 3-phosphonato-D-glycerate(3-)[c] + NAD[c] => 3-phospho-hydroxypyruvate[c] + H+[c] + NADH[c]
+	phosphoglycerate dehydrogenase
+	Flux: 0.55593 Reference flux: 0.69524 Difference: -0.13931
+
+r_4983: NAD[c] + galactitol[c] <=> H+[c] + NADH[c] + L-xylo-3-hexulose[c]
+	MNXR117337
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_5195: 5 H+[m] + NADH[c] + ubiquinone-6[m] => 4 H+[c] + NAD[c] + ubiquinol-6[m]
+	NADH:ubiquinone oxidoreductase(with proton pump)
+	Flux: 5.8335 Reference flux: 5.5609 Difference: 0.27262
+
+ald_red_NADH: D-galactose[c] + NADH[c] => NAD[c] + galactitol[c]
+	aldose reductase (NADH)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,0.05,'NADH')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above 0.05 (6 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADH 
+
+r_0323: D-glucitol[c] + NAD[c] => D-fructose[c] + H+[c] + NADH[c]
+	D-sorbitol dehydrogenase (D-fructose producing)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0445: formate[c] + NAD[c] => carbon dioxide[c] + NADH[c]
+	formate dehydrogenase
+	Flux: 0.8248 Reference flux: 1.0991 Difference: -0.27431
+
+r_0501: L-glycine[m] + NAD[m] + THF[m] => 5,10-methylenetetrahydrofolate[m] + ammonium[m] + carbon dioxide[m] + NADH[m]
+	glycine cleavage system
+	Flux: 0.40684 Reference flux: 0.54391 Difference: -0.13707
+
+r_0891: 3-phosphonato-D-glycerate(3-)[c] + NAD[c] => 3-phospho-hydroxypyruvate[c] + H+[c] + NADH[c]
+	phosphoglycerate dehydrogenase
+	Flux: 0.55593 Reference flux: 0.69524 Difference: -0.13931
+
+r_4983: NAD[c] + galactitol[c] <=> H+[c] + NADH[c] + L-xylo-3-hexulose[c]
+	MNXR117337
+	Flux: 1 Reference flux: 0 Difference: 1
+
+ald_red_NADH: D-galactose[c] + NADH[c] => NAD[c] + galactitol[c]
+	aldose reductase (NADH)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,0.05,'NADH')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above 0.05 (6 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADH 
+
+r_0323: D-glucitol[c] + NAD[c] => D-fructose[c] + H+[c] + NADH[c]
+	D-sorbitol dehydrogenase (D-fructose producing)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0445: formate[c] + NAD[c] => carbon dioxide[c] + NADH[c]
+	formate dehydrogenase
+	Flux: 0.8248 Reference flux: 1.0991 Difference: -0.27431
+
+r_0501: L-glycine[m] + NAD[m] + THF[m] => 5,10-methylenetetrahydrofolate[m] + ammonium[m] + carbon dioxide[m] + NADH[m]
+	glycine cleavage system
+	Flux: 0.40684 Reference flux: 0.54391 Difference: -0.13707
+
+r_0891: 3-phosphonato-D-glycerate(3-)[c] + NAD[c] => 3-phospho-hydroxypyruvate[c] + H+[c] + NADH[c]
+	phosphoglycerate dehydrogenase
+	Flux: 0.55593 Reference flux: 0.69524 Difference: -0.13931
+
+r_4983: NAD[c] + galactitol[c] <=> H+[c] + NADH[c] + L-xylo-3-hexulose[c]
+	MNXR117337
+	Flux: 1 Reference flux: 0 Difference: 1
+
+ald_red_NADH: D-galactose[c] + NADH[c] => NAD[c] + galactitol[c]
+	aldose reductase (NADH)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,25,0.05,0.01,'NADH')
+These reactions have flux values that differ by more than 25 percent, absolute values above 0.05, and a total difference above 0.01 (6 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADH 
+
+r_0323: D-glucitol[c] + NAD[c] => D-fructose[c] + H+[c] + NADH[c]
+	D-sorbitol dehydrogenase (D-fructose producing)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0445: formate[c] + NAD[c] => carbon dioxide[c] + NADH[c]
+	formate dehydrogenase
+	Flux: 0.8248 Reference flux: 1.0991 Difference: -0.27431
+
+r_0501: L-glycine[m] + NAD[m] + THF[m] => 5,10-methylenetetrahydrofolate[m] + ammonium[m] + carbon dioxide[m] + NADH[m]
+	glycine cleavage system
+	Flux: 0.40684 Reference flux: 0.54391 Difference: -0.13707
+
+r_0891: 3-phosphonato-D-glycerate(3-)[c] + NAD[c] => 3-phospho-hydroxypyruvate[c] + H+[c] + NADH[c]
+	phosphoglycerate dehydrogenase
+	Flux: 0.55593 Reference flux: 0.69524 Difference: -0.13931
+
+r_4983: NAD[c] + galactitol[c] <=> H+[c] + NADH[c] + L-xylo-3-hexulose[c]
+	MNXR117337
+	Flux: 1 Reference flux: 0 Difference: 1
+
+ald_red_NADH: D-galactose[c] + NADH[c] => NAD[c] + galactitol[c]
+	aldose reductase (NADH)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
+followChanged(model,solMG.x, solMO.x,10,0.05,0.01,'NADH')
+These reactions have flux values that differ by more than 10 percent, absolute values above 0.05, and a total difference above 0.01 (8 reactions)
+
+Only prints reactions involving one or more of the following metabolites:
+NADH 
+
+r_0163: ethanol[c] + NAD[c] => acetaldehyde[c] + H+[c] + NADH[c]
+	alcohol dehydrogenase (ethanol to acetaldehyde)
+	Flux: 0.71621 Reference flux: 0.85792 Difference: -0.14172
+
+r_0165: acetaldehyde[m] + H+[m] + NADH[m] => ethanol[m] + NAD[m]
+	mitochondrial alcohol dehydrogenase
+	Flux: 0.71621 Reference flux: 0.85792 Difference: -0.14172
+
+r_0323: D-glucitol[c] + NAD[c] => D-fructose[c] + H+[c] + NADH[c]
+	D-sorbitol dehydrogenase (D-fructose producing)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+r_0445: formate[c] + NAD[c] => carbon dioxide[c] + NADH[c]
+	formate dehydrogenase
+	Flux: 0.8248 Reference flux: 1.0991 Difference: -0.27431
+
+r_0501: L-glycine[m] + NAD[m] + THF[m] => 5,10-methylenetetrahydrofolate[m] + ammonium[m] + carbon dioxide[m] + NADH[m]
+	glycine cleavage system
+	Flux: 0.40684 Reference flux: 0.54391 Difference: -0.13707
+
+r_0891: 3-phosphonato-D-glycerate(3-)[c] + NAD[c] => 3-phospho-hydroxypyruvate[c] + H+[c] + NADH[c]
+	phosphoglycerate dehydrogenase
+	Flux: 0.55593 Reference flux: 0.69524 Difference: -0.13931
+
+r_4983: NAD[c] + galactitol[c] <=> H+[c] + NADH[c] + L-xylo-3-hexulose[c]
+	MNXR117337
+	Flux: 1 Reference flux: 0 Difference: 1
+
+ald_red_NADH: D-galactose[c] + NADH[c] => NAD[c] + galactitol[c]
+	aldose reductase (NADH)
+	Flux: 1 Reference flux: 0 Difference: 1
+
+diary off
