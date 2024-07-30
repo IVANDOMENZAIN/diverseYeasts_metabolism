@@ -16,9 +16,7 @@ load('../../models/candida_intermedia/cint_leloir.mat')
 %niger/A.nidulans/T.reesei. Reference:﻿﻿10.1074/jbc.M112.372755
 newRxns = {'D-galactose[c] + NADPH[c] => galactitol[c] + NADP(+)[c]'... 
            'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> L-sorbose[c] + NADP(+)[c]'};...
-           %'D-Fructose[c] + ATP[c] <=> D-Fructose-6-Phosphate[c] + ADP[c]'};
 rxnsToAdd.equations = newRxns;
-
 % Define reaction names
 rxnsToAdd.rxnNames = {'aldose reductase (NAPDH)'  'L-xylo-3-hexulose reductase'};% 'hexokinase'};
 rxnsToAdd.rxns     = {'ald_red_NADPH' 'xyl_hex_red'};% 'hxk'};
@@ -32,7 +30,7 @@ genesToAdd.geneShortNames = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};
 rxnsToAdd.grRules         = {'xyl1 or xyl1_2 or xyl1_3' 'G0RNA2'};
 %LEt's evaluate biomass production before integrating the pathway
 cd ..
-model = changeMedia(model,'lac_ex',1);
+model = changeMedia_batch(model,'lactose exchange',1);
 sol1  = solveLP(model,1);
 printFluxes(model,sol1.x)
 % Introduce changes to the model
@@ -43,7 +41,7 @@ model_oxido = addRxns(model_oxido,rxnsToAdd,3);
 I  = haveFlux(model_oxido,1E-6,'ald_red_NADPH');
 I2 = haveFlux(model_oxido,1E-6,'xyl_hex_red');
 %LEt's evaluate biomass production
-model_oxido = changeMedia(model_oxido,'lac_ex',1);
+model_oxido = changeMedia_batch(model_oxido,'lactose exchange',1);
 sol2 = solveLP(model_oxido,1);
 printFluxes(model_oxido,sol2.x)
 %Let's evaluate the whole pathway
@@ -84,7 +82,7 @@ writetable(t,'../results/lactose_pathways_comparison_Cint.txt','delimiter','\t',
 clc
 followChanged(model_oxido,[sol1.x; 0; 0],sol3.x,5E-1, 1E-6, 1E-8, {'ATP'})
 
-% Kamesh has shared that xyl1 displays cofactor cofactor promiscuity, let's
+% Kamesh has shared that xyl1 displays cofactor promiscuity, let's
 % add this to the model
 % Define reaction names
 rxnsToAdd = [];
@@ -114,6 +112,19 @@ model.ub(index)  = 1000;
 index = find(contains(model_oxido.rxns,'r_4222')); %Galactokinase
 model.lb(index)  = 0;
 model.ub(index)  = 1000;
+%standardize grRules
+[rules,mat] = standardizeGrRules(model,false);
+model.grRules = rules;
+model.rxnGeneMat = mat;
 %save model (oxido-reductive pathway)
 save('../models/candida_intermedia/cintGEM_oxido.mat','model')
+%generate version-controllable file
+formulas = constructEquations(model);
+rxns = model.rxns;
+rxnNames = model.rxnNames;
+grRules = model.grRules;
+modelTable = table(rxns,rxnNames,formulas, grRules);
+writetable(modelTable,'../models/candida_intermedia/cintGEM_oxido.txt','WriteVariableNames',true,'Delimiter','\t','QuoteStrings',false);
+cd(current)
+
 cd(current)
