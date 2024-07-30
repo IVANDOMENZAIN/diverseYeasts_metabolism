@@ -25,9 +25,9 @@ rxnsToAdd.c  = [0 0];
 rxnsToAdd.lb = [0 -1000];
 rxnsToAdd.ub = [1000 1000];
 % %genes to add
-genesToAdd.genes          = {'xyl1' 'xyl1_2' 'xyl1_3' 'G0RNA2'};
+genesToAdd.genes          = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};
 genesToAdd.geneShortNames = {'xyl1' 'xyl1_2' 'xyl1_3' 'lxr4'};  
-rxnsToAdd.grRules         = {'xyl1 or xyl1_2 or xyl1_3' 'G0RNA2'};
+rxnsToAdd.grRules         = {'xyl1 or xyl1_2 or xyl1_3' 'lxr4'};
 %LEt's evaluate biomass production before integrating the pathway
 cd ..
 model = changeMedia_batch(model,'lactose exchange',1);
