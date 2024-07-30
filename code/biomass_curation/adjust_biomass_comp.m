@@ -33,7 +33,6 @@ rxnsToAdd.ub = [1000];
 rxnsToAdd.grRules         = {'Seq_2272'};
 % Introduce changes to the model
 model_oxido = model;%addGenesRaven(model,genesToAdd);
-model_oxido.proteins = [model_oxido.proteins; genesToAdd.genes'];
 model_oxido = addRxns(model_oxido,rxnsToAdd,3);
 %the model does not have any reaction for secreting galactitol, introduce
 %it (based on secretion/uptake experimental phenotype
@@ -96,12 +95,13 @@ temp = setParam(model,'obj',x,1);
 sol = solveLP(temp);
 model.lb(x) = sol.x(x);
 
-%correct stoichiometry in complex I, lets start with the theoretical valuer of
-% 2 (as a basis coeff. for proton translocation)
-model = changePOratio(model,2.2);
 %calibrate biomass comp
 modelMod = calibrate_biomass_pseudoreaction(model);
 
+%correct stoichiometry in complex I, lets start with the theoretical valuer of
+% 2.5 (as a basis coeff. for proton translocation, and in agreement with
+% theory for organisms with complex I in ETC)
+modelMod = changePOratio(modelMod,2.5);
 for j=1:1
     GAM = fitGAM(modelMod);
     modelMod =changeGAM(modelMod,GAM);
@@ -114,8 +114,8 @@ model = modelMod;
 model = changeMedia_batch(model,'lactose exchange',1);
 model = setParam(model,'obj',3736,1);
 %block ATP:D-tagatose 6-phosphotransferase
-model = setParam(model,'ub','r_4393',0);
-model = setParam(model,'lb','r_4393',0);
+%model = setParam(model,'ub','r_4393',0);
+%model = setParam(model,'lb','r_4393',0);
 %
 sol = solveLP(model,1);
 printFluxes(model,sol.x,true)

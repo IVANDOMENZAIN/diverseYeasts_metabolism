@@ -43,5 +43,5 @@ modelMod = rescalePseudoReaction(modelMod,'lipid chain',fL);
 [~,X] = getFraction(modelMod,comps,'R',X);
 [~,X] = getFraction(modelMod,comps,'D',X);
 [~,X] = getFraction(modelMod,comps,'L',X);
-disp(['Calibrated biomass composition accounts for ' num2str(x) '% of gCDW'])
+disp(['Calibrated biomass composition accounts for ' num2str(X) '% of gCDW'])
 end
