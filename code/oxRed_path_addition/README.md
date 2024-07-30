@@ -12,4 +12,4 @@ Run the scripts in the following order.
 3. `lxr4_exploration.m`: explore presence of lxr4 in the model and data. Result: lxr4 was already present in our model but assigned to other reaction(s).
 
 # Results
-The resulting functional model can be found in `models/candida_intermedia/cintGEM_oxido.mat`
+The resulting functional model can be found in `models/candida_intermedia/cintGEM_oxido_orthologs_curated.mat`

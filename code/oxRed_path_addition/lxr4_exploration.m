@@ -3,7 +3,7 @@
 %orthologue in C. intermedia (Seq_2272)
 
 %Let's try to find the gene in our model
-load('../../models/candida_intermedia/cintGEM_oxido.mat')
+load('../../models/candida_intermedia/cintGEM_oxido_orthologs.mat')
 %search gene in model
 genePos = find(strcmpi(model.genes,'Seq_2272'));
 %The gene is present let's see if it has been detected also in our RNA
@@ -20,13 +20,11 @@ newTable = table();
 for j = 1:length(conditions)
     cond = conditions{j};
     if ~strcmpi(cond,'glu')
-        disp(cond)
         DE_results = readtable(['../../results/RNA_DE_analysis/RNA_DE_glu_vs_' cond '.txt'],'delimiter','\t');
         index = find(strcmpi(DE_results.Row,ortholog));
         newTable = [newTable; [DE_results(index,:), conditions(j)]];
     end
 end
-%newTable.condition = conditions(2:end)';
 %It was found that our gene is significantly upreg in presence of galactose
 %let's search for the rest of the pathway
 genes = {'xyl1' 'xyl1_2' 'GAL1' 'lad' 'XYL2'};
@@ -38,7 +36,6 @@ for i = 1:length(genes)
     for j = 1:length(conditions)
         cond = conditions{j};
         if ~strcmpi(cond,'glu')
-            disp(cond)
             DE_results = readtable(['../../results/RNA_DE_analysis/RNA_DE_glu_vs_' cond '.txt'],'delimiter','\t');
             index = find(strcmpi(DE_results.Row,geneDataID));
             newTable = [newTable; [DE_results(index,:), conditions(j)]];
@@ -57,8 +54,8 @@ lxr4Rxns = find(contains(model.grRules,'Seq_2272'));
 %uniprot for its cerevisiae orthologues.
 %Let's correct gene association for the lxr4 rxns (oxi/red pathway) in the model
 try
-    idx = find(contains(model.orthologues,'G0RNA2'));
-    idx = find(contains(model.grRules,'G0RNA2'));
+    idx = find(contains(model.orthologues,'lxr4'));
+    idx = find(contains(model.grRules,'lxr4'));
     %correct gene association 
     model.grRules{idx} = 'Candida_intermedia@Seq_2272';
     model.rxnGeneMat(idx,:) = 0*model.rxnGeneMat(idx,:);
@@ -81,6 +78,24 @@ model.grRules = strrep(model.grRules,'Candida_intermedia@','');
 [grRules,rxnGeneMat] = standardizeGrRules(model);
 model.grRules = grRules;
 model.rxnGeneMat = rxnGeneMat;
-save('../../models/candida_intermedia/cintGEM_oxido.mat','model')
+
+%generate version-controllable files
+formulas = constructEquations(model);
+rxns = model.rxns;
+rxnNames = model.rxnNames;
+grRules = model.grRules;
+modelTable = table(rxns,rxnNames,formulas, grRules);
+writetable(modelTable,'../../models/candida_intermedia/cintGEM_oxido_orthologs_curated.txt','WriteVariableNames',true,'Delimiter','\t','QuoteStrings',false);
+
+%add version control
+genes = model.genes;
+model.geneShortNames = strrep(model.geneShortNames,'Candida_intermedia@','');
+shortnames = model.geneShortNames;
+orthologues = model.orthologues;
+proteins = model.proteins;
+gene_table = table(genes,shortnames,orthologues,proteins);
+writetable(gene_table,'../../models/candida_intermedia/gene_table_CintOxido_orthologues_curated.txt','Delimiter','\t','QuoteStrings',false);
+
+save('../../models/candida_intermedia/cintGEM_oxido_orthologs_curated.mat','model')
 
 
