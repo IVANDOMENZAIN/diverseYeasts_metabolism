@@ -1,3 +1,5 @@
+clear
+clc
 current = pwd;
 %load model
 load('../../models/candida_intermedia/cintGEM_oxido.mat');
@@ -56,6 +58,7 @@ iA = find(presence);
 iB = iB(iB~=0);
 %substitute IDs in the model
 model.orthologues(iA) = newDataset.IDs_2(iB);
+
 %There are some genes in the model that map to more than one sequence in
 %the data, let's find them and substitute them
 for i=1:length(model.orthologues)
@@ -78,13 +81,18 @@ end
 %with the correct ortholog ID
 
 %LEt's substitute the IDs for the manually introduced genes
-pos = find(strcmpi(model.orthologues,'xyl1'));
+pos = find(strcmpi(model.genes,'Seq_2193'));
 model.orthologues{pos} = 'CIC11T00000000334';
-pos = find(strcmpi(model.orthologues,'xyl1_2'));
+model.geneShortNames{pos} = 'XYL1';
+model.proteins{pos} = 'xyl1';
+pos = find(strcmpi(model.genes,'Seq_4254'));
 model.orthologues{pos} = 'CIC11T00000000893';
-pos = find(strcmpi(model.orthologues,'xyl1_3'));
+model.geneShortNames{pos} = 'XYL1_2';
+model.proteins{pos} = 'xyl1_2';
+pos = find(strcmpi(model.genes,'Seq_110'));
 model.orthologues{pos} = 'CIC11T00000005922';
-
+model.geneShortNames{pos} = 'XYL1_3';
+model.proteins{pos} = 'xyl1_3';
 %add version control
 genes = model.genes;
 shortnames = model.geneShortNames;

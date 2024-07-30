@@ -279,7 +279,7 @@ Seq_2562	Candida_intermedia@Seq_2562	CIC11T00000000244	YHR074W
 Seq_2307	Candida_intermedia@Seq_2307	CIC11T00000001754	YHR091C
 Seq_1183	Candida_intermedia@Seq_1183	Seq_1183	YHR096C
 Seq_2023	Candida_intermedia@Seq_2023	CIC11T00000003317	YHR100C
-Seq_2193	Candida_intermedia@Seq_2193	Seq_2193	YHR104W
+Seq_2193	XYL1	CIC11T00000000334	xyl1
 Seq_136	Candida_intermedia@Seq_136	CIC11T00000001250	YHR106W
 Seq_4142	Candida_intermedia@Seq_4142	CIC11T00000004148	YHR128W
 Seq_3641	Candida_intermedia@Seq_3641	CIC11T00000005287	YHR137W
@@ -952,7 +952,7 @@ Seq_4936	Candida_intermedia@Seq_4936	Seq_4936	YHR096C
 Seq_4945	Candida_intermedia@Seq_4945	CIC11T00000003667	YGR289C
 Seq_3591	Candida_intermedia@Seq_3591	CIC11T00000001117	YHR019C
 Seq_3482	Candida_intermedia@Seq_3482	CIC11T00000000433	YHR104W
-Seq_4254	Candida_intermedia@Seq_4254	Seq_4254	YHR104W
+Seq_4254	XYL1_2	CIC11T00000000893	xyl1_2
 Seq_5269	Candida_intermedia@Seq_5269	CIC11T00000004642	YGL039W
 Seq_2121	Candida_intermedia@Seq_2121	Seq_2121	YOR328W
 Seq_2362	Candida_intermedia@Seq_2362	Seq_2362	YOR328W
@@ -1066,7 +1066,5 @@ Seq_5399	Candida_intermedia@Seq_5399	CIC11T00000003340	Metschnikowia_proteae@Seq
 Seq_5435	Candida_intermedia@Seq_5435	CIC11T00000001216	Metschnikowia_matae@Seq_2907
 Seq_598	Candida_intermedia@Seq_598	CIC11T00000001269	Geotrichum_candidum@Seq_5694
 Seq_843	Candida_intermedia@Seq_843	CIC11T00000000769	Lodderomyces_elongisporus@Seq_5442
-xyl1	xyl1	CIC11T00000000334	xyl1
-xyl1_2	xyl1_2	CIC11T00000000893	xyl1_2
-xyl1_3	xyl1_3	CIC11T00000005922	xyl1_3
+Seq_110	XYL1_3	CIC11T00000005922	xyl1_3
 lxr4	lxr4	lxr4	lxr4
