@@ -1,10 +1,10 @@
 %Load model 
-load('../../models/candida_intermedia/cintGEM_curated2.mat')
+load('../../models/candida_intermedia/cintGEM_curated.mat')
 %Correct grRules field
-model.grRules = strrep(model.grRules,'Candida_intermedia@','');
-[grRules,rxnGeneMat] = standardizeGrRules(model);
-model.grRules = grRules;
-model.rxnGeneMat = rxnGeneMat;
+%model.grRules = strrep(model.grRules,'Candida_intermedia@','');
+%[grRules,rxnGeneMat] = standardizeGrRules(model);
+%model.grRules = grRules;
+%model.rxnGeneMat = rxnGeneMat;
 threshold = 0.01;
 %Iterate through each condition
 conditions = {'gal' 'lac' 'cel' 'xyl'};
@@ -45,7 +45,6 @@ for j = 1:length(conditions)
     newTable.log2FC = zeros(height(newTable),1);
     newTable.log2FC(find(iA)) = DE_results.Log2_FC(iB(iB>0));    
 
-    
     newTable.adjPval = zeros(height(newTable),1);
     newTable.adjPval(find(iA)) = DE_results.adjPVal(iB(iB>0));  
     %Map the rxns and mets that are linked to each gene

@@ -1,14 +1,6 @@
 orthogroups = readtable('../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
 newDataset  = getFastaIDs;
-
 load('../models/candida_intermedia/cintGEM_oxido_orthologs_curated.mat')
-% model.orthologues(1071) = {'galactitol_dh'};
-% t = table(model.genes,model.geneShortNames,model.orthologues);
-% writetable(t,'../results/modelGenes.txt','delimiter','\t','QuoteStrings',false)
-% formulas = constructEquations(model);
-% t = table(model.rxns,model.rxnNames,formulas,model.grRules);
-% writetable(t,'../results/model_grRules.txt','delimiter','\t','QuoteStrings',false)
-
 inconsistencies = find(contains(model.orthologues,'Seq'));
 %there were 154 inconsitencies found 14.39% of the model's genes
 anomalies = [];
@@ -200,12 +192,7 @@ ortholog = newDataset.IDs_2(y);
 x = find(strcmp(model.genes,gene));
 model.orthologues(x) = ortholog;
 
-%t = table(model.genes,model.geneShortNames,model.orthologues);
-%writetable(t,'../results/modelGenes.txt','delimiter','\t','QuoteStrings',false)
-%formulas = constructEquations(model);
-%t = table(model.rxns,model.rxnNames,formulas,model.grRules);
-%writetable(t,'../results/model_grRules.txt','delimiter','\t','QuoteStrings',false)
-%save('../models/candida_intermedia/cintGEM_curated2.mat','model')
+
 [a,b] = standardizeGrRules(model,false);
 model.grRules = a;
 model.rxnGeneMat = b;
