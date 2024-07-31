@@ -101,7 +101,8 @@ modelMod = calibrate_biomass_pseudoreaction(model);
 %correct stoichiometry in complex I, lets start with the theoretical valuer of
 % 2.5 (as a basis coeff. for proton translocation, and in agreement with
 % theory for organisms with complex I in ETC)
-modelMod = changePOratio(modelMod,2.5);
+Theor_PO = 2.5;
+modelMod = changePOratio(modelMod,Theor_PO);
 for j=1:1
     GAM = fitGAM(modelMod);
     modelMod =changeGAM(modelMod,GAM);
@@ -120,4 +121,19 @@ model = setParam(model,'obj',3736,1);
 sol = solveLP(model,1);
 printFluxes(model,sol.x,true)
 save('../../models/candida_intermedia/cintGEM_curated.mat','model')
+%generate version-controllable files
+formulas = constructEquations(model);
+rxns = model.rxns;
+rxnNames = model.rxnNames;
+grRules = model.grRules;
+modelTable = table(rxns,rxnNames,formulas, grRules);
+writetable(modelTable,'../../models/candida_intermedia/cintGEM_curated.txt','WriteVariableNames',true,'Delimiter','\t','QuoteStrings',false);
+
+%add version control
+genes = model.genes;
+shortnames = model.geneShortNames;
+orthologues = model.orthologues;
+proteins = model.proteins;
+gene_table = table(genes,shortnames,orthologues,proteins);
+writetable(gene_table,'../../models/candida_intermedia/gene_table_curated.txt','Delimiter','\t','QuoteStrings',false);
 
