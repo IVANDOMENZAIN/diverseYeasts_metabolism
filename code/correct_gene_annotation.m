@@ -1,13 +1,13 @@
-orthogroups     = readtable('../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
-newDataset = getFastaIDs;
+orthogroups = readtable('../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
+newDataset  = getFastaIDs;
 
 load('../models/candida_intermedia/cintGEM_curated.mat')
-model.orthologues(1071) = {'galactitol_dh'};
-t = table(model.genes,model.geneShortNames,model.orthologues);
-writetable(t,'../results/modelGenes.txt','delimiter','\t','QuoteStrings',false)
-formulas = constructEquations(model);
-t = table(model.rxns,model.rxnNames,formulas,model.grRules);
-writetable(t,'../results/model_grRules.txt','delimiter','\t','QuoteStrings',false)
+% model.orthologues(1071) = {'galactitol_dh'};
+% t = table(model.genes,model.geneShortNames,model.orthologues);
+% writetable(t,'../results/modelGenes.txt','delimiter','\t','QuoteStrings',false)
+% formulas = constructEquations(model);
+% t = table(model.rxns,model.rxnNames,formulas,model.grRules);
+% writetable(t,'../results/model_grRules.txt','delimiter','\t','QuoteStrings',false)
 
 inconsistencies = find(contains(model.orthologues,'Seq'));
 %there were 154 inconsitencies found 14.39% of the model's genes
@@ -152,9 +152,29 @@ ortholog = newDataset.IDs_2(y);
 x = find(strcmp(model.genes,gene));
 model.orthologues(x) = ortholog;
 
-t = table(model.genes,model.geneShortNames,model.orthologues);
-writetable(t,'../results/modelGenes.txt','delimiter','\t','QuoteStrings',false)
+%t = table(model.genes,model.geneShortNames,model.orthologues);
+%writetable(t,'../results/modelGenes.txt','delimiter','\t','QuoteStrings',false)
+%formulas = constructEquations(model);
+%t = table(model.rxns,model.rxnNames,formulas,model.grRules);
+%writetable(t,'../results/model_grRules.txt','delimiter','\t','QuoteStrings',false)
+%save('../models/candida_intermedia/cintGEM_curated2.mat','model')
+[a,b] = standardizeGrRules(model,false);
+model.grRules = a;
+model.rxnGeneMat = b;
+%generate version-controllable files
 formulas = constructEquations(model);
-t = table(model.rxns,model.rxnNames,formulas,model.grRules);
-writetable(t,'../results/model_grRules.txt','delimiter','\t','QuoteStrings',false)
+rxns = model.rxns;
+rxnNames = model.rxnNames;
+grRules = model.grRules;
+modelTable = table(rxns,rxnNames,formulas, grRules);
+writetable(modelTable,'../models/candida_intermedia/cintGEM_curated.txt','WriteVariableNames',true,'Delimiter','\t','QuoteStrings',false);
+
+%add version control
+genes = model.genes;
+shortnames = model.geneShortNames;
+orthologues = model.orthologues;
+proteins = model.proteins;
+gene_table = table(genes,shortnames,orthologues,proteins);
+writetable(gene_table,'../models/candida_intermedia/gene_table_curated.txt','Delimiter','\t','QuoteStrings',false);
+
 save('../models/candida_intermedia/cintGEM_curated2.mat','model')
