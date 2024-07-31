@@ -4,7 +4,8 @@
 % as:   cintGEM_oxido.mat
 %
 % Last edited: Ivan Domenzain 2024-07-30
-
+clear
+clc
 current = pwd;
 load('../../models/candida_intermedia/cint_leloir.mat')
 

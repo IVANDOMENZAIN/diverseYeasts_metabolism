@@ -1,10 +1,10 @@
+function output = adjust_biomass_comp
 clear
 clc
-load('../../models/candida_intermedia/cintGEM_oxido_orthologs_curated.mat')
+load('../../models/candida_intermedia/cintGEM_gene_curated.mat')
 %%correct reaction
 % * L-xylo-3-hexulose reductase: 'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> L-sorbose[c] + NADP(+)[c]'};... G0RNA2 (lxr4)
 %by this:  * L-xylo-3-hexulose reductase: 'L-xylo-3-hexulose[c] + NADPH[c] + H+[c] <=> D-glucitol[c] + NADP(+)[c]'};... G0RNA2 (lxr4)
-rxnName = 'xyl_hex_red';
 x = find(strcmp(model.rxns,'xyl_hex_red'));
 products = find(model.S(:,x)>0);
 disp(model.metNames(products))
@@ -26,11 +26,11 @@ rxnsToAdd.equations = newRxns;
 % Define reaction names
 rxnsToAdd.rxnNames = {'galactitol dehydrogenase'};
 %Define objective and bounds
-rxnsToAdd.c  = [0];
-rxnsToAdd.lb = [0];
-rxnsToAdd.ub = [1000];
+rxnsToAdd.c  = 0;
+rxnsToAdd.lb = 0;
+rxnsToAdd.ub = 1000;
 % %genes to add
-rxnsToAdd.grRules         = {'Seq_2272'};
+rxnsToAdd.grRules = {'Seq_2272'};
 % Introduce changes to the model
 model_oxido = model;%addGenesRaven(model,genesToAdd);
 model_oxido = addRxns(model_oxido,rxnsToAdd,3);
@@ -42,9 +42,9 @@ rxnsToAdd.equations = newRxns;
 rxnsToAdd.rxns     = {'galactitol exchange'};
 rxnsToAdd.rxnNames = {'galactitol exchange'};
 % Define objective and bounds
-rxnsToAdd.c  = [0];
-rxnsToAdd.lb = [0];
-rxnsToAdd.ub = [1000];
+rxnsToAdd.c  = 0;
+rxnsToAdd.lb = 0;
+rxnsToAdd.ub = 1000;
 rxnsToAdd.grRules = {''};
 model_oxido = addRxns(model_oxido,rxnsToAdd,3);
 model = model_oxido;
@@ -121,6 +121,7 @@ model = setParam(model,'obj',3736,1);
 sol = solveLP(model,1);
 printFluxes(model,sol.x,true)
 save('../../models/candida_intermedia/cintGEM_curated.mat','model')
+output = model;
 %generate version-controllable files
 formulas = constructEquations(model);
 rxns = model.rxns;
@@ -136,4 +137,4 @@ orthologues = model.orthologues;
 proteins = model.proteins;
 gene_table = table(genes,shortnames,orthologues,proteins);
 writetable(gene_table,'../../models/candida_intermedia/gene_table_curated.txt','Delimiter','\t','QuoteStrings',false);
-
+end

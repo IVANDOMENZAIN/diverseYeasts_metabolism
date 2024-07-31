@@ -1,7 +1,7 @@
 orthogroups = readtable('../orthoFinder/OrthoFinder/dataSEQs_vs_modelSEQs/Orthogroups/Orthogroups.txt','delimiter','\t');
 newDataset  = getFastaIDs;
 
-load('../models/candida_intermedia/cintGEM_curated.mat')
+load('../models/candida_intermedia/cintGEM_oxido_orthologs_curated.mat')
 % model.orthologues(1071) = {'galactitol_dh'};
 % t = table(model.genes,model.geneShortNames,model.orthologues);
 % writetable(t,'../results/modelGenes.txt','delimiter','\t','QuoteStrings',false)
@@ -152,6 +152,54 @@ ortholog = newDataset.IDs_2(y);
 x = find(strcmp(model.genes,gene));
 model.orthologues(x) = ortholog;
 
+gene = {'Seq_594'};
+x = find(contains(orthogroups.model_Cint,gene));
+ortholog = {'SGZ47281.1'};
+y = find(contains(newDataset.IDs_1,ortholog));
+ortholog = newDataset.IDs_2(y);
+x = find(strcmp(model.genes,gene));
+model.orthologues(x) = ortholog;
+
+gene = {'Seq_5004'};
+x = find(contains(orthogroups.model_Cint,gene));
+ortholog = {'SGZ57507.1'};
+y = find(contains(newDataset.IDs_1,ortholog));
+ortholog = newDataset.IDs_2(y);
+x = find(strcmp(model.genes,gene));
+model.orthologues(x) = ortholog;
+
+gene = {'Seq_652'};
+x = find(contains(orthogroups.model_Cint,gene));
+ortholog = {'SGZ56088.1'};
+y = find(contains(newDataset.IDs_1,ortholog));
+ortholog = newDataset.IDs_2(y);
+x = find(strcmp(model.genes,gene));
+model.orthologues(x) = ortholog;
+
+gene = {'Seq_623'};
+x = find(contains(orthogroups.model_Cint,gene));
+ortholog = {'SGZ55088.1'};
+y = find(contains(newDataset.IDs_1,ortholog));
+ortholog = newDataset.IDs_2(y);
+x = find(strcmp(model.genes,gene));
+model.orthologues(x) = ortholog;
+
+gene = {'Seq_4649'};
+x = find(contains(orthogroups.model_Cint,gene));
+ortholog = {'SGZ50241.1'};
+y = find(contains(newDataset.IDs_1,ortholog));
+ortholog = newDataset.IDs_2(y);
+x = find(strcmp(model.genes,gene));
+model.orthologues(x) = ortholog;
+
+gene = {'Seq_4552'};
+x = find(contains(orthogroups.model_Cint,gene));
+ortholog = {'SGZ50241.1'};
+y = find(contains(newDataset.IDs_1,ortholog));
+ortholog = newDataset.IDs_2(y);
+x = find(strcmp(model.genes,gene));
+model.orthologues(x) = ortholog;
+
 %t = table(model.genes,model.geneShortNames,model.orthologues);
 %writetable(t,'../results/modelGenes.txt','delimiter','\t','QuoteStrings',false)
 %formulas = constructEquations(model);
@@ -177,4 +225,4 @@ proteins = model.proteins;
 gene_table = table(genes,shortnames,orthologues,proteins);
 writetable(gene_table,'../models/candida_intermedia/gene_table_curated.txt','Delimiter','\t','QuoteStrings',false);
 
-save('../models/candida_intermedia/cintGEM_curated2.mat','model')
+save('../models/candida_intermedia/cintGEM_gene_curated.mat','model')
