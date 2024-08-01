@@ -26,6 +26,7 @@ writetable(gene_table,'../models/candida_intermedia/gene_table_cintGEM.txt','Del
 %remove temporary .mat files
 delete '..'/models/candida_intermedia/cintGEM_curated2.mat
 delete '..'/models/candida_intermedia/cintGEM_curated.mat
+delete '..'/models/candida_intermedia/cint_GEM_curated.mat
 delete '..'/models/candida_intermedia/cintGEM_gene_curated.mat
 delete '..'/models/candida_intermedia/cintGEM_oxido.mat
 delete '..'/models/candida_intermedia/cintGEM_oxido_orthologs.mat
