@@ -46,7 +46,8 @@ Thumbs.db
 *.mlappinstall 
 *.mltbx
 helpsearch*/
-.Rhistory
+*.Rhistory
+*results/randomSampling*
 
 # Non-complying tables #
 ########################

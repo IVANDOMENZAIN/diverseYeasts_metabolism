@@ -1,7 +1,7 @@
 %repMets_analysis
 
 %load model 
-load('../../models/candida_intermedia/cint_GEM_curated.mat')
+load('../../models/candida_intermedia/cintGEM.mat')
 %Correct model grRules
 model.grRules = strrep(model.grRules,'Candida_intermedia@','');
 [grRules,rxnGeneMat] = standardizeGrRules(model,false);
