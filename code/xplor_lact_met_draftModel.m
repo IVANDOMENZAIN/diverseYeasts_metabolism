@@ -35,8 +35,6 @@ x = find(contains(exchTable.exch_metNames,'lactose'));
 %introduce it!
 
 % Define reactions equations
-%MCR_rxn        = 'malonyl-CoA[c] + 2 NADPH[c] => 3-hydroxypropionic acid[c] + 2 NADP(+)[c]';
-%transport_3HP  = '3-hydroxypropionic acid[c] => 3-hydroxypropionic acid[e]';
 exchange_lac   = 'lactose[e] => ';
 rxnsToAdd.equations = {exchange_lac}; 
 % Define reaction names
@@ -47,18 +45,6 @@ rxnsToAdd.c  = [0];
 rxnsToAdd.lb = [-1000];
 rxnsToAdd.ub = [1000];
 
-% % Metabolites to Add
-% metsToAdd.mets          = {'s_3HP_c' 's_3HP_e'};
-% metsToAdd.metNames      = {'3-hydroxypropionic acid' '3-hydroxypropionic acid'};
-% metsToAdd.compartments  = {'c' 'e'};
-% 
-% %genes to add
-% genesToAdd.genes          = {'MCR'};
-% genesToAdd.geneShortNames = {'MCR'};
-% rxnsToAdd.grRules         = {'MCR' '' ''};
-% Introduce changes to the model
-% model_3HP = addGenesRaven(model,genesToAdd);
-% model_3HP = addMets(model_3HP,metsToAdd);
 model_lac = addRxns(model,rxnsToAdd,3);
 %Evaluate if rxn can carry flux
 I = haveFlux(model_lac,1E-6,'lac_ex');
@@ -67,7 +53,6 @@ model = model_lac;
 %pathway
 %The rxns of interest are reported in the lacTable,let's regenerate the
 %table with the introduced reaction
-
 lacIdxs = find(contains(model.metNames,'lactose'));
 lacTable = table(model.metNames(lacIdxs),model.mets(lacIdxs), lacIdxs,...
                 model.compNames(model.metComps(lacIdxs)),...
@@ -80,14 +65,14 @@ lacTable.associatedGenes = cell(height(lacTable),1);
 lacTable.haveFlux = cell(height(lacTable),1);
 for i=1:length(lacIdxs)
     rxnIdxs = find(model.S(lacIdxs(i),:));
-    lacTable.rxnIdxs{i} = rxnIdxs;
+    lacTable.rxnIdxs{i} = num2str(rxnIdxs);
     fluxVector = [];
     for j=1:length(rxnIdxs)
-        ii = haveFlux(model,1E-6,rxnIdxs(j));
+        ii = [num2str(haveFlux(model,1E-6,rxnIdxs(j))) ' / '];
         fluxVector = [fluxVector, ii];
     end
     lacTable.haveFlux{i} = fluxVector;
-    lacTable.rxnIds{i} = model.rxns(rxnIdxs);
-    lacTable.rxnNames{i} = model.rxnNames(rxnIdxs);
-    lacTable.associatedGenes{i} = model.grRules(rxnIdxs);
+    lacTable.rxnIds{i} = strjoin(model.rxns(rxnIdxs),'/');
+    lacTable.rxnNames{i} = strjoin(model.rxnNames(rxnIdxs),'/');
+    lacTable.associatedGenes{i} = strjoin(model.grRules(rxnIdxs),'/');
 end
